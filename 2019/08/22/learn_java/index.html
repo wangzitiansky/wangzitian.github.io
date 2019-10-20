@@ -5,13 +5,16 @@
   
 
   
-  <title>Hexo</title>
+  <title>learn_java | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+  <meta name="description" content="1title:java学习笔记  java基础Java集合总结Java多线程总结基本类型   类型 字节    byte 1   short 2   int 4   long 8   float 4   double 8   char 2   关键字final####常量final关键字修饰 1final int PAI = 3.14;  ####final 修饰一个类的实例域 则其在构造器中必须">
+<meta property="og:type" content="article">
+<meta property="og:title" content="learn_java">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;08&#x2F;22&#x2F;learn_java&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1title:java学习笔记  java基础Java集合总结Java多线程总结基本类型   类型 字节    byte 1   short 2   int 4   long 8   float 4   double 8   char 2   关键字final####常量final关键字修饰 1final int PAI = 3.14;  ####final 修饰一个类的实例域 则其在构造器中必须">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-20T14:44:50.659Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -59,56 +62,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-learn_python" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/29/learn_python/" class="article-date">
-  <time datetime="2019-09-29T06:05:41.394Z" itemprop="datePublished">2019-09-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/29/learn_python/">learn_python</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><h2 id="format格式化输出"><a href="#format格式化输出" class="headerlink" title="format格式化输出"></a>format格式化输出</h2><ul>
-<li><h3 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="string">'&#123;:d&#125;'</span>.format(<span class="number">42</span>)</span><br><span class="line"><span class="comment"># 42</span></span><br><span class="line">&gt;&gt;&gt;<span class="string">'&#123;:f&#125;'</span>.format(<span class="number">3.1415926</span>)</span><br><span class="line"><span class="comment"># '3.141593</span></span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;<span class="string">'&#123;:4d&#125;'</span>.format(<span class="number">42</span>)</span><br><span class="line"><span class="comment"># '  42'</span></span><br><span class="line">&gt;&gt;&gt;<span class="string">'&#123;:06.2f&#125;'</span>.format(<span class="number">3.1415926</span>)</span><br><span class="line"><span class="comment"># '003.14'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><h3 id="带加减号的数字"><a href="#带加减号的数字" class="headerlink" title="带加减号的数字"></a>带加减号的数字</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="string">'&#123;: d&#125;'</span>.format(<span class="number">-23</span>)</span><br><span class="line"><span class="comment"># '-23'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><h3 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="string">'&#123;first&#125; &#123;last&#125;'</span>.format(first=<span class="string">'last'</span>, last=<span class="string">'first'</span>)</span><br><span class="line"><span class="comment"># 'last first'</span></span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;data = &#123;<span class="string">'first'</span>: <span class="string">'Hodor'</span>, <span class="string">'last'</span>: <span class="string">'Hodor!'</span> &#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;first&#125; &#123;last&#125;'</span>.format(**data)</span><br><span class="line"><span class="comment"># 'Hodor Hodor!'</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>data = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;d[4]&#125; &#123;d[1]&#125; &#123;d[0]&#125;'</span>.format(d=data)</span><br><span class="line"><span class="string">'5 2 1'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><h3 id="类与对象"><a href="#类与对象" class="headerlink" title="类与对象"></a>类与对象</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Data</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"str"</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'repr'</span></span><br><span class="line">print(<span class="string">'&#123;0!s&#125; &#123;0!r&#125;'</span>.format(Data()))</span><br><span class="line"><span class="comment"># str repr</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/29/learn_python/" data-id="ck1z3rzoz0001iefy2mkr7dai" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-learn_java" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-learn_java" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/22/learn_java/" class="article-date">
   <time datetime="2019-08-22T06:29:12.648Z" itemprop="datePublished">2019-08-22</time>
@@ -121,8 +75,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/22/learn_java/">learn_java</a>
+    <h1 class="article-title" itemprop="name">
+      learn_java
     </h1>
   
 
@@ -201,11 +155,23 @@
     </footer>
   </div>
   
-</article>
-
+    
+<nav id="article-nav">
+  
+    <a href="/2019/09/29/learn_python/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          learn_python
+        
+      </div>
+    </a>
+  
+  
+</nav>
 
   
-
+</article>
 
 </section>
         
