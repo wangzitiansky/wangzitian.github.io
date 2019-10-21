@@ -1,1031 +1,615 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="Chinese">
+<html>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
+  <meta charset="utf-8">
+  <title>The Blog of Wang</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="The Blog of Wang">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="keywords" content="Java, Python, Programer">
 <meta property="og:type" content="website">
-<meta property="og:title" content="The Blog of Wang">
-<meta property="og:url" content="http:&#x2F;&#x2F;wangzitian.club&#x2F;index.html">
+<meta property="og:title" content="about">
+<meta property="og:url" content="http:&#x2F;&#x2F;wangzitian.club&#x2F;about&#x2F;index.html">
 <meta property="og:site_name" content="The Blog of Wang">
 <meta property="og:locale" content="Chinese">
+<meta property="og:updated_time" content="2019-10-21T13:02:21.933Z">
 <meta name="twitter:card" content="summary">
 
 
+<link rel="icon" href="/img/avatar.jpg">
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
 </script>
 
-
-
-  <link rel="canonical" href="http://wangzitian.club/"/>
-
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
 
 
 
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
 
-  <title>The Blog of Wang</title>
-  
-
-
-
-
-
-
-
+<script src="/js/iconfont.js?v=1.0.1" ></script>
 
 </head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="Chinese">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">The Blog of Wang</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
 </div>
 
-<nav class="site-nav">
-  
+<body>
+<aside class="nav mobile">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>WangZiTian</span>
+</div>
 
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            About
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            Categories
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
+<div class="icon">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2019/10/21/java%E7%AC%94%E8%AF%95%E9%A2%98%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WangZiTian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The Blog of Wang">
-    </span>
-
-    
-      <header class="post-header">
-
         
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"></use>
+                </svg>
+            
+        </a>
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/21/java%E7%AC%94%E8%AF%95%E9%A2%98%E7%AC%94%E8%AE%B0/" itemprop="url">java面试题笔记</a></h1>
+    
         
-
-        <div class="post-meta">
-          <span class="post-time">
+        <a title="github" href="https://github.com/yelog" target="_blank">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-21T20:27:03+08:00">
-                2019-10-21
-              </time>
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
             
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+        </a>
         
-          
-            <h2 id="NewCoder面试题笔记"><a href="#NewCoder面试题笔记" class="headerlink" title="NewCoder面试题笔记"></a>NewCoder面试题笔记</h2><ul>
-<li><h4 id="Math-round-11-5-等于多少-Math-round-11-5-等于多少"><a href="#Math-round-11-5-等于多少-Math-round-11-5-等于多少" class="headerlink" title="Math.round(11.5) 等于多少 (). Math.round(-11.5) 等于多少 ( )"></a>Math.round(11.5) 等于多少 (). Math.round(-11.5) 等于多少 ( )</h4></li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 12 -11</span></span><br><span class="line"><span class="comment">//Math.round(a)</span></span><br><span class="line"><span class="comment">// a + 0.5 取下边界</span></span><br></pre></td></tr></table></figure>
+    
+        
+        <a title="facebook" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-facebook"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="instagram" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-instagram"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="reddit" href="https://www.reddit.com/user/yelog/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-reddit"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/u/2307534817" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/ff56736de7cf" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/jaytp/activities" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="oschina" href="https://my.oschina.net/yelog" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-oschina"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:jaytp@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="kugou" href="https://www.kugou.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-kugou"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=88151013" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
 
 <ul>
-<li><h4 id="public-Method-getDeclaredMethods-返回类或接口声明的所有方法，包括public-protected-default-package-访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。"><a href="#public-Method-getDeclaredMethods-返回类或接口声明的所有方法，包括public-protected-default-package-访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。" class="headerlink" title="public Method[] getDeclaredMethods()返回类或接口声明的所有方法，包括public, protected, default (package) 访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。"></a><strong>public Method[] getDeclaredMethods()</strong>返回类或接口声明的所有方法，包括public, protected, default (package) 访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。</h4></li>
-<li><h4 id="关于byte和final"><a href="#关于byte和final" class="headerlink" title="关于byte和final"></a>关于byte和final</h4></li>
+    <li><div class="all active">全部文章<small>(4)</small></div></li>
+    
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span> b1=<span class="number">1</span>,b2=<span class="number">2</span>,b3,b6,b8;</span><br><span class="line"><span class="keyword">final</span> <span class="keyword">byte</span> b4=<span class="number">4</span>,b5=<span class="number">6</span>,b7;</span><br><span class="line">b3=(b1+b2);  <span class="comment">/*语句1*/</span></span><br><span class="line">b6=b4+b5;    <span class="comment">/*语句2*/</span></span><br><span class="line">b8=(b1+b4);  <span class="comment">/*语句3*/</span></span><br><span class="line">b7=(b2+b5);  <span class="comment">/*语句4*/</span></span><br><span class="line">System.out.println(b3+b6);</span><br><span class="line"><span class="comment">// 当使用 +、-、*、/、%、运算操作时 操作数为：byte、short、int 、char 两个数会被转化为int类型 结果也是int类型 被声明为final的变量不会被转化</span></span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
     </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="4">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
     
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">java</a>
+    </li>
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2019/10/21/Java-Collection/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WangZiTian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The Blog of Wang">
-    </span>
+    <div class="clearfix"></div>
+</div>
 
     
-      <header class="post-header">
-
+    <nav id="title-list-nav">
         
+        <a  class=""
+           href="/2019/10/21/Java-Collection/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Java Collection">Java Collection</span>
+            <span class="post-date" title="2019-10-21 10:47:13">2019/10/21</span>
+        </a>
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/21/Java-Collection/" itemprop="url">Java Collection</a></h1>
+        <a  class=""
+           href="/2019/10/21/java%E7%AC%94%E8%AF%95%E9%A2%98%E7%AC%94%E8%AE%B0/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="java面试题笔记">java面试题笔记</span>
+            <span class="post-date" title="2019-10-21 20:27:03">2019/10/21</span>
+        </a>
         
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-21T10:47:13+08:00">
-                2019-10-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+        <a  class=""
+           href="/2019/08/22/learn_java/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="learn_java">learn_java</span>
+            <span class="post-date" title="2019-08-22 14:29:12">2019/08/22</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/09/29/learn_python/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="learn_python">learn_python</span>
+            <span class="post-date" title="2019-09-29 14:05:41">2019/09/29</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="java集合"><a href="#java集合" class="headerlink" title="java集合"></a>java集合</h1><h2 id="Iterator"><a href="#Iterator" class="headerlink" title="Iterator"></a>Iterator</h2><h4 id="1-Iterator-方法返回一个Iterator"><a href="#1-Iterator-方法返回一个Iterator" class="headerlink" title="1.Iterator()方法返回一个Iterator"></a>1.Iterator()方法返回一个Iterator</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Iterator&lt;Integer&gt; listIter = list.iterator();</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-next-方法获得序列的下一个元素"><a href="#2-next-方法获得序列的下一个元素" class="headerlink" title="2.next()方法获得序列的下一个元素"></a>2.next()方法获得序列的下一个元素</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(listIter.next());</span><br><span class="line"><span class="comment">//打印第一个元素</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="3-hasNext-方法检查序列中是否还有元素"><a href="#3-hasNext-方法检查序列中是否还有元素" class="headerlink" title="3.hasNext()方法检查序列中是否还有元素"></a>3.hasNext()方法检查序列中是否还有元素</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(listIter.hasNext())&#123;</span><br><span class="line">            System.out.println(listIter.next());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-remove-将迭代器新近返回的元素删除"><a href="#4-remove-将迭代器新近返回的元素删除" class="headerlink" title="4.remove()将迭代器新近返回的元素删除"></a>4.remove()将迭代器新近返回的元素删除</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">listIter.next();</span><br><span class="line">listIter.remove();</span><br></pre></td></tr></table></figure>
-
-<h2 id="ListIterator"><a href="#ListIterator" class="headerlink" title="ListIterator"></a>ListIterator</h2><h4 id="1-ListIterator继承了Iterator"><a href="#1-ListIterator继承了Iterator" class="headerlink" title="1.ListIterator继承了Iterator"></a>1.ListIterator继承了Iterator</h4><h4 id="可以获得当前位置前一个元素和后一个元素的索引"><a href="#可以获得当前位置前一个元素和后一个元素的索引" class="headerlink" title="可以获得当前位置前一个元素和后一个元素的索引"></a>可以获得当前位置前一个元素和后一个元素的索引</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ListIterator&lt;Integer&gt; it = list.listIterator();</span><br><span class="line"><span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">      System.out.println(it.next() + <span class="string">" "</span> + it.previousIndex() + <span class="string">" "</span> + it.nextIndex());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Collection是一个独立的元素序列"><a href="#Collection是一个独立的元素序列" class="headerlink" title="Collection是一个独立的元素序列"></a>Collection是一个独立的元素序列</h3><ul>
-<li><h4 id="int-size-返回长度"><a href="#int-size-返回长度" class="headerlink" title="int size() 返回长度"></a>int <strong>size()</strong> 返回长度</h4></li>
-<li><h4 id="boolean-isEmpty-返回true如果集合为空"><a href="#boolean-isEmpty-返回true如果集合为空" class="headerlink" title="boolean isEmpty() 返回true如果集合为空"></a>boolean <strong>isEmpty</strong>() 返回true如果集合为空</h4></li>
-<li><h4 id="boolean-contains-Object-o-返回true如果有指定的元素"><a href="#boolean-contains-Object-o-返回true如果有指定的元素" class="headerlink" title="boolean contains(Object o) 返回true如果有指定的元素"></a>boolean <strong>contains</strong>(Object o) 返回true如果有指定的元素</h4></li>
-<li><h4 id="boolean-add-E-e-确保这个集合包含指定元素"><a href="#boolean-add-E-e-确保这个集合包含指定元素" class="headerlink" title="boolean add(E e) 确保这个集合包含指定元素"></a>boolean <strong>add</strong>(E e) 确保这个集合包含指定元素</h4></li>
-<li><h4 id="boolean-remove-Object-o-removes-a-single-instance-of-the-specified-element"><a href="#boolean-remove-Object-o-removes-a-single-instance-of-the-specified-element" class="headerlink" title="boolean remove(Object o)  removes a single instance of the specified element"></a>boolean <strong>remove</strong>(Object o)  removes a single instance of the specified element</h4></li>
-<li><h4 id="void-clear-清空集合"><a href="#void-clear-清空集合" class="headerlink" title="void clear() 清空集合"></a>void <strong>clear</strong>() 清空集合</h4></li>
-</ul>
-<h3 id="Map一组”键值对“对象"><a href="#Map一组”键值对“对象" class="headerlink" title="Map一组”键值对“对象"></a>Map一组”键值对“对象</h3><h4 id="Here-are-common-methods-for-collections-inherited-from-the-Map-interface"><a href="#Here-are-common-methods-for-collections-inherited-from-the-Map-interface" class="headerlink" title="Here are common methods for collections inherited from the Map interface:"></a>Here are common methods for collections inherited from the Map interface:</h4><ul>
-<li><h4 id="int-size-returns-the-number-of-elements-in-this-collection"><a href="#int-size-returns-the-number-of-elements-in-this-collection" class="headerlink" title="int size() returns the number of elements in this collection"></a>int <strong>size</strong>() returns the number of elements in this collection</h4></li>
-<li><h4 id="boolean-isEmpty-Returns-true-if-this-collection-contains-no-elements"><a href="#boolean-isEmpty-Returns-true-if-this-collection-contains-no-elements" class="headerlink" title="boolean isEmpty() Returns true if this collection contains no elements"></a>boolean <strong>isEmpty</strong>() Returns <strong>true</strong> if this collection contains no elements</h4></li>
-<li><h4 id="boolean-containsKey-Object-key-Returns-true-if-this-collection-contains-the-specified-key"><a href="#boolean-containsKey-Object-key-Returns-true-if-this-collection-contains-the-specified-key" class="headerlink" title="boolean containsKey(Object key)   Returns true if this collection contains the specified key"></a>boolean <strong>containsKey</strong>(Object key)   Returns <strong>true</strong> if this collection contains the specified key</h4></li>
-<li><h4 id="boolean-containsValue-Object-value-Returns-true-if-this-collection-contains-the-specified-value"><a href="#boolean-containsValue-Object-value-Returns-true-if-this-collection-contains-the-specified-value" class="headerlink" title="boolean containsValue(Object value) Returns true if this collection contains the specified value"></a>boolean <strong>containsValue</strong>(Object value) Returns <strong>true</strong> if this collection contains the specified value</h4></li>
-<li><h4 id="V-get-Object-key-returns-the-value-to-which-the-specified-key-is-mapped-or-null"><a href="#V-get-Object-key-returns-the-value-to-which-the-specified-key-is-mapped-or-null" class="headerlink" title="V get(Object key) returns the value to which the specified key is mapped, or null"></a>V <strong>get</strong>(Object key) returns the value to which the specified key is mapped, or <strong>null</strong></h4></li>
-<li><h4 id="V-put-K-key-V-value-associates-the-specified-value-with-the-specified-key-optional"><a href="#V-put-K-key-V-value-associates-the-specified-value-with-the-specified-key-optional" class="headerlink" title="V put(K key, V value) associates the specified value with the specified key (optional)"></a>V <strong>put</strong>(K key, V value) associates the specified value with the specified key (<strong>optional</strong>)</h4></li>
-<li><h4 id="V-remove-Object-key-removes-the-mapping-for-a-key-from-this-map-optional"><a href="#V-remove-Object-key-removes-the-mapping-for-a-key-from-this-map-optional" class="headerlink" title="V remove(Object key) removes the mapping for a key from this map (optional)"></a>V <strong>remove</strong>(Object key) removes the mapping for a key from this map (<strong>optional</strong>)</h4></li>
-<li><h4 id="void-clear-removes-all-elements-from-this-collection-optional"><a href="#void-clear-removes-all-elements-from-this-collection-optional" class="headerlink" title="void clear() removes all elements from this collection (optional)"></a>void <strong>clear</strong>() removes all elements from this collection <strong>(optional)</strong></h4></li>
-<li><h4 id="Set-keySet-Returns-a-Set-view-of-the-keys-contained-in-this-map"><a href="#Set-keySet-Returns-a-Set-view-of-the-keys-contained-in-this-map" class="headerlink" title="Set keySet() Returns a Set view of the keys contained in this map"></a>Set<K> <strong>keySet</strong>() Returns a Set view of the keys contained in this map</h4></li>
-<li><h4 id="Collection-values-returns-a-Collection-view-of-the-values-contained-in-this-map"><a href="#Collection-values-returns-a-Collection-view-of-the-values-contained-in-this-map" class="headerlink" title="Collection values() returns a Collection view of the values contained in this map"></a>Collection<V> <strong>values</strong>() returns a Collection view of the values contained in this map</h4></li>
-<li><h4 id="Set-lt-Map-Entry-lt-K-V-gt-gt-entrySet-returns-a-Set-view-of-the-mappings-contained-in-this-map"><a href="#Set-lt-Map-Entry-lt-K-V-gt-gt-entrySet-returns-a-Set-view-of-the-mappings-contained-in-this-map" class="headerlink" title="Set&lt;Map.Entry&lt;K, V&gt;&gt; entrySet() returns a Set view of the mappings contained in this map"></a>Set&lt;Map.Entry&lt;K, V&gt;&gt; <strong>entrySet</strong>() returns a Set view of the mappings contained in this map</h4></li>
-</ul>
-<h4 id="迭代遍历map"><a href="#迭代遍历map" class="headerlink" title="迭代遍历map"></a>迭代遍历map</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//检测随机数的分布情况</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestRandom</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Random rand = <span class="keyword">new</span> Random(<span class="number">47</span>);</span><br><span class="line">        Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> r = rand.nextInt(<span class="number">20</span>);</span><br><span class="line">            Integer freq = map.get(r);</span><br><span class="line">            map.put(r, (freq == <span class="keyword">null</span>) ? <span class="number">1</span> : freq + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        map.forEach((k,v) -&gt; System.out.println(<span class="string">"key: "</span>+k+<span class="string">" value:"</span>+v));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="The-List-interface"><a href="#The-List-interface" class="headerlink" title="The List interface"></a>The List interface</h3><ul>
-<li><h4 id="E-get-int-index-returns-the-element-at-the-specified-position-in-this-list"><a href="#E-get-int-index-returns-the-element-at-the-specified-position-in-this-list" class="headerlink" title="E get(int index) returns the element at the specified position in this list"></a>E <strong>get</strong>(int index) returns the element at the specified position in this list</h4></li>
-<li><h4 id="int-size-returns-the-number-of-elements-in-this-collection-1"><a href="#int-size-returns-the-number-of-elements-in-this-collection-1" class="headerlink" title="int size() returns the number of elements in this collection"></a>int <strong>size()</strong> returns the number of elements in this collection</h4></li>
-<li><h4 id="boolean-isEmpty-returns-true-if-this-collection-contains-no-elements"><a href="#boolean-isEmpty-returns-true-if-this-collection-contains-no-elements" class="headerlink" title="boolean isEmpty() returns true if this collection contains no elements"></a>boolean <strong>isEmpty</strong>() returns <strong>true</strong> if this collection contains no elements</h4></li>
-<li><h4 id="boolean-contains-Object-o-returns-true-if-this-collection-contains-the-specified-element"><a href="#boolean-contains-Object-o-returns-true-if-this-collection-contains-the-specified-element" class="headerlink" title="boolean contains(Object o) returns true if this collection contains the specified element"></a>boolean <strong>contains</strong>(Object o) returns <strong>true</strong> if this collection contains the specified element</h4></li>
-<li><h4 id="boolean-add-E-e-ensures-that-this-collection-contains-the-specified-element"><a href="#boolean-add-E-e-ensures-that-this-collection-contains-the-specified-element" class="headerlink" title="boolean add(E e) ensures that this collection contains the specified element"></a>boolean <strong>add</strong>(E e) ensures that this collection contains the specified element</h4></li>
-<li><p>####boolean <strong>remove</strong>(Object o) removes a single instance of the specified element</p>
-</li>
-<li><h4 id="void-clear-removes-all-elements-from-this-collection"><a href="#void-clear-removes-all-elements-from-this-collection" class="headerlink" title="void clear() removes all elements from this collection"></a>void <strong>clear</strong>() removes all elements from this collection</h4></li>
-<li><h4 id="void-add-int-index-E-element-inserts-the-specified-element-at-the-specified-position-in-this-list"><a href="#void-add-int-index-E-element-inserts-the-specified-element-at-the-specified-position-in-this-list" class="headerlink" title="void add(int index, E element) inserts the specified element at the specified position in this list"></a>void <strong>add</strong>(int index, E element) inserts the specified element at the specified position in this list</h4></li>
-<li><h4 id="E-remove-int-index-removes-the-element-at-the-specified-position-in-this-list-and-returns-it"><a href="#E-remove-int-index-removes-the-element-at-the-specified-position-in-this-list-and-returns-it" class="headerlink" title="E remove(int index) removes the element at the specified position in this list and returns it"></a>E <strong>remove</strong>(int index) removes the element at the specified position in this list and returns it</h4></li>
-<li><h4 id="E-set-int-index-E-element-replaces-the-element-at-the-specified-position-in-this-list-with-the-specified-element"><a href="#E-set-int-index-E-element-replaces-the-element-at-the-specified-position-in-this-list-with-the-specified-element" class="headerlink" title="E set(int index, E element) replaces the element at the specified position in this list with the specified element"></a>E <strong>set</strong>(int index, E element) replaces the element at the specified position in this list with the specified element</h4></li>
-<li><h4 id="int-indexOf-Object-o-returns-the-index-of-the-first-occurrence-of-the-specified-element-in-this-list-or-1"><a href="#int-indexOf-Object-o-returns-the-index-of-the-first-occurrence-of-the-specified-element-in-this-list-or-1" class="headerlink" title="int indexOf(Object o) returns the index of the first occurrence of the specified element in this list, or -1"></a>int <strong>indexOf</strong>(Object o) returns the index of the first occurrence of the specified element in this list, or -1</h4></li>
-</ul>
-<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><h2 id="增删改查的时间复杂度"><a href="#增删改查的时间复杂度" class="headerlink" title="增删改查的时间复杂度"></a>增删改查的时间复杂度</h2><h3 id="1-get-int-index-—–-O-1"><a href="#1-get-int-index-—–-O-1" class="headerlink" title="1. get(int index) —– O(1)"></a>1. get(int index) —– O(1)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">        Objects.checkIndex(index, size);</span><br><span class="line">        <span class="keyword">return</span> elementData(index);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-add-E-e-—–-O-1"><a href="#2-add-E-e-—–-O-1" class="headerlink" title="2. add(E e) —– O(1)"></a>2. add(E e) —– O(1)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//默认追加元素到list尾部 时间复杂度O(1)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span> </span>&#123;</span><br><span class="line">        modCount++;</span><br><span class="line">        add(e, elementData, size);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-add-int-index-E-element-—–-O-n"><a href="#3-add-int-index-E-element-—–-O-n" class="headerlink" title="3. add(int index, E element) —– O(n)"></a>3. add(int index, E element) —– O(n)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> index, E element)</span> </span>&#123;</span><br><span class="line">        rangeCheckForAdd(index);</span><br><span class="line">        modCount++;</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> s;</span><br><span class="line">        Object[] elementData;</span><br><span class="line">        <span class="keyword">if</span> ((s = size) == (elementData = <span class="keyword">this</span>.elementData).length)</span><br><span class="line">            elementData = grow();</span><br><span class="line">        System.arraycopy(elementData, index,</span><br><span class="line">                         elementData, index + <span class="number">1</span>,</span><br><span class="line">                         s - index);</span><br><span class="line">        elementData[index] = element;</span><br><span class="line">        size = s + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-remove-E-e-remove-index-—–-O-n"><a href="#3-remove-E-e-remove-index-—–-O-n" class="headerlink" title="3. remove(E e)    remove(index) —– O(n)"></a>3. remove(E e)    remove(index) —– O(n)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">remove</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">final</span> Object[] es = elementData;</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> size = <span class="keyword">this</span>.size;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        found: &#123;</span><br><span class="line">            <span class="keyword">if</span> (o == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">for</span> (; i &lt; size; i++)</span><br><span class="line">                    <span class="keyword">if</span> (es[i] == <span class="keyword">null</span>)</span><br><span class="line">                        <span class="keyword">break</span> found;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">for</span> (; i &lt; size; i++)</span><br><span class="line">                    <span class="keyword">if</span> (o.equals(es[i]))</span><br><span class="line">                        <span class="keyword">break</span> found;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        fastRemove(es, i);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">remove</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">        Objects.checkIndex(index, size);</span><br><span class="line">        <span class="keyword">final</span> Object[] es = elementData;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>) E oldValue = (E) es[index];</span><br><span class="line">        fastRemove(es, index);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> oldValue;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">fastRemove</span><span class="params">(Object[] es, <span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">        modCount++;</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> newSize;</span><br><span class="line">        <span class="keyword">if</span> ((newSize = size - <span class="number">1</span>) &gt; i)</span><br><span class="line">            System.arraycopy(es, i + <span class="number">1</span>, es, i, newSize - i);</span><br><span class="line">        es[size = newSize] = <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2><h3 id="增删改查时间复杂度"><a href="#增删改查时间复杂度" class="headerlink" title="增删改查时间复杂度"></a>增删改查时间复杂度</h3><h3 id="1-add-E-e-—–-O-1"><a href="#1-add-E-e-—–-O-1" class="headerlink" title="1. add(E e) —– O(1)"></a>1. add(E e) —– O(1)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-get-int-index-—–-O-n"><a href="#2-get-int-index-—–-O-n" class="headerlink" title="2. get(int index) —– O(n)"></a>2. get(int index) —– O(n)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-add-int-index-E-e-—–-O-n"><a href="#3-add-int-index-E-e-—–-O-n" class="headerlink" title="3. add(int index, E e) —– O(n)"></a>3. add(int index, E e) —– O(n)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="4-remove-int-index-—–-O-n"><a href="#4-remove-int-index-—–-O-n" class="headerlink" title="4. remove(int index) —– O(n)"></a>4. remove(int index) —– O(n)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="5-Iterator-remove-—–-O-1"><a href="#5-Iterator-remove-—–-O-1" class="headerlink" title="5. Iterator.remove() —– O(1)"></a>5. Iterator.remove() —– O(1)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h3><h4 id="1-ArrayList-constructs-an-empty-list-with-an-initial-capacity-of-ten-构造一个空的长度为10的list"><a href="#1-ArrayList-constructs-an-empty-list-with-an-initial-capacity-of-ten-构造一个空的长度为10的list" class="headerlink" title="1. ArrayList()  constructs an empty list with an initial capacity of ten; 构造一个空的长度为10的list"></a>1. ArrayList()  constructs an empty list with an initial capacity of ten; 构造一个空的长度为10的list</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;(); <span class="comment">// a list of strings, it has the default size 10</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="2-ArrayList-Collection-lt-extends-E-gt-c-constructs-a-list-containing-the-elements-of-the-specified-collection"><a href="#2-ArrayList-Collection-lt-extends-E-gt-c-constructs-a-list-containing-the-elements-of-the-specified-collection" class="headerlink" title="2.ArrayList(Collection&lt;? extends E&gt; c) constructs a list containing the elements of the specified collection;"></a>2.<strong>ArrayList(Collection&lt;? extends E&gt; c)</strong> constructs a list containing the elements of the specified collection;</h4><h4 id="3-ArrayList-int-initialCapacity-constructs-an-empty-list-with-the-specified-initial-capacity"><a href="#3-ArrayList-int-initialCapacity-constructs-an-empty-list-with-the-specified-initial-capacity" class="headerlink" title="3. ArrayList(int initialCapacity)**  constructs an empty list with the specified initial capacity."></a>3. ArrayList(int initialCapacity)**  constructs an empty list with the specified initial capacity.</h4><h3 id="list-与-array"><a href="#list-与-array" class="headerlink" title="list 与 array"></a>list 与 array</h3><h4 id="1-list-to-array"><a href="#1-list-to-array" class="headerlink" title="1. list to array"></a>1. list to array</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object[] objArray = list.toArray();</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String[] strArray = list.toArray(<span class="keyword">new</span> String[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-array-to-list"><a href="#2-array-to-list" class="headerlink" title="2.array to list"></a>2.array to list</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList(Arrays.asList(<span class="string">"one"</span> , <span class="string">"two"</span>));</span><br></pre></td></tr></table></figure>
-
-<h1 id="集合源码"><a href="#集合源码" class="headerlink" title="集合源码"></a>集合源码</h1><h2 id="ArrayList-1"><a href="#ArrayList-1" class="headerlink" title="ArrayList"></a>ArrayList</h2><h3 id="1-概况"><a href="#1-概况" class="headerlink" title="1. 概况"></a>1. 概况</h3><h4 id="RandomAccess接口标志其支持快速随机访问"><a href="#RandomAccess接口标志其支持快速随机访问" class="headerlink" title="RandomAccess接口标志其支持快速随机访问"></a>RandomAccess接口标志其支持快速随机访问</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayList</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractList</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">        <span class="keyword">implements</span> <span class="title">List</span>&lt;<span class="title">E</span>&gt;, <span class="title">RandomAccess</span>, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span></span></span><br></pre></td></tr></table></figure>
-
-<h4 id="数组默认大小为10"><a href="#数组默认大小为10" class="headerlink" title="数组默认大小为10"></a>数组默认大小为10</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEFAULT_CAPACITY = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-扩容"><a href="#2-扩容" class="headerlink" title="2. 扩容"></a>2. 扩容</h3><h4 id="添加元素时使用-ensureCapacityInternal-方法来保证容量足够，如果不够时，需要使用-grow-方法进行扩容，新容量的大小为-oldCapacity-oldCapacity-gt-gt-1-，也就是旧容量的-1-5-倍。"><a href="#添加元素时使用-ensureCapacityInternal-方法来保证容量足够，如果不够时，需要使用-grow-方法进行扩容，新容量的大小为-oldCapacity-oldCapacity-gt-gt-1-，也就是旧容量的-1-5-倍。" class="headerlink" title="添加元素时使用 ensureCapacityInternal() 方法来保证容量足够，如果不够时，需要使用 grow() 方法进行扩容，新容量的大小为 oldCapacity + (oldCapacity &gt;&gt; 1)，也就是旧容量的 1.5 倍。"></a>添加元素时使用 ensureCapacityInternal() 方法来保证容量足够，如果不够时，需要使用 grow() 方法进行扩容，新容量的大小为 <code>oldCapacity + (oldCapacity &gt;&gt; 1)</code>，也就是旧容量的 1.5 倍。</h4><h4 id="扩容操作需要调用-Arrays-copyOf-把原数组整个复制到新数组中，这个操作代价很高，因此最好在创建-ArrayList-对象时就指定大概的容量大小，减少扩容操作的次数。"><a href="#扩容操作需要调用-Arrays-copyOf-把原数组整个复制到新数组中，这个操作代价很高，因此最好在创建-ArrayList-对象时就指定大概的容量大小，减少扩容操作的次数。" class="headerlink" title="扩容操作需要调用 Arrays.copyOf() 把原数组整个复制到新数组中，这个操作代价很高，因此最好在创建 ArrayList 对象时就指定大概的容量大小，减少扩容操作的次数。"></a>扩容操作需要调用 <code>Arrays.copyOf()</code> 把原数组整个复制到新数组中，这个操作代价很高，因此最好在创建 ArrayList 对象时就指定大概的容量大小，减少扩容操作的次数。</h4>
-          
-        
-      
     </div>
+</aside>
+<div class="post index">
+    <div class="pjax">
+        <article class="index">
+            <div class="toc-ref">
     
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于叶落阁"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
     
-    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
+<blockquote>
+<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
+</blockquote>
+<blockquote>
+<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
+</blockquote>
+<blockquote>
+<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
+</blockquote>
+<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
+<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
+<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是阿杰（杨玉杰）的个人站。</p>
+<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
+<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
+<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源</p>
+<p>主要功能：</p>
+<ul>
+<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
+<li>pad/手机等移动端适配</li>
+<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+</ul>
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2019/09/29/learn_python/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WangZiTian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The Blog of Wang">
-    </span>
-
-    
-      <header class="post-header">
-
+        </article>
+        
+        <p>
+            <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+        </p>
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/29/learn_python/" itemprop="url">learn_python</a></h1>
-        
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 Yelog</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-29T14:05:41+08:00">
-                2019-09-29
-              </time>
-            
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
 
-            
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
 
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><h2 id="format格式化输出"><a href="#format格式化输出" class="headerlink" title="format格式化输出"></a>format格式化输出</h2><ul>
-<li><h3 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="string">'&#123;:d&#125;'</span>.format(<span class="number">42</span>)</span><br><span class="line"><span class="comment"># 42</span></span><br><span class="line">&gt;&gt;&gt;<span class="string">'&#123;:f&#125;'</span>.format(<span class="number">3.1415926</span>)</span><br><span class="line"><span class="comment"># '3.141593</span></span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;<span class="string">'&#123;:4d&#125;'</span>.format(<span class="number">42</span>)</span><br><span class="line"><span class="comment"># '  42'</span></span><br><span class="line">&gt;&gt;&gt;<span class="string">'&#123;:06.2f&#125;'</span>.format(<span class="number">3.1415926</span>)</span><br><span class="line"><span class="comment"># '003.14'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><h3 id="带加减号的数字"><a href="#带加减号的数字" class="headerlink" title="带加减号的数字"></a>带加减号的数字</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="string">'&#123;: d&#125;'</span>.format(<span class="number">-23</span>)</span><br><span class="line"><span class="comment"># '-23'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><h3 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="string">'&#123;first&#125; &#123;last&#125;'</span>.format(first=<span class="string">'last'</span>, last=<span class="string">'first'</span>)</span><br><span class="line"><span class="comment"># 'last first'</span></span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;data = &#123;<span class="string">'first'</span>: <span class="string">'Hodor'</span>, <span class="string">'last'</span>: <span class="string">'Hodor!'</span> &#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;first&#125; &#123;last&#125;'</span>.format(**data)</span><br><span class="line"><span class="comment"># 'Hodor Hodor!'</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>data = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;d[4]&#125; &#123;d[1]&#125; &#123;d[0]&#125;'</span>.format(d=data)</span><br><span class="line"><span class="string">'5 2 1'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><h3 id="类与对象"><a href="#类与对象" class="headerlink" title="类与对象"></a>类与对象</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Data</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"str"</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'repr'</span></span><br><span class="line">print(<span class="string">'&#123;0!s&#125; &#123;0!r&#125;'</span>.format(Data()))</span><br><span class="line"><span class="comment"># str repr</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-
-          
-        
-      
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2019/08/22/learn_java/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WangZiTian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The Blog of Wang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/22/learn_java/" itemprop="url">learn_java</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-22T14:29:12+08:00">
-                2019-08-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">title:java学习笔记</span><br></pre></td></tr></table></figure>
-
-<h1 id="java基础"><a href="#java基础" class="headerlink" title="java基础"></a>java基础</h1><h3 id="Java集合总结"><a href="#Java集合总结" class="headerlink" title="Java集合总结"></a><a href="/TestCollection">Java集合总结</a></h3><h3 id="Java多线程总结"><a href="#Java多线程总结" class="headerlink" title="Java多线程总结"></a><a href="multithread/">Java多线程总结</a></h3><h2 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h2><table>
-<thead>
-<tr>
-<th align="left">类型</th>
-<th align="center">字节</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">byte</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="left">short</td>
-<td align="center">2</td>
-</tr>
-<tr>
-<td align="left">int</td>
-<td align="center">4</td>
-</tr>
-<tr>
-<td align="left">long</td>
-<td align="center">8</td>
-</tr>
-<tr>
-<td align="left">float</td>
-<td align="center">4</td>
-</tr>
-<tr>
-<td align="left">double</td>
-<td align="center">8</td>
-</tr>
-<tr>
-<td align="left">char</td>
-<td align="center">2</td>
-</tr>
-</tbody></table>
-<h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><h3 id="final"><a href="#final" class="headerlink" title="final"></a>final</h3><p>####常量final关键字修饰</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="keyword">int</span> PAI = <span class="number">3.14</span>;</span><br></pre></td></tr></table></figure>
-
-<p>####final 修饰一个类的实例域 则其在构造器中必须被初始化 后面的操作中不会再被修改 final修饰符最好修饰不可变类（String）或基本类型</p>
-<h4 id="1-对于基本数据"><a href="#1-对于基本数据" class="headerlink" title="1.对于基本数据"></a>1.对于基本数据</h4><h4 id="声明为final使得数值不可变"><a href="#声明为final使得数值不可变" class="headerlink" title="声明为final使得数值不可变"></a>声明为final使得数值不可变</h4><h4 id="2-对于引用数据-使得引用的对象不可变"><a href="#2-对于引用数据-使得引用的对象不可变" class="headerlink" title="2.对于引用数据 使得引用的对象不可变"></a>2.对于引用数据 使得引用的对象不可变</h4><h4 id="3-对于方法-不能被子类重写-private方法被隐式指定为final"><a href="#3-对于方法-不能被子类重写-private方法被隐式指定为final" class="headerlink" title="3.对于方法 不能被子类重写 private方法被隐式指定为final"></a>3.对于方法 不能被子类重写 private方法被隐式指定为final</h4><h4 id="4-声明类不可以被继承"><a href="#4-声明类不可以被继承" class="headerlink" title="4.声明类不可以被继承"></a>4.声明类不可以被继承</h4><h3 id="static"><a href="#static" class="headerlink" title="static"></a>static</h3><h4 id="1-实例变量于静态变量"><a href="#1-实例变量于静态变量" class="headerlink" title="1.实例变量于静态变量"></a>1.实例变量于静态变量</h4><h4 id="实例变量：每创建一个实例就会产生一个实例变量，它与该实例同生共死。"><a href="#实例变量：每创建一个实例就会产生一个实例变量，它与该实例同生共死。" class="headerlink" title="实例变量：每创建一个实例就会产生一个实例变量，它与该实例同生共死。"></a>实例变量：每创建一个实例就会产生一个实例变量，它与该实例同生共死。</h4><h4 id="静态常量：类所有的实例都共享静态变量，可以直接通过类名来访问它。静态变量在内存中只存在一份"><a href="#静态常量：类所有的实例都共享静态变量，可以直接通过类名来访问它。静态变量在内存中只存在一份" class="headerlink" title="静态常量：类所有的实例都共享静态变量，可以直接通过类名来访问它。静态变量在内存中只存在一份"></a>静态常量：类所有的实例都共享静态变量，可以直接通过类名来访问它。静态变量在内存中只存在一份</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> PI = <span class="number">3.14</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="2-静态方法"><a href="#2-静态方法" class="headerlink" title="2.静态方法"></a>2.静态方法</h4><h4 id="所有的静态方法必须有实现。静态方法不依赖于任何实例。"><a href="#所有的静态方法必须有实现。静态方法不依赖于任何实例。" class="headerlink" title="所有的静态方法必须有实现。静态方法不依赖于任何实例。"></a>所有的静态方法必须有实现。静态方法不依赖于任何实例。</h4><h4 id="只能访问所属类的静态字段和静态方法，方法中不能有-this-和-super-关键字。"><a href="#只能访问所属类的静态字段和静态方法，方法中不能有-this-和-super-关键字。" class="headerlink" title="只能访问所属类的静态字段和静态方法，方法中不能有 this 和 super 关键字。"></a>只能访问所属类的静态字段和静态方法，方法中不能有 this 和 super 关键字。</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> y;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">func1</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = x;</span><br><span class="line">        <span class="comment">// int b = y;  // Non-static field 'y' cannot be referenced from a static context</span></span><br><span class="line">        <span class="comment">// int b = this.y;     // 'A.this' cannot be referenced from a static context</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-静态语句块：在类初始化时运行一下"><a href="#3-静态语句块：在类初始化时运行一下" class="headerlink" title="3.静态语句块：在类初始化时运行一下"></a>3.静态语句块：在类初始化时运行一下</h4><h3 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h3><h4 id="this关键字用于引用类的当前实例"><a href="#this关键字用于引用类的当前实例" class="headerlink" title="this关键字用于引用类的当前实例"></a>this关键字用于引用类的当前实例</h4><ul>
-<li>this.employees.length：访问类Manager的当前实例的变量。</li>
-<li>this.report（）：调用类Manager的当前实例的方法。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Manager</span> </span>&#123;</span><br><span class="line">    Employees[] employees;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">manageEmployees</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> totalEmp = <span class="keyword">this</span>.employees.length;</span><br><span class="line">        System.out.println(<span class="string">"Total employees: "</span> + totalEmp);</span><br><span class="line">        <span class="keyword">this</span>.report();</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">report</span><span class="params">()</span> </span>&#123; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h2><h4 id="java中都是值传递"><a href="#java中都是值传递" class="headerlink" title="java中都是值传递"></a>java中都是值传递</h4><p><a href="Example/src/TestPass.java">示例代码</a></p>
-<h2 id="Object-通用方法"><a href="#Object-通用方法" class="headerlink" title="Object 通用方法"></a>Object 通用方法</h2><h4 id="equals"><a href="#equals" class="headerlink" title="equals()"></a>equals()</h4><h4 id="1-基本性质"><a href="#1-基本性质" class="headerlink" title="1.基本性质"></a>1.基本性质</h4><h4 id="自反性"><a href="#自反性" class="headerlink" title="自反性"></a>自反性</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x.equals(x); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="对称性"><a href="#对称性" class="headerlink" title="对称性"></a>对称性</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x.equals(y) == y.equals(x); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="传递性"><a href="#传递性" class="headerlink" title="传递性"></a>传递性</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(x.equals(y) &amp;&amp; y.equals(z))</span><br><span class="line">  x.equals(z); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="一致性"><a href="#一致性" class="headerlink" title="一致性"></a>一致性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">多次调用equals()方法结果不变</span><br></pre></td></tr></table></figure>
-
-<h2 id="JRE-与-JDK"><a href="#JRE-与-JDK" class="headerlink" title="JRE 与 JDK"></a>JRE 与 JDK</h2><h4 id="JDK是Java-Development-Kit-能创建和编译程序"><a href="#JDK是Java-Development-Kit-能创建和编译程序" class="headerlink" title="JDK是Java Development Kit 能创建和编译程序"></a>JDK是Java Development Kit 能创建和编译程序</h4><h4 id="JRE是Java运行时的环境-它是运行已编译-Java-程序所需的所有内容的集合，包括-Java虚拟机（JVM），Java类库，java命令和其他的一些基础构件。但是，它不能用于创建新程序。"><a href="#JRE是Java运行时的环境-它是运行已编译-Java-程序所需的所有内容的集合，包括-Java虚拟机（JVM），Java类库，java命令和其他的一些基础构件。但是，它不能用于创建新程序。" class="headerlink" title="JRE是Java运行时的环境 它是运行已编译 Java 程序所需的所有内容的集合，包括 Java虚拟机（JVM），Java类库，java命令和其他的一些基础构件。但是，它不能用于创建新程序。"></a>JRE是Java运行时的环境 它是运行已编译 Java 程序所需的所有内容的集合，包括 Java虚拟机（JVM），Java类库，java命令和其他的一些基础构件。但是，它不能用于创建新程序。</h4><h2 id="Oracle-JDK-与-OpenJDK"><a href="#Oracle-JDK-与-OpenJDK" class="headerlink" title="Oracle JDK 与 OpenJDK"></a>Oracle JDK 与 OpenJDK</h2><h4 id="非常接近-我们的Oracle-JDK版本构建过程基于OpenJDK-7构建，只添加了几个部分，例如部署代码，其中包括Oracle的Java插件和Java-WebStart的实现，以及一些封闭的源代码派对组件，如图形光栅化器，一些开源的第三方组件，如Rhino，以及一些零碎的东西，如附加文档或第三方字体。展望未来，我们的目的是开源Oracle-JDK的所有部分，除了我们考虑商业功能的部分。"><a href="#非常接近-我们的Oracle-JDK版本构建过程基于OpenJDK-7构建，只添加了几个部分，例如部署代码，其中包括Oracle的Java插件和Java-WebStart的实现，以及一些封闭的源代码派对组件，如图形光栅化器，一些开源的第三方组件，如Rhino，以及一些零碎的东西，如附加文档或第三方字体。展望未来，我们的目的是开源Oracle-JDK的所有部分，除了我们考虑商业功能的部分。" class="headerlink" title="非常接近 - 我们的Oracle JDK版本构建过程基于OpenJDK 7构建，只添加了几个部分，例如部署代码，其中包括Oracle的Java插件和Java WebStart的实现，以及一些封闭的源代码派对组件，如图形光栅化器，一些开源的第三方组件，如Rhino，以及一些零碎的东西，如附加文档或第三方字体。展望未来，我们的目的是开源Oracle JDK的所有部分，除了我们考虑商业功能的部分。"></a>非常接近 - 我们的Oracle JDK版本构建过程基于OpenJDK 7构建，只添加了几个部分，例如部署代码，其中包括Oracle的Java插件和Java WebStart的实现，以及一些封闭的源代码派对组件，如图形光栅化器，一些开源的第三方组件，如Rhino，以及一些零碎的东西，如附加文档或第三方字体。展望未来，我们的目的是开源Oracle JDK的所有部分，除了我们考虑商业功能的部分。</h4>
-          
-        
-      
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">WangZiTian</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/%20%7C%7C%20archive">
-              
-                  <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">tags</span>
-                
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">WangZiTian</span>
-
-  
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
-
-
-
-
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#java',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
         
 
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
 
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
 
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
 
-
-
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
 
         
-      </div>
-    </footer>
+    }
 
+    /*打赏页面隐藏与展示*/
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
     
 
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
 </script>
 
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
 
 
 
@@ -1033,132 +617,4 @@
 
 
 
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-</body>
 </html>
