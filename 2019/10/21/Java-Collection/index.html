@@ -79,12 +79,15 @@
 
 
 
+<meta name="description" content="java集合Iterator1.Iterator()方法返回一个Iterator1Iterator&amp;lt;Integer&amp;gt; listIter = list.iterator();  2.next()方法获得序列的下一个元素12System.out.println(listIter.next());&#x2F;&#x2F;打印第一个元素  3.hasNext()方法检查序列中是否还有元素123while(list">
 <meta name="keywords" content="Java, Python, Programer">
-<meta property="og:type" content="website">
-<meta property="og:title" content="The Blog of Wang">
-<meta property="og:url" content="http:&#x2F;&#x2F;wangzitian.club&#x2F;index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java Collection">
+<meta property="og:url" content="http:&#x2F;&#x2F;wangzitian.club&#x2F;2019&#x2F;10&#x2F;21&#x2F;Java-Collection&#x2F;index.html">
 <meta property="og:site_name" content="The Blog of Wang">
+<meta property="og:description" content="java集合Iterator1.Iterator()方法返回一个Iterator1Iterator&amp;lt;Integer&amp;gt; listIter = list.iterator();  2.next()方法获得序列的下一个元素12System.out.println(listIter.next());&#x2F;&#x2F;打印第一个元素  3.hasNext()方法检查序列中是否还有元素123while(list">
 <meta property="og:locale" content="Chinese">
+<meta property="og:updated_time" content="2019-10-21T02:50:50.735Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -115,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://wangzitian.club/"/>
+  <link rel="canonical" href="http://wangzitian.club/2019/10/21/Java-Collection/"/>
 
 
 
 
 
-  <title>The Blog of Wang</title>
+  <title>Java Collection | The Blog of Wang</title>
   
 
 
@@ -140,8 +143,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,9 +216,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -246,9 +248,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/21/Java-Collection/" itemprop="url">Java Collection</a></h1>
+          <h1 class="post-title" itemprop="name headline">Java Collection</h1>
         
 
         <div class="post-meta">
@@ -298,9 +298,7 @@
       
 
       
-        
-          
-            <h1 id="java集合"><a href="#java集合" class="headerlink" title="java集合"></a>java集合</h1><h2 id="Iterator"><a href="#Iterator" class="headerlink" title="Iterator"></a>Iterator</h2><h4 id="1-Iterator-方法返回一个Iterator"><a href="#1-Iterator-方法返回一个Iterator" class="headerlink" title="1.Iterator()方法返回一个Iterator"></a>1.Iterator()方法返回一个Iterator</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Iterator&lt;Integer&gt; listIter = list.iterator();</span><br></pre></td></tr></table></figure>
+        <h1 id="java集合"><a href="#java集合" class="headerlink" title="java集合"></a>java集合</h1><h2 id="Iterator"><a href="#Iterator" class="headerlink" title="Iterator"></a>Iterator</h2><h4 id="1-Iterator-方法返回一个Iterator"><a href="#1-Iterator-方法返回一个Iterator" class="headerlink" title="1.Iterator()方法返回一个Iterator"></a>1.Iterator()方法返回一个Iterator</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Iterator&lt;Integer&gt; listIter = list.iterator();</span><br></pre></td></tr></table></figure>
 
 <h4 id="2-next-方法获得序列的下一个元素"><a href="#2-next-方法获得序列的下一个元素" class="headerlink" title="2.next()方法获得序列的下一个元素"></a>2.next()方法获得序列的下一个元素</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(listIter.next());</span><br><span class="line"><span class="comment">//打印第一个元素</span></span><br></pre></td></tr></table></figure>
 
@@ -382,8 +380,6 @@
 <h4 id="数组默认大小为10"><a href="#数组默认大小为10" class="headerlink" title="数组默认大小为10"></a>数组默认大小为10</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEFAULT_CAPACITY = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-扩容"><a href="#2-扩容" class="headerlink" title="2. 扩容"></a>2. 扩容</h3><h4 id="添加元素时使用-ensureCapacityInternal-方法来保证容量足够，如果不够时，需要使用-grow-方法进行扩容，新容量的大小为-oldCapacity-oldCapacity-gt-gt-1-，也就是旧容量的-1-5-倍。"><a href="#添加元素时使用-ensureCapacityInternal-方法来保证容量足够，如果不够时，需要使用-grow-方法进行扩容，新容量的大小为-oldCapacity-oldCapacity-gt-gt-1-，也就是旧容量的-1-5-倍。" class="headerlink" title="添加元素时使用 ensureCapacityInternal() 方法来保证容量足够，如果不够时，需要使用 grow() 方法进行扩容，新容量的大小为 oldCapacity + (oldCapacity &gt;&gt; 1)，也就是旧容量的 1.5 倍。"></a>添加元素时使用 ensureCapacityInternal() 方法来保证容量足够，如果不够时，需要使用 grow() 方法进行扩容，新容量的大小为 <code>oldCapacity + (oldCapacity &gt;&gt; 1)</code>，也就是旧容量的 1.5 倍。</h4><h4 id="扩容操作需要调用-Arrays-copyOf-把原数组整个复制到新数组中，这个操作代价很高，因此最好在创建-ArrayList-对象时就指定大概的容量大小，减少扩容操作的次数。"><a href="#扩容操作需要调用-Arrays-copyOf-把原数组整个复制到新数组中，这个操作代价很高，因此最好在创建-ArrayList-对象时就指定大概的容量大小，减少扩容操作的次数。" class="headerlink" title="扩容操作需要调用 Arrays.copyOf() 把原数组整个复制到新数组中，这个操作代价很高，因此最好在创建 ArrayList 对象时就指定大概的容量大小，减少扩容操作的次数。"></a>扩容操作需要调用 <code>Arrays.copyOf()</code> 把原数组整个复制到新数组中，这个操作代价很高，因此最好在创建 ArrayList 对象时就指定大概的容量大小，减少扩容操作的次数。</h4>
-          
-        
       
     </div>
     
@@ -400,142 +396,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2019/09/29/learn_python/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WangZiTian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The Blog of Wang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/29/learn_python/" itemprop="url">learn_python</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-29T14:05:41+08:00">
-                2019-09-29
-              </time>
+              <a href="/2019/09/29/learn_python/" rel="next" title="learn_python">
+                <i class="fa fa-chevron-left"></i> learn_python
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><h2 id="format格式化输出"><a href="#format格式化输出" class="headerlink" title="format格式化输出"></a>format格式化输出</h2><ul>
-<li><h3 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="string">'&#123;:d&#125;'</span>.format(<span class="number">42</span>)</span><br><span class="line"><span class="comment"># 42</span></span><br><span class="line">&gt;&gt;&gt;<span class="string">'&#123;:f&#125;'</span>.format(<span class="number">3.1415926</span>)</span><br><span class="line"><span class="comment"># '3.141593</span></span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;<span class="string">'&#123;:4d&#125;'</span>.format(<span class="number">42</span>)</span><br><span class="line"><span class="comment"># '  42'</span></span><br><span class="line">&gt;&gt;&gt;<span class="string">'&#123;:06.2f&#125;'</span>.format(<span class="number">3.1415926</span>)</span><br><span class="line"><span class="comment"># '003.14'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><h3 id="带加减号的数字"><a href="#带加减号的数字" class="headerlink" title="带加减号的数字"></a>带加减号的数字</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="string">'&#123;: d&#125;'</span>.format(<span class="number">-23</span>)</span><br><span class="line"><span class="comment"># '-23'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><h3 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="string">'&#123;first&#125; &#123;last&#125;'</span>.format(first=<span class="string">'last'</span>, last=<span class="string">'first'</span>)</span><br><span class="line"><span class="comment"># 'last first'</span></span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;data = &#123;<span class="string">'first'</span>: <span class="string">'Hodor'</span>, <span class="string">'last'</span>: <span class="string">'Hodor!'</span> &#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;first&#125; &#123;last&#125;'</span>.format(**data)</span><br><span class="line"><span class="comment"># 'Hodor Hodor!'</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>data = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;d[4]&#125; &#123;d[1]&#125; &#123;d[0]&#125;'</span>.format(d=data)</span><br><span class="line"><span class="string">'5 2 1'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><h3 id="类与对象"><a href="#类与对象" class="headerlink" title="类与对象"></a>类与对象</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Data</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"str"</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'repr'</span></span><br><span class="line">print(<span class="string">'&#123;0!s&#125; &#123;0!r&#125;'</span>.format(Data()))</span><br><span class="line"><span class="comment"># str repr</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -545,190 +427,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2019/08/22/learn_java/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WangZiTian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The Blog of Wang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/22/learn_java/" itemprop="url">learn_java</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-22T14:29:12+08:00">
-                2019-08-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">title:java学习笔记</span><br></pre></td></tr></table></figure>
-
-<h1 id="java基础"><a href="#java基础" class="headerlink" title="java基础"></a>java基础</h1><h3 id="Java集合总结"><a href="#Java集合总结" class="headerlink" title="Java集合总结"></a><a href="/TestCollection">Java集合总结</a></h3><h3 id="Java多线程总结"><a href="#Java多线程总结" class="headerlink" title="Java多线程总结"></a><a href="multithread/">Java多线程总结</a></h3><h2 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h2><table>
-<thead>
-<tr>
-<th align="left">类型</th>
-<th align="center">字节</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">byte</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="left">short</td>
-<td align="center">2</td>
-</tr>
-<tr>
-<td align="left">int</td>
-<td align="center">4</td>
-</tr>
-<tr>
-<td align="left">long</td>
-<td align="center">8</td>
-</tr>
-<tr>
-<td align="left">float</td>
-<td align="center">4</td>
-</tr>
-<tr>
-<td align="left">double</td>
-<td align="center">8</td>
-</tr>
-<tr>
-<td align="left">char</td>
-<td align="center">2</td>
-</tr>
-</tbody></table>
-<h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><h3 id="final"><a href="#final" class="headerlink" title="final"></a>final</h3><p>####常量final关键字修饰</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="keyword">int</span> PAI = <span class="number">3.14</span>;</span><br></pre></td></tr></table></figure>
-
-<p>####final 修饰一个类的实例域 则其在构造器中必须被初始化 后面的操作中不会再被修改 final修饰符最好修饰不可变类（String）或基本类型</p>
-<h4 id="1-对于基本数据"><a href="#1-对于基本数据" class="headerlink" title="1.对于基本数据"></a>1.对于基本数据</h4><h4 id="声明为final使得数值不可变"><a href="#声明为final使得数值不可变" class="headerlink" title="声明为final使得数值不可变"></a>声明为final使得数值不可变</h4><h4 id="2-对于引用数据-使得引用的对象不可变"><a href="#2-对于引用数据-使得引用的对象不可变" class="headerlink" title="2.对于引用数据 使得引用的对象不可变"></a>2.对于引用数据 使得引用的对象不可变</h4><h4 id="3-对于方法-不能被子类重写-private方法被隐式指定为final"><a href="#3-对于方法-不能被子类重写-private方法被隐式指定为final" class="headerlink" title="3.对于方法 不能被子类重写 private方法被隐式指定为final"></a>3.对于方法 不能被子类重写 private方法被隐式指定为final</h4><h4 id="4-声明类不可以被继承"><a href="#4-声明类不可以被继承" class="headerlink" title="4.声明类不可以被继承"></a>4.声明类不可以被继承</h4><h3 id="static"><a href="#static" class="headerlink" title="static"></a>static</h3><h4 id="1-实例变量于静态变量"><a href="#1-实例变量于静态变量" class="headerlink" title="1.实例变量于静态变量"></a>1.实例变量于静态变量</h4><h4 id="实例变量：每创建一个实例就会产生一个实例变量，它与该实例同生共死。"><a href="#实例变量：每创建一个实例就会产生一个实例变量，它与该实例同生共死。" class="headerlink" title="实例变量：每创建一个实例就会产生一个实例变量，它与该实例同生共死。"></a>实例变量：每创建一个实例就会产生一个实例变量，它与该实例同生共死。</h4><h4 id="静态常量：类所有的实例都共享静态变量，可以直接通过类名来访问它。静态变量在内存中只存在一份"><a href="#静态常量：类所有的实例都共享静态变量，可以直接通过类名来访问它。静态变量在内存中只存在一份" class="headerlink" title="静态常量：类所有的实例都共享静态变量，可以直接通过类名来访问它。静态变量在内存中只存在一份"></a>静态常量：类所有的实例都共享静态变量，可以直接通过类名来访问它。静态变量在内存中只存在一份</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> PI = <span class="number">3.14</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="2-静态方法"><a href="#2-静态方法" class="headerlink" title="2.静态方法"></a>2.静态方法</h4><h4 id="所有的静态方法必须有实现。静态方法不依赖于任何实例。"><a href="#所有的静态方法必须有实现。静态方法不依赖于任何实例。" class="headerlink" title="所有的静态方法必须有实现。静态方法不依赖于任何实例。"></a>所有的静态方法必须有实现。静态方法不依赖于任何实例。</h4><h4 id="只能访问所属类的静态字段和静态方法，方法中不能有-this-和-super-关键字。"><a href="#只能访问所属类的静态字段和静态方法，方法中不能有-this-和-super-关键字。" class="headerlink" title="只能访问所属类的静态字段和静态方法，方法中不能有 this 和 super 关键字。"></a>只能访问所属类的静态字段和静态方法，方法中不能有 this 和 super 关键字。</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> y;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">func1</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = x;</span><br><span class="line">        <span class="comment">// int b = y;  // Non-static field 'y' cannot be referenced from a static context</span></span><br><span class="line">        <span class="comment">// int b = this.y;     // 'A.this' cannot be referenced from a static context</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-静态语句块：在类初始化时运行一下"><a href="#3-静态语句块：在类初始化时运行一下" class="headerlink" title="3.静态语句块：在类初始化时运行一下"></a>3.静态语句块：在类初始化时运行一下</h4><h3 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h3><h4 id="this关键字用于引用类的当前实例"><a href="#this关键字用于引用类的当前实例" class="headerlink" title="this关键字用于引用类的当前实例"></a>this关键字用于引用类的当前实例</h4><ul>
-<li>this.employees.length：访问类Manager的当前实例的变量。</li>
-<li>this.report（）：调用类Manager的当前实例的方法。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Manager</span> </span>&#123;</span><br><span class="line">    Employees[] employees;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">manageEmployees</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> totalEmp = <span class="keyword">this</span>.employees.length;</span><br><span class="line">        System.out.println(<span class="string">"Total employees: "</span> + totalEmp);</span><br><span class="line">        <span class="keyword">this</span>.report();</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">report</span><span class="params">()</span> </span>&#123; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h2><h4 id="java中都是值传递"><a href="#java中都是值传递" class="headerlink" title="java中都是值传递"></a>java中都是值传递</h4><p><a href="Example/src/TestPass.java">示例代码</a></p>
-<h2 id="Object-通用方法"><a href="#Object-通用方法" class="headerlink" title="Object 通用方法"></a>Object 通用方法</h2><h4 id="equals"><a href="#equals" class="headerlink" title="equals()"></a>equals()</h4><h4 id="1-基本性质"><a href="#1-基本性质" class="headerlink" title="1.基本性质"></a>1.基本性质</h4><h4 id="自反性"><a href="#自反性" class="headerlink" title="自反性"></a>自反性</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x.equals(x); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="对称性"><a href="#对称性" class="headerlink" title="对称性"></a>对称性</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x.equals(y) == y.equals(x); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="传递性"><a href="#传递性" class="headerlink" title="传递性"></a>传递性</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(x.equals(y) &amp;&amp; y.equals(z))</span><br><span class="line">  x.equals(z); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="一致性"><a href="#一致性" class="headerlink" title="一致性"></a>一致性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">多次调用equals()方法结果不变</span><br></pre></td></tr></table></figure>
-
-<h2 id="JRE-与-JDK"><a href="#JRE-与-JDK" class="headerlink" title="JRE 与 JDK"></a>JRE 与 JDK</h2><h4 id="JDK是Java-Development-Kit-能创建和编译程序"><a href="#JDK是Java-Development-Kit-能创建和编译程序" class="headerlink" title="JDK是Java Development Kit 能创建和编译程序"></a>JDK是Java Development Kit 能创建和编译程序</h4><h4 id="JRE是Java运行时的环境-它是运行已编译-Java-程序所需的所有内容的集合，包括-Java虚拟机（JVM），Java类库，java命令和其他的一些基础构件。但是，它不能用于创建新程序。"><a href="#JRE是Java运行时的环境-它是运行已编译-Java-程序所需的所有内容的集合，包括-Java虚拟机（JVM），Java类库，java命令和其他的一些基础构件。但是，它不能用于创建新程序。" class="headerlink" title="JRE是Java运行时的环境 它是运行已编译 Java 程序所需的所有内容的集合，包括 Java虚拟机（JVM），Java类库，java命令和其他的一些基础构件。但是，它不能用于创建新程序。"></a>JRE是Java运行时的环境 它是运行已编译 Java 程序所需的所有内容的集合，包括 Java虚拟机（JVM），Java类库，java命令和其他的一些基础构件。但是，它不能用于创建新程序。</h4><h2 id="Oracle-JDK-与-OpenJDK"><a href="#Oracle-JDK-与-OpenJDK" class="headerlink" title="Oracle JDK 与 OpenJDK"></a>Oracle JDK 与 OpenJDK</h2><h4 id="非常接近-我们的Oracle-JDK版本构建过程基于OpenJDK-7构建，只添加了几个部分，例如部署代码，其中包括Oracle的Java插件和Java-WebStart的实现，以及一些封闭的源代码派对组件，如图形光栅化器，一些开源的第三方组件，如Rhino，以及一些零碎的东西，如附加文档或第三方字体。展望未来，我们的目的是开源Oracle-JDK的所有部分，除了我们考虑商业功能的部分。"><a href="#非常接近-我们的Oracle-JDK版本构建过程基于OpenJDK-7构建，只添加了几个部分，例如部署代码，其中包括Oracle的Java插件和Java-WebStart的实现，以及一些封闭的源代码派对组件，如图形光栅化器，一些开源的第三方组件，如Rhino，以及一些零碎的东西，如附加文档或第三方字体。展望未来，我们的目的是开源Oracle-JDK的所有部分，除了我们考虑商业功能的部分。" class="headerlink" title="非常接近 - 我们的Oracle JDK版本构建过程基于OpenJDK 7构建，只添加了几个部分，例如部署代码，其中包括Oracle的Java插件和Java WebStart的实现，以及一些封闭的源代码派对组件，如图形光栅化器，一些开源的第三方组件，如Rhino，以及一些零碎的东西，如附加文档或第三方字体。展望未来，我们的目的是开源Oracle JDK的所有部分，除了我们考虑商业功能的部分。"></a>非常接近 - 我们的Oracle JDK版本构建过程基于OpenJDK 7构建，只添加了几个部分，例如部署代码，其中包括Oracle的Java插件和Java WebStart的实现，以及一些封闭的源代码派对组件，如图形光栅化器，一些开源的第三方组件，如Rhino，以及一些零碎的东西，如附加文档或第三方字体。展望未来，我们的目的是开源Oracle JDK的所有部分，除了我们考虑商业功能的部分。</h4>
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -736,6 +439,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -756,8 +463,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -799,6 +515,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java集合"><span class="nav-number">1.</span> <span class="nav-text">java集合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Iterator"><span class="nav-number">1.1.</span> <span class="nav-text">Iterator</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Iterator-方法返回一个Iterator"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">1.Iterator()方法返回一个Iterator</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-next-方法获得序列的下一个元素"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">2.next()方法获得序列的下一个元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-hasNext-方法检查序列中是否还有元素"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">3.hasNext()方法检查序列中是否还有元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-remove-将迭代器新近返回的元素删除"><span class="nav-number">1.1.0.4.</span> <span class="nav-text">4.remove()将迭代器新近返回的元素删除</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ListIterator"><span class="nav-number">1.2.</span> <span class="nav-text">ListIterator</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-ListIterator继承了Iterator"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">1.ListIterator继承了Iterator</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可以获得当前位置前一个元素和后一个元素的索引"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">可以获得当前位置前一个元素和后一个元素的索引</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Collection是一个独立的元素序列"><span class="nav-number">1.2.1.</span> <span class="nav-text">Collection是一个独立的元素序列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#int-size-返回长度"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">int size() 返回长度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#boolean-isEmpty-返回true如果集合为空"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">boolean isEmpty() 返回true如果集合为空</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#boolean-contains-Object-o-返回true如果有指定的元素"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">boolean contains(Object o) 返回true如果有指定的元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#boolean-add-E-e-确保这个集合包含指定元素"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">boolean add(E e) 确保这个集合包含指定元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#boolean-remove-Object-o-removes-a-single-instance-of-the-specified-element"><span class="nav-number">1.2.1.5.</span> <span class="nav-text">boolean remove(Object o)  removes a single instance of the specified element</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#void-clear-清空集合"><span class="nav-number">1.2.1.6.</span> <span class="nav-text">void clear() 清空集合</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Map一组”键值对“对象"><span class="nav-number">1.2.2.</span> <span class="nav-text">Map一组”键值对“对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Here-are-common-methods-for-collections-inherited-from-the-Map-interface"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">Here are common methods for collections inherited from the Map interface:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#int-size-returns-the-number-of-elements-in-this-collection"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">int size() returns the number of elements in this collection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#boolean-isEmpty-Returns-true-if-this-collection-contains-no-elements"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">boolean isEmpty() Returns true if this collection contains no elements</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#boolean-containsKey-Object-key-Returns-true-if-this-collection-contains-the-specified-key"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">boolean containsKey(Object key)   Returns true if this collection contains the specified key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#boolean-containsValue-Object-value-Returns-true-if-this-collection-contains-the-specified-value"><span class="nav-number">1.2.2.5.</span> <span class="nav-text">boolean containsValue(Object value) Returns true if this collection contains the specified value</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#V-get-Object-key-returns-the-value-to-which-the-specified-key-is-mapped-or-null"><span class="nav-number">1.2.2.6.</span> <span class="nav-text">V get(Object key) returns the value to which the specified key is mapped, or null</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#V-put-K-key-V-value-associates-the-specified-value-with-the-specified-key-optional"><span class="nav-number">1.2.2.7.</span> <span class="nav-text">V put(K key, V value) associates the specified value with the specified key (optional)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#V-remove-Object-key-removes-the-mapping-for-a-key-from-this-map-optional"><span class="nav-number">1.2.2.8.</span> <span class="nav-text">V remove(Object key) removes the mapping for a key from this map (optional)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#void-clear-removes-all-elements-from-this-collection-optional"><span class="nav-number">1.2.2.9.</span> <span class="nav-text">void clear() removes all elements from this collection (optional)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set-keySet-Returns-a-Set-view-of-the-keys-contained-in-this-map"><span class="nav-number">1.2.2.10.</span> <span class="nav-text">Set keySet() Returns a Set view of the keys contained in this map</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Collection-values-returns-a-Collection-view-of-the-values-contained-in-this-map"><span class="nav-number">1.2.2.11.</span> <span class="nav-text">Collection values() returns a Collection view of the values contained in this map</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set-lt-Map-Entry-lt-K-V-gt-gt-entrySet-returns-a-Set-view-of-the-mappings-contained-in-this-map"><span class="nav-number">1.2.2.12.</span> <span class="nav-text">Set&lt;Map.Entry&lt;K, V&gt;&gt; entrySet() returns a Set view of the mappings contained in this map</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#迭代遍历map"><span class="nav-number">1.2.2.13.</span> <span class="nav-text">迭代遍历map</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-List-interface"><span class="nav-number">1.2.3.</span> <span class="nav-text">The List interface</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#E-get-int-index-returns-the-element-at-the-specified-position-in-this-list"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">E get(int index) returns the element at the specified position in this list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#int-size-returns-the-number-of-elements-in-this-collection-1"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">int size() returns the number of elements in this collection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#boolean-isEmpty-returns-true-if-this-collection-contains-no-elements"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">boolean isEmpty() returns true if this collection contains no elements</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#boolean-contains-Object-o-returns-true-if-this-collection-contains-the-specified-element"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">boolean contains(Object o) returns true if this collection contains the specified element</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#boolean-add-E-e-ensures-that-this-collection-contains-the-specified-element"><span class="nav-number">1.2.3.5.</span> <span class="nav-text">boolean add(E e) ensures that this collection contains the specified element</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#void-clear-removes-all-elements-from-this-collection"><span class="nav-number">1.2.3.6.</span> <span class="nav-text">void clear() removes all elements from this collection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#void-add-int-index-E-element-inserts-the-specified-element-at-the-specified-position-in-this-list"><span class="nav-number">1.2.3.7.</span> <span class="nav-text">void add(int index, E element) inserts the specified element at the specified position in this list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#E-remove-int-index-removes-the-element-at-the-specified-position-in-this-list-and-returns-it"><span class="nav-number">1.2.3.8.</span> <span class="nav-text">E remove(int index) removes the element at the specified position in this list and returns it</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#E-set-int-index-E-element-replaces-the-element-at-the-specified-position-in-this-list-with-the-specified-element"><span class="nav-number">1.2.3.9.</span> <span class="nav-text">E set(int index, E element) replaces the element at the specified position in this list with the specified element</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#int-indexOf-Object-o-returns-the-index-of-the-first-occurrence-of-the-specified-element-in-this-list-or-1"><span class="nav-number">1.2.3.10.</span> <span class="nav-text">int indexOf(Object o) returns the index of the first occurrence of the specified element in this list, or -1</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ArrayList"><span class="nav-number">1.3.</span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增删改查的时间复杂度"><span class="nav-number">1.4.</span> <span class="nav-text">增删改查的时间复杂度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-get-int-index-—–-O-1"><span class="nav-number">1.4.1.</span> <span class="nav-text">1. get(int index) —– O(1)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-add-E-e-—–-O-1"><span class="nav-number">1.4.2.</span> <span class="nav-text">2. add(E e) —– O(1)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-add-int-index-E-element-—–-O-n"><span class="nav-number">1.4.3.</span> <span class="nav-text">3. add(int index, E element) —– O(n)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-remove-E-e-remove-index-—–-O-n"><span class="nav-number">1.4.4.</span> <span class="nav-text">3. remove(E e)    remove(index) —– O(n)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LinkedList"><span class="nav-number">1.5.</span> <span class="nav-text">LinkedList</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#增删改查时间复杂度"><span class="nav-number">1.5.1.</span> <span class="nav-text">增删改查时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-add-E-e-—–-O-1"><span class="nav-number">1.5.2.</span> <span class="nav-text">1. add(E e) —– O(1)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-get-int-index-—–-O-n"><span class="nav-number">1.5.3.</span> <span class="nav-text">2. get(int index) —– O(n)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-add-int-index-E-e-—–-O-n"><span class="nav-number">1.5.4.</span> <span class="nav-text">3. add(int index, E e) —– O(n)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-remove-int-index-—–-O-n"><span class="nav-number">1.5.5.</span> <span class="nav-text">4. remove(int index) —– O(n)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Iterator-remove-—–-O-1"><span class="nav-number">1.5.6.</span> <span class="nav-text">5. Iterator.remove() —– O(1)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造器"><span class="nav-number">1.5.7.</span> <span class="nav-text">构造器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-ArrayList-constructs-an-empty-list-with-an-initial-capacity-of-ten-构造一个空的长度为10的list"><span class="nav-number">1.5.7.1.</span> <span class="nav-text">1. ArrayList()  constructs an empty list with an initial capacity of ten; 构造一个空的长度为10的list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-ArrayList-Collection-lt-extends-E-gt-c-constructs-a-list-containing-the-elements-of-the-specified-collection"><span class="nav-number">1.5.7.2.</span> <span class="nav-text">2.ArrayList(Collection&lt;? extends E&gt; c) constructs a list containing the elements of the specified collection;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-ArrayList-int-initialCapacity-constructs-an-empty-list-with-the-specified-initial-capacity"><span class="nav-number">1.5.7.3.</span> <span class="nav-text">3. ArrayList(int initialCapacity)**  constructs an empty list with the specified initial capacity.</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list-与-array"><span class="nav-number">1.5.8.</span> <span class="nav-text">list 与 array</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-list-to-array"><span class="nav-number">1.5.8.1.</span> <span class="nav-text">1. list to array</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-array-to-list"><span class="nav-number">1.5.8.2.</span> <span class="nav-text">2.array to list</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集合源码"><span class="nav-number">2.</span> <span class="nav-text">集合源码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ArrayList-1"><span class="nav-number">2.1.</span> <span class="nav-text">ArrayList</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-概况"><span class="nav-number">2.1.1.</span> <span class="nav-text">1. 概况</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RandomAccess接口标志其支持快速随机访问"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">RandomAccess接口标志其支持快速随机访问</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组默认大小为10"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">数组默认大小为10</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-扩容"><span class="nav-number">2.1.2.</span> <span class="nav-text">2. 扩容</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加元素时使用-ensureCapacityInternal-方法来保证容量足够，如果不够时，需要使用-grow-方法进行扩容，新容量的大小为-oldCapacity-oldCapacity-gt-gt-1-，也就是旧容量的-1-5-倍。"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">添加元素时使用 ensureCapacityInternal() 方法来保证容量足够，如果不够时，需要使用 grow() 方法进行扩容，新容量的大小为 oldCapacity + (oldCapacity &gt;&gt; 1)，也就是旧容量的 1.5 倍。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扩容操作需要调用-Arrays-copyOf-把原数组整个复制到新数组中，这个操作代价很高，因此最好在创建-ArrayList-对象时就指定大概的容量大小，减少扩容操作的次数。"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">扩容操作需要调用 Arrays.copyOf() 把原数组整个复制到新数组中，这个操作代价很高，因此最好在创建 ArrayList 对象时就指定大概的容量大小，减少扩容操作的次数。</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -932,6 +664,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
