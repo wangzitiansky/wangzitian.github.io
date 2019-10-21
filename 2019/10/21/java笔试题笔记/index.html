@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="java," />
 
 
 
@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="Pythonformat格式化输出 数字123456789&amp;gt;&amp;gt;&amp;gt;&amp;apos;&amp;#123;:d&amp;#125;&amp;apos;.format(42)# 42&amp;gt;&amp;gt;&amp;gt;&amp;apos;&amp;#123;:f&amp;#125;&amp;apos;.format(3.1415926)# &amp;apos;3.141593&amp;gt;&amp;gt;&amp;gt;&amp;apos;&amp;#123;:4d&amp;#125;&amp;apos;.format(42)# &amp;apos;  42&amp;apos;&amp;gt;&amp;gt;&amp;gt;&amp;apos;&amp;#123;:06.">
-<meta name="keywords" content="Java, Python, Programer">
+<meta name="description" content="NewCoder面试题笔记 Math.round(11.5) 等于多少 (). Math.round(-11.5) 等于多少 ( )  123&#x2F;&#x2F; 12 -11&#x2F;&#x2F;Math.round(a)&#x2F;&#x2F; a + 0.5 取下边界   public Method[] getDeclaredMethods()返回类或接口声明的所有方法，包括public, protected, default (package">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="learn_python">
-<meta property="og:url" content="http:&#x2F;&#x2F;wangzitian.club&#x2F;2019&#x2F;09&#x2F;29&#x2F;learn_python&#x2F;index.html">
+<meta property="og:title" content="java面试题笔记">
+<meta property="og:url" content="http:&#x2F;&#x2F;wangzitian.club&#x2F;2019&#x2F;10&#x2F;21&#x2F;java%E7%AC%94%E8%AF%95%E9%A2%98%E7%AC%94%E8%AE%B0&#x2F;index.html">
 <meta property="og:site_name" content="The Blog of Wang">
-<meta property="og:description" content="Pythonformat格式化输出 数字123456789&amp;gt;&amp;gt;&amp;gt;&amp;apos;&amp;#123;:d&amp;#125;&amp;apos;.format(42)# 42&amp;gt;&amp;gt;&amp;gt;&amp;apos;&amp;#123;:f&amp;#125;&amp;apos;.format(3.1415926)# &amp;apos;3.141593&amp;gt;&amp;gt;&amp;gt;&amp;apos;&amp;#123;:4d&amp;#125;&amp;apos;.format(42)# &amp;apos;  42&amp;apos;&amp;gt;&amp;gt;&amp;gt;&amp;apos;&amp;#123;:06.">
+<meta property="og:description" content="NewCoder面试题笔记 Math.round(11.5) 等于多少 (). Math.round(-11.5) 等于多少 ( )  123&#x2F;&#x2F; 12 -11&#x2F;&#x2F;Math.round(a)&#x2F;&#x2F; a + 0.5 取下边界   public Method[] getDeclaredMethods()返回类或接口声明的所有方法，包括public, protected, default (package">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2019-09-29T06:25:51.001Z">
+<meta property="og:updated_time" content="2019-10-21T12:54:50.706Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://wangzitian.club/2019/09/29/learn_python/"/>
+  <link rel="canonical" href="http://wangzitian.club/2019/10/21/java笔试题笔记/"/>
 
 
 
 
 
-  <title>learn_python | The Blog of Wang</title>
+  <title>java面试题笔记 | The Blog of Wang</title>
   
 
 
@@ -231,7 +231,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2019/09/29/learn_python/">
+    <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2019/10/21/java%E7%AC%94%E8%AF%95%E9%A2%98%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="WangZiTian">
@@ -248,7 +248,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">learn_python</h1>
+          <h1 class="post-title" itemprop="name headline">java面试题笔记</h1>
         
 
         <div class="post-meta">
@@ -260,8 +260,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-29T14:05:41+08:00">
-                2019-09-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-21T20:27:03+08:00">
+                2019-10-21
               </time>
             
 
@@ -298,17 +298,17 @@
       
 
       
-        <h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><h2 id="format格式化输出"><a href="#format格式化输出" class="headerlink" title="format格式化输出"></a>format格式化输出</h2><ul>
-<li><h3 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="string">'&#123;:d&#125;'</span>.format(<span class="number">42</span>)</span><br><span class="line"><span class="comment"># 42</span></span><br><span class="line">&gt;&gt;&gt;<span class="string">'&#123;:f&#125;'</span>.format(<span class="number">3.1415926</span>)</span><br><span class="line"><span class="comment"># '3.141593</span></span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;<span class="string">'&#123;:4d&#125;'</span>.format(<span class="number">42</span>)</span><br><span class="line"><span class="comment"># '  42'</span></span><br><span class="line">&gt;&gt;&gt;<span class="string">'&#123;:06.2f&#125;'</span>.format(<span class="number">3.1415926</span>)</span><br><span class="line"><span class="comment"># '003.14'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><h3 id="带加减号的数字"><a href="#带加减号的数字" class="headerlink" title="带加减号的数字"></a>带加减号的数字</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="string">'&#123;: d&#125;'</span>.format(<span class="number">-23</span>)</span><br><span class="line"><span class="comment"># '-23'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><h3 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="string">'&#123;first&#125; &#123;last&#125;'</span>.format(first=<span class="string">'last'</span>, last=<span class="string">'first'</span>)</span><br><span class="line"><span class="comment"># 'last first'</span></span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;data = &#123;<span class="string">'first'</span>: <span class="string">'Hodor'</span>, <span class="string">'last'</span>: <span class="string">'Hodor!'</span> &#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;first&#125; &#123;last&#125;'</span>.format(**data)</span><br><span class="line"><span class="comment"># 'Hodor Hodor!'</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>data = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;d[4]&#125; &#123;d[1]&#125; &#123;d[0]&#125;'</span>.format(d=data)</span><br><span class="line"><span class="string">'5 2 1'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><h3 id="类与对象"><a href="#类与对象" class="headerlink" title="类与对象"></a>类与对象</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Data</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"str"</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'repr'</span></span><br><span class="line">print(<span class="string">'&#123;0!s&#125; &#123;0!r&#125;'</span>.format(Data()))</span><br><span class="line"><span class="comment"># str repr</span></span><br></pre></td></tr></table></figure>
-
-</li>
+        <h2 id="NewCoder面试题笔记"><a href="#NewCoder面试题笔记" class="headerlink" title="NewCoder面试题笔记"></a>NewCoder面试题笔记</h2><ul>
+<li><h4 id="Math-round-11-5-等于多少-Math-round-11-5-等于多少"><a href="#Math-round-11-5-等于多少-Math-round-11-5-等于多少" class="headerlink" title="Math.round(11.5) 等于多少 (). Math.round(-11.5) 等于多少 ( )"></a>Math.round(11.5) 等于多少 (). Math.round(-11.5) 等于多少 ( )</h4></li>
 </ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 12 -11</span></span><br><span class="line"><span class="comment">//Math.round(a)</span></span><br><span class="line"><span class="comment">// a + 0.5 取下边界</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h4 id="public-Method-getDeclaredMethods-返回类或接口声明的所有方法，包括public-protected-default-package-访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。"><a href="#public-Method-getDeclaredMethods-返回类或接口声明的所有方法，包括public-protected-default-package-访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。" class="headerlink" title="public Method[] getDeclaredMethods()返回类或接口声明的所有方法，包括public, protected, default (package) 访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。"></a><strong>public Method[] getDeclaredMethods()</strong>返回类或接口声明的所有方法，包括public, protected, default (package) 访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。</h4></li>
+<li><h4 id="关于byte和final"><a href="#关于byte和final" class="headerlink" title="关于byte和final"></a>关于byte和final</h4></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span> b1=<span class="number">1</span>,b2=<span class="number">2</span>,b3,b6,b8;</span><br><span class="line"><span class="keyword">final</span> <span class="keyword">byte</span> b4=<span class="number">4</span>,b5=<span class="number">6</span>,b7;</span><br><span class="line">b3=(b1+b2);  <span class="comment">/*语句1*/</span></span><br><span class="line">b6=b4+b5;    <span class="comment">/*语句2*/</span></span><br><span class="line">b8=(b1+b4);  <span class="comment">/*语句3*/</span></span><br><span class="line">b7=(b2+b5);  <span class="comment">/*语句4*/</span></span><br><span class="line">System.out.println(b3+b6);</span><br><span class="line"><span class="comment">// 当使用 +、-、*、/、%、运算操作时 操作数为：byte、short、int 、char 两个数会被转化为int类型 结果也是int类型 被声明为final的变量不会被转化</span></span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -324,6 +324,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
 
       
       
@@ -333,8 +339,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/22/learn_java/" rel="next" title="learn_java">
-                <i class="fa fa-chevron-left"></i> learn_java
+              <a href="/2019/10/21/Java-Collection/" rel="next" title="Java Collection">
+                <i class="fa fa-chevron-left"></i> Java Collection
               </a>
             
           </div>
@@ -342,10 +348,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/21/Java-Collection/" rel="prev" title="Java Collection">
-                Java Collection <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -468,7 +470,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python"><span class="nav-number">1.</span> <span class="nav-text">Python</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#format格式化输出"><span class="nav-number">1.1.</span> <span class="nav-text">format格式化输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数字"><span class="nav-number">1.1.1.</span> <span class="nav-text">数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#带加减号的数字"><span class="nav-number">1.1.2.</span> <span class="nav-text">带加减号的数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字典"><span class="nav-number">1.1.3.</span> <span class="nav-text">字典</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类与对象"><span class="nav-number">1.1.4.</span> <span class="nav-text">类与对象</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#NewCoder面试题笔记"><span class="nav-number">1.</span> <span class="nav-text">NewCoder面试题笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Math-round-11-5-等于多少-Math-round-11-5-等于多少"><span class="nav-number">1.0.1.</span> <span class="nav-text">Math.round(11.5) 等于多少 (). Math.round(-11.5) 等于多少 ( )</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#public-Method-getDeclaredMethods-返回类或接口声明的所有方法，包括public-protected-default-package-访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。"><span class="nav-number">1.0.2.</span> <span class="nav-text">public Method[] getDeclaredMethods()返回类或接口声明的所有方法，包括public, protected, default (package) 访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于byte和final"><span class="nav-number">1.0.3.</span> <span class="nav-text">关于byte和final</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
