@@ -124,7 +124,7 @@
     
         
             
-            <li><div data-rel="python">python<small>(1)</small></div>
+            <li><div data-rel="java">java<small>(2)</small></div>
                 
             </li>
             
@@ -132,7 +132,7 @@
     
         
             
-            <li><div data-rel="java">java<small>(2)</small></div>
+            <li><div data-rel="python">python<small>(1)</small></div>
                 
             </li>
             
@@ -183,15 +183,15 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color2">Django</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a href="javascript:" class="color4">java语言基础</a>
     </li>
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color4">java面试总结</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">Django</a>
     </li>
     
     <div class="clearfix"></div>
@@ -200,20 +200,20 @@
     
     <nav id="title-list-nav">
         
-        <a  class="python "
-           href="/2019/10/22/Django%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
-           data-tag="Django"
-           data-author="" >
-            <span class="post-title" title="Django学习笔记">Django学习笔记</span>
-            <span class="post-date" title="2019-10-22 10:07:23">2019/10/22</span>
-        </a>
-        
         <a  class="java "
            href="/2019/10/21/Java-Collection/"
            data-tag="java语言基础"
            data-author="" >
             <span class="post-title" title="Java Collection">Java Collection</span>
             <span class="post-date" title="2019-10-21 10:47:13">2019/10/21</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/08/22/learn_java/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="learn_java">learn_java</span>
+            <span class="post-date" title="2019-08-22 14:29:12">2019/08/22</span>
         </a>
         
         <a  class="java "
@@ -224,12 +224,12 @@
             <span class="post-date" title="2019-10-21 20:27:03">2019/10/21</span>
         </a>
         
-        <a  class=""
-           href="/2019/08/22/learn_java/"
-           data-tag=""
+        <a  class="python "
+           href="/2019/10/22/Django%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag="Django"
            data-author="" >
-            <span class="post-title" title="learn_java">learn_java</span>
-            <span class="post-date" title="2019-08-22 14:29:12">2019/08/22</span>
+            <span class="post-title" title="Django学习笔记">Django学习笔记</span>
+            <span class="post-date" title="2019-10-22 10:07:23">2019/10/22</span>
         </a>
         
         <a  class=""
@@ -369,7 +369,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#Django','#java语言基础','#java面试总结',],
+            'data': ['#java语言基础','#java面试总结','#Django',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
@@ -468,39 +468,39 @@
     
     
     .nav {
-        width: 502px;
+        width: 532px;
     }
     .nav.fullscreen {
-        margin-left: -502px;
+        margin-left: -532px;
     }
     .nav-left {
-        width: 80px;
+        width: 110px;
     }
     
     
     @media screen and (max-width: 1468px) {
         .nav {
-            width: 452px;
+            width: 492px;
         }
         .nav.fullscreen {
-            margin-left: -452px;
+            margin-left: -492px;
         }
         .nav-left {
-            width: 60px;
+            width: 100px;
         }
     }
     
     
     @media screen and (max-width: 1024px) {
         .nav {
-            width: 452px;
-            margin-left: -452px
+            width: 492px;
+            margin-left: -492px
         }
         .nav.fullscreen {
             margin-left: 0;
         }
         .nav .hide-list.fullscreen {
-            left: 452px
+            left: 492px
         }
     }
     
