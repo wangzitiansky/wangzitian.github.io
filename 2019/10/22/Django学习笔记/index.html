@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>分类 | The Blog of Wang</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="分类 | The Blog of Wang">
+  <title>Django学习笔记 | The Blog of Wang</title>
+  <meta name="keywords" content=" Django ">
+  <meta name="description" content="Django学习笔记 | The Blog of Wang">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="keywords" content="Java, Python, Programer">
 <meta property="og:type" content="website">
@@ -336,19 +336,31 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="categories-" class="article article-type-categories" itemscope itemprop="blogPost">
+        <article id="post-Django学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">分类</h1>
+        <h1 class="article-title">Django学习笔记</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="python">python</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color2">Django</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-21 21:04:00'>2019-10-21 21:02</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-22 10:38:55'>2019-10-22 10:07</time>
         
     </div>
     <div class="article-meta">
@@ -370,7 +382,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Django笔记"><span class="toc-text">Django笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#验证"><span class="toc-text">验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#建立项目"><span class="toc-text">建立项目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#进入一个你想放置源码的地方"><span class="toc-text">进入一个你想放置源码的地方</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行项目"><span class="toc-text">运行项目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#每一个应用都是一个python包"><span class="toc-text">每一个应用都是一个python包</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -386,7 +398,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="Django笔记"><a href="#Django笔记" class="headerlink" title="Django笔记"></a>Django笔记</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre><code class="bash">$ python3 pip install Django
+// Django2.1 2.2 -----&gt; python 3.5 3.6 3. 7</code></pre>
+<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><pre><code class="bash">$ python3
+&gt;&gt;&gt; import django
+&gt;&gt;&gt; print(django.get_version())</code></pre>
+<h3 id="建立项目"><a href="#建立项目" class="headerlink" title="建立项目"></a>建立项目</h3><h4 id="进入一个你想放置源码的地方"><a href="#进入一个你想放置源码的地方" class="headerlink" title="进入一个你想放置源码的地方"></a>进入一个你想放置源码的地方</h4><pre><code class="bash">$ django-admin startproject blogproject
+//项目目录如下
+根目录名字/
+            manage.py
+            blogproject/
+                        __init__.py
+                        settings.py
+                        urls.py
+                        wsgi.py</code></pre>
+<h3 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h3><pre><code class="bas">$ python3 manage.py runserver</code></pre>
+<p>###建立应用</p>
+<h4 id="每一个应用都是一个python包"><a href="#每一个应用都是一个python包" class="headerlink" title="每一个应用都是一个python包"></a>每一个应用都是一个python包</h4><pre><code class="bash">$ python3 manage.py startapp blog</code></pre>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
@@ -397,6 +426,18 @@
     <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
 </p>
 
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>Django学习笔记</p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="wangzitian">wangzitian</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-10-22, 10:07:23</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-22, 10:38:55</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/22/Django%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Django学习笔记">http://wangzitian.club/2019/10/22/Django%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
 
 
 
