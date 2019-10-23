@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>LinkedList实现队列和栈 | The Blog of Wang</title>
-  <meta name="keywords" content=" java集合 , java ">
-  <meta name="description" content="LinkedList实现队列和栈 | The Blog of Wang">
+  <title>Java数组 | The Blog of Wang</title>
+  <meta name="keywords" content=" java数组 ">
+  <meta name="description" content="Java数组 | The Blog of Wang">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="keywords" content="Java, Python, Programer">
 <meta property="og:type" content="website">
@@ -336,9 +336,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-LinkedList实现队列和栈" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Java数组" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">LinkedList实现队列和栈</h1>
+        <h1 class="article-title">Java数组</h1>
     
     <div class="article-meta">
         
@@ -355,16 +355,14 @@
         
         <span class="tag">
             
-            <a href="javascript:" class="color2">java集合</a>
-            
-            <a href="javascript:" class="color5">java</a>
+            <a href="javascript:" class="color2">java数组</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-22 14:51:09'>2019-10-22 14:49</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-23 14:55:06'>2019-10-23 14:38</time>
         
     </div>
     <div class="article-meta">
@@ -386,7 +384,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#实现栈"><span class="toc-text">实现栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现队列"><span class="toc-text">实现队列</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java数组"><span class="toc-text">Java数组</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#多维数组"><span class="toc-text">多维数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#生成一个三维数组"><span class="toc-text">生成一个三维数组</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复制数组"><span class="toc-text">复制数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#System-arraycopy"><span class="toc-text">System.arraycopy()</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -402,18 +400,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="实现栈"><a href="#实现栈" class="headerlink" title="实现栈"></a>实现栈</h2><pre><code class="java">LinkedList&lt;Integer&gt; stack = new LinkedList&lt;&gt;();
-stack.add(1);
-stack.add(2);
-stack.add(3);
-System.out.println(stack.peekLast()); // 3
-System.out.println(stack.pollLast()); // 3</code></pre>
-<h2 id="实现队列"><a href="#实现队列" class="headerlink" title="实现队列"></a>实现队列</h2><pre><code class="java">Queue&lt;Integer&gt; queue = new LinkedList&lt;&gt;();
-queue.add(1);
-queue.add(2);
-queue.add(3);
-System.out.println(queue.peek()); // 1
-System.out.println(queue.poll()); // 1</code></pre>
+        <h1 id="Java数组"><a href="#Java数组" class="headerlink" title="Java数组"></a>Java数组</h1><ul>
+<li><h2 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h2></li>
+</ul>
+<h3 id="生成一个三维数组"><a href="#生成一个三维数组" class="headerlink" title="生成一个三维数组"></a>生成一个三维数组</h3><pre><code class="java">public class RaggedArray {
+    public static void main(String[] args) {
+        Random rand = new Random(47);
+        int[][][] a = new int[rand.nextInt(5)][][];
+        for (int i = 0; i &lt; a.length; i++) {
+            a[i] = new int[rand.nextInt(5)][];
+            for (int j = 0; j &lt; a[i].length; j++) {
+                a[i][j] = new int[rand.nextInt(5)];
+            }
+        }
+        System.out.println(Arrays.deepToString(a));
+    }
+}</code></pre>
+<ul>
+<li><h2 id="复制数组"><a href="#复制数组" class="headerlink" title="复制数组"></a>复制数组</h2></li>
+</ul>
+<h3 id="System-arraycopy"><a href="#System-arraycopy" class="headerlink" title="System.arraycopy()"></a>System.arraycopy()</h3><pre><code class="java">System.arraycopy(src, srcPos, dest, destPos, length);
+// src 原数组 srcPos 从原数组的哪里开始拷贝 dest目标数组 destPost 同srcPost length 复制数组长度</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 15010531295@163.com </span>
@@ -427,12 +434,12 @@ System.out.println(queue.poll()); // 1</code></pre>
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>LinkedList实现队列和栈</p>
+    <p><span class="copy-title">文章标题:</span>Java数组</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="wangzitian">wangzitian</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-22, 14:49:28</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-22, 14:51:09</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/22/LinkedList%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97%E5%92%8C%E6%A0%88/" title="LinkedList实现队列和栈">http://wangzitian.club/2019/10/22/LinkedList%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97%E5%92%8C%E6%A0%88/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-23, 14:38:51</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-23, 14:55:06</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/23/Java%E6%95%B0%E7%BB%84/" title="Java数组">http://wangzitian.club/2019/10/23/Java%E6%95%B0%E7%BB%84/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
