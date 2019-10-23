@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>The Blog of Wang</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="The Blog of Wang">
+  <title>python基础 | The Blog of Wang</title>
+  <meta name="keywords" content=" python ">
+  <meta name="description" content="python基础 | The Blog of Wang">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="keywords" content="Java, Python, Programer">
 <meta property="og:type" content="website">
@@ -49,7 +49,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -322,12 +322,57 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-python基础" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#本博客内容"><span class="toc-text">本博客内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于wangzitian-club"><span class="toc-text">关于wangzitian.club</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol>
+        <h1 class="article-title">python基础</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="python">python</a>/
+            
+                <a href="javascript:" data-rel="python基础">python基础</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color2">python</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-10-23 10:17:57'>2019-10-23 10:17</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Python"><span class="toc-text">Python</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#format格式化输出"><span class="toc-text">format格式化输出</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数字"><span class="toc-text">数字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#带加减号的数字"><span class="toc-text">带加减号的数字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字典"><span class="toc-text">字典</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类与对象"><span class="toc-text">类与对象</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -340,28 +385,77 @@
     }
 </style>
 </div>
-            <h2 id="本博客内容"><a href="#本博客内容" class="headerlink" title="本博客内容"></a>本博客内容</h2><blockquote>
-<p>java python 以及我感兴趣的编程语言</p>
-</blockquote>
-<blockquote>
-<p>一些计算机基础知识如算法 操作系统等等</p>
-</blockquote>
-<blockquote>
-<p>还没想好</p>
-</blockquote>
-<h2 id="关于wangzitian-club"><a href="#关于wangzitian-club" class="headerlink" title="关于wangzitian.club"></a>关于wangzitian.club</h2><p><strong>wangzitian.club</strong> 是王子天的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源</p>
-<p>希望大家多去Github上多多支持主题作者！！</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><h2 id="format格式化输出"><a href="#format格式化输出" class="headerlink" title="format格式化输出"></a>format格式化输出</h2><ul>
+<li><h3 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h3><pre><code class="python">&gt;&gt;&gt;&#39;{:d}&#39;.format(42)
+# 42
+&gt;&gt;&gt;&#39;{:f}&#39;.format(3.1415926)
+# &#39;3.141593
 
-        </article>
-        
-        <p>
-            <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+&gt;&gt;&gt;&#39;{:4d}&#39;.format(42)
+# &#39;  42&#39;
+&gt;&gt;&gt;&#39;{:06.2f}&#39;.format(3.1415926)
+# &#39;003.14&#39;</code></pre>
+</li>
+<li><h3 id="带加减号的数字"><a href="#带加减号的数字" class="headerlink" title="带加减号的数字"></a>带加减号的数字</h3><pre><code class="python">&gt;&gt;&gt;&#39;{: d}&#39;.format(-23)
+# &#39;-23&#39;</code></pre>
+</li>
+<li><h3 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h3><pre><code class="python">&gt;&gt;&gt;&#39;{first} {last}&#39;.format(first=&#39;last&#39;, last=&#39;first&#39;)
+# &#39;last first&#39;
+
+&gt;&gt;&gt;data = {&#39;first&#39;: &#39;Hodor&#39;, &#39;last&#39;: &#39;Hodor!&#39; }
+&gt;&gt;&gt; &#39;{first} {last}&#39;.format(**data)
+# &#39;Hodor Hodor!&#39;
+
+&gt;&gt;&gt; data = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+&gt;&gt;&gt; &#39;{d[4]} {d[1]} {d[0]}&#39;.format(d=data)
+&#39;5 2 1&#39;</code></pre>
+</li>
+<li><h3 id="类与对象"><a href="#类与对象" class="headerlink" title="类与对象"></a>类与对象</h3><pre><code class="python">class Data(object):
+    def __str__(self):
+        return &quot;str&quot;
+
+    def __repr__(self):
+        return &#39;repr&#39;
+print(&#39;{0!s} {0!r}&#39;.format(Data()))
+# str repr</code></pre>
+</li>
+</ul>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 15010531295@163.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>python基础</p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="wangzitian">wangzitian</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-10-23, 10:17:08</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-23, 10:17:57</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/23/python%E5%9F%BA%E7%A1%80/" title="python基础">http://wangzitian.club/2019/10/23/python%E5%9F%BA%E7%A1%80/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2016-2022 wangzitian</p>
