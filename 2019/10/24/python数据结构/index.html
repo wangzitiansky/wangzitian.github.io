@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>LinkedList实现队列和栈 | The Blog of Wang</title>
-  <meta name="keywords" content=" java集合 , java ">
-  <meta name="description" content="LinkedList实现队列和栈 | The Blog of Wang">
+  <title>python数据结构 | The Blog of Wang</title>
+  <meta name="keywords" content=" 数据结构 ">
+  <meta name="description" content="python数据结构 | The Blog of Wang">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="keywords" content="Java, Python, Programer">
 <meta property="og:type" content="website">
@@ -380,9 +380,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-LinkedList实现队列和栈" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-python数据结构" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">LinkedList实现队列和栈</h1>
+        <h1 class="article-title">python数据结构</h1>
     
     <div class="article-meta">
         
@@ -390,25 +390,23 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="java">java</a>/
+                <a href="javascript:" data-rel="python">python</a>/
             
-                <a href="javascript:" data-rel="java基础">java基础</a>
+                <a href="javascript:" data-rel="python基础">python基础</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color2">java集合</a>
-            
-            <a href="javascript:" class="color5">java</a>
+            <a href="javascript:" class="color5">数据结构</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-22 14:51:09'>2019-10-22 14:49</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-24 20:57:39'>2019-10-24 20:37</time>
         
     </div>
     <div class="article-meta">
@@ -430,7 +428,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#实现栈"><span class="toc-text">实现栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现队列"><span class="toc-text">实现队列</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Python数据结构的实现"><span class="toc-text">Python数据结构的实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#heapq简介"><span class="toc-text">heapq简介</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -446,18 +444,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="实现栈"><a href="#实现栈" class="headerlink" title="实现栈"></a>实现栈</h2><pre><code class="java">LinkedList&lt;Integer&gt; stack = new LinkedList&lt;&gt;();
-stack.add(1);
-stack.add(2);
-stack.add(3);
-System.out.println(stack.peekLast()); // 3
-System.out.println(stack.pollLast()); // 3</code></pre>
-<h2 id="实现队列"><a href="#实现队列" class="headerlink" title="实现队列"></a>实现队列</h2><pre><code class="java">Queue&lt;Integer&gt; queue = new LinkedList&lt;&gt;();
-queue.add(1);
-queue.add(2);
-queue.add(3);
-System.out.println(queue.peek()); // 1
-System.out.println(queue.poll()); // 1</code></pre>
+        <h2 id="Python数据结构的实现"><a href="#Python数据结构的实现" class="headerlink" title="Python数据结构的实现"></a>Python数据结构的实现</h2><h3 id="heapq简介"><a href="#heapq简介" class="headerlink" title="heapq简介"></a>heapq简介</h3><pre><code class="python">import heapq
+# heapq实现了优先队列算法
+# 是一个数组实现的二叉树 满足heap[k] &lt;= heap[2*k+1] 和 heap[k] &lt;= heap[2*k+2]
+# 默认是最小堆
+heap = []
+item = ()
+heapq.heappush(heap, item)
+# item加入堆 并保证堆的不变性
+heapq.heappop(heap)
+# 弹出并返回堆顶 保持堆的不变性 堆为空则抛出IndexError
+# 堆顶可以使用heapq[0]来访问</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 15010531295@163.com </span>
@@ -471,12 +468,12 @@ System.out.println(queue.poll()); // 1</code></pre>
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>LinkedList实现队列和栈</p>
+    <p><span class="copy-title">文章标题:</span>python数据结构</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="wangzitian">wangzitian</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-22, 14:49:28</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-22, 14:51:09</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/22/LinkedList%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97%E5%92%8C%E6%A0%88/" title="LinkedList实现队列和栈">http://wangzitian.club/2019/10/22/LinkedList%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97%E5%92%8C%E6%A0%88/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-24, 20:37:23</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-24, 20:57:39</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/24/python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="python数据结构">http://wangzitian.club/2019/10/24/python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
