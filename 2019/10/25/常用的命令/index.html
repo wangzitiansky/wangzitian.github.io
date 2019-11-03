@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>The Blog of Wang</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="The Blog of Wang">
+  <title>常用的命令 | The Blog of Wang</title>
+  <meta name="keywords" content=" shell ">
+  <meta name="description" content="常用的命令 | The Blog of Wang">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="keywords" content="Java, Python, Programer">
 <meta property="og:type" content="website">
@@ -49,7 +49,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -378,12 +378,57 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-常用的命令" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#本博客内容"><span class="toc-text">本博客内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于wangzitian-club"><span class="toc-text">关于wangzitian.club</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol>
+        <h1 class="article-title">常用的命令</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="mac">mac</a>/
+            
+                <a href="javascript:" data-rel="terminal">terminal</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color1">shell</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-11-03 14:22:22'>2019-10-25 13:06</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#查看当前目录树"><span class="toc-text">查看当前目录树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#将数据库字符集转换为utf8"><span class="toc-text">将数据库字符集转换为utf8</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -396,28 +441,45 @@
     }
 </style>
 </div>
-            <h2 id="本博客内容"><a href="#本博客内容" class="headerlink" title="本博客内容"></a>本博客内容</h2><blockquote>
-<p>java python 以及我感兴趣的编程语言</p>
-</blockquote>
-<blockquote>
-<p>一些计算机基础知识如算法 操作系统等等</p>
-</blockquote>
-<blockquote>
-<p>还没想好</p>
-</blockquote>
-<h2 id="关于wangzitian-club"><a href="#关于wangzitian-club" class="headerlink" title="关于wangzitian.club"></a>关于wangzitian.club</h2><p><strong>wangzitian.club</strong> 是王子天的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源</p>
-<p>希望大家多去Github上多多支持主题作者！！</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="查看当前目录树"><a href="#查看当前目录树" class="headerlink" title="查看当前目录树"></a>查看当前目录树</h2><pre><code class="bash">$ find . -print | sed -e &#39;s;[^/]*/;|____;g;s;____|; |;g&#39;</code></pre>
+<h3 id="将数据库字符集转换为utf8"><a href="#将数据库字符集转换为utf8" class="headerlink" title="将数据库字符集转换为utf8"></a>将数据库字符集转换为utf8</h3><pre><code class="mysql">ALTER DATABASE databasename CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</code></pre>
+<pre><code class="mysql">ALTER TABLE tablename CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</code></pre>
 
-        </article>
-        
-        <p>
-            <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 15010531295@163.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>常用的命令</p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="wangzitian">wangzitian</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-10-25, 13:06:24</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-03, 14:22:22</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/25/%E5%B8%B8%E7%94%A8%E7%9A%84%E5%91%BD%E4%BB%A4/" title="常用的命令">http://wangzitian.club/2019/10/25/%E5%B8%B8%E7%94%A8%E7%9A%84%E5%91%BD%E4%BB%A4/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2016-2022 wangzitian</p>
