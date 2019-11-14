@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>about | The Blog of Wang</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="about | The Blog of Wang">
+  <title>python面向对象 | The Blog of Wang</title>
+  <meta name="keywords" content=" python面向对象 ">
+  <meta name="description" content="python面向对象 | The Blog of Wang">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="keywords" content="Java, Python, Programer">
 <meta property="og:type" content="website">
@@ -392,19 +392,31 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-python面向对象" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">about</h1>
+        <h1 class="article-title">python面向对象</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="python">python</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color1">python面向对象</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-21 21:02:21'>2019-10-21 21:02</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-14 11:00:07'>2019-11-14 10:37</time>
         
     </div>
     <div class="article-meta">
@@ -426,7 +438,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#名称和对象"><span class="toc-text">名称和对象</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#对象具有个性，多个名称（在多个作用域内）可以绑定到同一个对象。这在其他语言中称为别名。乍一看Python时通常不会理解这一点，在处理不可变的基本类型（数字，字符串，元组）时可以安全地忽略它。但是，别名对涉及可变对象，如列表，字典和大多数其他类型，的Python代码的语义可能会产生惊人的影响。这通常用于程序的好处，因为别名在某些方面表现得像指针。例如，传递一个对象很便宜，因为实现只传递一个指针；如果函数修改了作为参数传递的对象，调用者将看到更改"><span class="toc-text">对象具有个性，多个名称（在多个作用域内）可以绑定到同一个对象。这在其他语言中称为别名。乍一看Python时通常不会理解这一点，在处理不可变的基本类型（数字，字符串，元组）时可以安全地忽略它。但是，别名对涉及可变对象，如列表，字典和大多数其他类型，的Python代码的语义可能会产生惊人的影响。这通常用于程序的好处，因为别名在某些方面表现得像指针。例如，传递一个对象很便宜，因为实现只传递一个指针；如果函数修改了作为参数传递的对象，调用者将看到更改</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作用域和命名空间"><span class="toc-text">作用域和命名空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类对象"><span class="toc-text">类对象</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#支持属性引用和实例化"><span class="toc-text">支持属性引用和实例化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法对象"><span class="toc-text">方法对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类变量和实例变量"><span class="toc-text">类变量和实例变量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#参考自：https-docs-python-org-zh-cn-3-tutorial-classes-html"><span class="toc-text">参考自：https://docs.python.org/zh-cn/3/tutorial/classes.html</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -442,7 +454,53 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="名称和对象"><a href="#名称和对象" class="headerlink" title="名称和对象"></a>名称和对象</h2><h5 id="对象具有个性，多个名称（在多个作用域内）可以绑定到同一个对象。这在其他语言中称为别名。乍一看Python时通常不会理解这一点，在处理不可变的基本类型（数字，字符串，元组）时可以安全地忽略它。但是，别名对涉及可变对象，如列表，字典和大多数其他类型，的Python代码的语义可能会产生惊人的影响。这通常用于程序的好处，因为别名在某些方面表现得像指针。例如，传递一个对象很便宜，因为实现只传递一个指针；如果函数修改了作为参数传递的对象，调用者将看到更改"><a href="#对象具有个性，多个名称（在多个作用域内）可以绑定到同一个对象。这在其他语言中称为别名。乍一看Python时通常不会理解这一点，在处理不可变的基本类型（数字，字符串，元组）时可以安全地忽略它。但是，别名对涉及可变对象，如列表，字典和大多数其他类型，的Python代码的语义可能会产生惊人的影响。这通常用于程序的好处，因为别名在某些方面表现得像指针。例如，传递一个对象很便宜，因为实现只传递一个指针；如果函数修改了作为参数传递的对象，调用者将看到更改" class="headerlink" title="对象具有个性，多个名称（在多个作用域内）可以绑定到同一个对象。这在其他语言中称为别名。乍一看Python时通常不会理解这一点，在处理不可变的基本类型（数字，字符串，元组）时可以安全地忽略它。但是，别名对涉及可变对象，如列表，字典和大多数其他类型，的Python代码的语义可能会产生惊人的影响。这通常用于程序的好处，因为别名在某些方面表现得像指针。例如，传递一个对象很便宜，因为实现只传递一个指针；如果函数修改了作为参数传递的对象，调用者将看到更改"></a>对象具有个性，多个名称（在多个作用域内）可以绑定到同一个对象。这在其他语言中称为别名。乍一看Python时通常不会理解这一点，在处理不可变的基本类型（数字，字符串，元组）时可以安全地忽略它。但是，别名对涉及可变对象，如列表，字典和大多数其他类型，的Python代码的语义可能会产生惊人的影响。这通常用于程序的好处，因为别名在某些方面表现得像指针。例如，传递一个对象很便宜，因为实现只传递一个指针；如果函数修改了作为参数传递的对象，调用者将看到更改</h5><h3 id="作用域和命名空间"><a href="#作用域和命名空间" class="headerlink" title="作用域和命名空间"></a>作用域和命名空间</h3><pre><code class="python"># 请注意 局部 赋值（这是默认状态）不会改变 scope_test 对 spam 的绑定。 nonlocal 赋值会改变 scope_test 对 spam 的绑定，而 global 赋值会改变模块层级的绑定。
+
+def scope_test():
+    def do_local():
+        spam = &quot;local spam&quot;
+
+    def do_nonlacal():
+        nonlocal spam
+        spam = &quot;nonlocal spam&quot;
+
+    def do_global():
+        global spam
+        spam = &quot;global spam&quot;
+
+    spam = &quot;test spam&quot;
+    do_local()
+    print(&quot;after local : &quot;, spam)
+    do_nonlacal()
+    print(&quot;after nonlocal : &quot;, spam)
+    do_global()
+    print(&quot;afer global : &quot;, spam)
+
+
+scope_test()
+print(&quot;In the global&quot;, spam)
+</code></pre>
+<h3 id="类对象"><a href="#类对象" class="headerlink" title="类对象"></a>类对象</h3><h5 id="支持属性引用和实例化"><a href="#支持属性引用和实例化" class="headerlink" title="支持属性引用和实例化"></a>支持属性引用和实例化</h5><pre><code class="python">print(MyClass.__doc__)</code></pre>
+<h3 id="方法对象"><a href="#方法对象" class="headerlink" title="方法对象"></a>方法对象</h3><pre><code class="python">myclass = Myclass()
+myclass.f()
+# 相当于 Myclass.f(myclass)</code></pre>
+<h3 id="类变量和实例变量"><a href="#类变量和实例变量" class="headerlink" title="类变量和实例变量"></a>类变量和实例变量</h3><pre><code class="python">class Dog:
+    kind = &#39;canine&#39;         # class variable shared by all instances
+
+    def __init__(self, name):
+        self.name = name    # instance variable unique to each instance
+
+&gt;&gt;&gt; d = Dog(&#39;Fido&#39;)
+&gt;&gt;&gt; e = Dog(&#39;Buddy&#39;)
+&gt;&gt;&gt; d.kind                  # shared by all dogs
+&#39;canine&#39;
+&gt;&gt;&gt; e.kind                  # shared by all dogs
+&#39;canine&#39;
+&gt;&gt;&gt; d.name                  # unique to d
+&#39;Fido&#39;
+&gt;&gt;&gt; e.name                  # unique to e
+&#39;Buddy&#39;</code></pre>
+<h5 id="参考自：https-docs-python-org-zh-cn-3-tutorial-classes-html"><a href="#参考自：https-docs-python-org-zh-cn-3-tutorial-classes-html" class="headerlink" title="参考自：https://docs.python.org/zh-cn/3/tutorial/classes.html"></a>参考自：<a href="https://docs.python.org/zh-cn/3/tutorial/classes.html" target="_blank" rel="noopener">https://docs.python.org/zh-cn/3/tutorial/classes.html</a></h5>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 15010531295@163.com </span>
     </div>
@@ -453,6 +511,18 @@
     <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
 </p>
 
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>python面向对象</p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="wangzitian">wangzitian</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-11-14, 10:37:13</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-14, 11:00:07</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/14/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="python面向对象">http://wangzitian.club/2019/11/14/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
 
 
 
