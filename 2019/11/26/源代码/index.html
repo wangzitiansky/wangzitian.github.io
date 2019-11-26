@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>java面试题笔记 | The Blog of Wang</title>
-  <meta name="keywords" content=" java笔试题 ">
-  <meta name="description" content="java面试题笔记 | The Blog of Wang">
+  <title>源代码 | The Blog of Wang</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="源代码 | The Blog of Wang">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="keywords" content="Java, Python, Programer">
 <meta property="og:type" content="website">
@@ -400,33 +400,19 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-java笔试题笔记" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-源代码" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">java面试题笔记</h1>
+        <h1 class="article-title">源代码</h1>
     
     <div class="article-meta">
         
         
         
-        <span class="book">
-            
-                <a href="javascript:" data-rel="java">java</a>/
-            
-                <a href="javascript:" data-rel="java面试">java面试</a>
-            
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="javascript:" class="color3">java笔试题</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-11 21:42:11'>2019-10-21 20:27</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-26 11:13:06'>2019-11-26 11:12</time>
         
     </div>
     <div class="article-meta">
@@ -448,7 +434,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#NewCoder面试题笔记"><span class="toc-text">NewCoder面试题笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Math-round-11-5-等于多少-Math-round-11-5-等于多少"><span class="toc-text">Math.round(11.5) 等于多少 (). Math.round(-11.5) 等于多少 ( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#public-Method-getDeclaredMethods-返回类或接口声明的所有方法，包括public-protected-default-package-访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。"><span class="toc-text">public Method[] getDeclaredMethods()返回类或接口声明的所有方法，包括public, protected, default (package) 访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关于byte和final"><span class="toc-text">关于byte和final</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#java编译和运行命令"><span class="toc-text">java编译和运行命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#switch语句"><span class="toc-text">switch语句</span></a></li></ol></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -464,37 +450,42 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="NewCoder面试题笔记"><a href="#NewCoder面试题笔记" class="headerlink" title="NewCoder面试题笔记"></a>NewCoder面试题笔记</h2><ul>
-<li><h4 id="Math-round-11-5-等于多少-Math-round-11-5-等于多少"><a href="#Math-round-11-5-等于多少-Math-round-11-5-等于多少" class="headerlink" title="Math.round(11.5) 等于多少 (). Math.round(-11.5) 等于多少 ( )"></a>Math.round(11.5) 等于多少 (). Math.round(-11.5) 等于多少 ( )</h4></li>
-</ul>
-<pre><code class="java">// 12 -11
-//Math.round(a)
-// a + 0.5 取下边界</code></pre>
-<ul>
-<li><h4 id="public-Method-getDeclaredMethods-返回类或接口声明的所有方法，包括public-protected-default-package-访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。"><a href="#public-Method-getDeclaredMethods-返回类或接口声明的所有方法，包括public-protected-default-package-访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。" class="headerlink" title="public Method[] getDeclaredMethods()返回类或接口声明的所有方法，包括public, protected, default (package) 访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。"></a><strong>public Method[] getDeclaredMethods()</strong>返回类或接口声明的所有方法，包括public, protected, default (package) 访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。</h4></li>
-<li><h4 id="关于byte和final"><a href="#关于byte和final" class="headerlink" title="关于byte和final"></a>关于byte和final</h4></li>
-</ul>
-<pre><code class="java">byte b1=1,b2=2,b3,b6,b8;
-final byte b4=4,b5=6,b7;
-b3=(b1+b2);  /*语句1*/
-b6=b4+b5;    /*语句2*/
-b8=(b1+b4);  /*语句3*/
-b7=(b2+b5);  /*语句4*/
-System.out.println(b3+b6);
-// 当使用 +、-、*、/、%、运算操作时 操作数为：byte、short、int 、char 两个数会被转化为int类型 结果也是int类型 被声明为final的变量不会被转化</code></pre>
-<ul>
-<li><h4 id="java编译和运行命令"><a href="#java编译和运行命令" class="headerlink" title="java编译和运行命令"></a>java编译和运行命令</h4></li>
-</ul>
-<pre><code class="java">//编译命令
-$ javac YourClassName.java
-//运行命令
-$ java YourClassName
-//运行的是YourClassName.class文件</code></pre>
-<ul>
-<li><h4 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h4></li>
-</ul>
-<pre><code class="java">// switch 语句支持的类型
-String byte short int char Enum </code></pre>
+        <pre><code class="c#">private Tuple&lt;int, int[]&gt; Dp(int cur, int disp, int[] dis)
+        {
+            int min = 100000;
+            int[] lane = new int[20];
+            if (disp == 0)
+            {
+                lane[disp] = cur;
+                return new Tuple&lt;int, int[]&gt;(D[cur, 0], lane);
+            }
+            else
+            {
+                for (int i = 0; i &lt; disp; i++)
+                {
+                    int newdisp = 0;
+                    int[] newdis = new int[20];
+                    for (int j = 0; j &lt; disp; j++)
+                    {
+                        if (j != i)
+                        {
+                            newdis[newdisp++] = dis[j];
+                        }
+                    }
+                    Tuple&lt;int, int[]&gt; dpout = Dp(dis[i], newdisp, newdis);
+
+                    if (dpout.Item1 + D[cur, dis[i]] &lt; min)
+                    {
+                        min = dpout.Item1 + D[cur, dis[i]];
+                        lane = dpout.Item2;
+                    }
+                }
+            }
+            lane[disp] = cur;
+            return new Tuple&lt;int, int[]&gt;(min, lane);
+        }
+
+Tuple&lt;int, int[]&gt; dpout = Dp(0, N, target);</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 15010531295@163.com </span>
@@ -508,12 +499,12 @@ String byte short int char Enum </code></pre>
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>java面试题笔记</p>
+    <p><span class="copy-title">文章标题:</span>源代码</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="wangzitian">wangzitian</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-21, 20:27:03</p>
-    <p><span class="copy-title">最后更新:</span>2019-11-11, 21:42:11</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/21/java%E7%AC%94%E8%AF%95%E9%A2%98%E7%AC%94%E8%AE%B0/" title="java面试题笔记">http://wangzitian.club/2019/10/21/java%E7%AC%94%E8%AF%95%E9%A2%98%E7%AC%94%E8%AE%B0/</a>
+    <p><span class="copy-title">发布时间:</span>2019-11-26, 11:12:43</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-26, 11:13:06</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/26/%E6%BA%90%E4%BB%A3%E7%A0%81/" title="源代码">http://wangzitian.club/2019/11/26/%E6%BA%90%E4%BB%A3%E7%A0%81/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
