@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>java面试题笔记 | The Blog of Wang</title>
-  <meta name="keywords" content=" java笔试题 ">
-  <meta name="description" content="java面试题笔记 | The Blog of Wang">
+  <title>计网-传输层 | The Blog of Wang</title>
+  <meta name="keywords" content=" 传输层 ">
+  <meta name="description" content="计网-传输层 | The Blog of Wang">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="keywords" content="Java, Python, Programer">
 <meta property="og:type" content="website">
@@ -488,9 +488,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-java笔试题笔记" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-计网-传输层" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">java面试题笔记</h1>
+        <h1 class="article-title">计网-传输层</h1>
     
     <div class="article-meta">
         
@@ -498,23 +498,21 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="java">java</a>/
-            
-                <a href="javascript:" data-rel="java面试">java面试</a>
+                <a href="javascript:" data-rel="计算机网络">计算机网络</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color3">java笔试题</a>
+            <a href="javascript:" class="color4">传输层</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-01-20 10:59:05'>2019-10-21 20:27</time>
+        创建时间:<time class="date" title='更新时间: 2020-02-27 14:33:44'>2020-02-22 19:42</time>
         
     </div>
     <div class="article-meta">
@@ -536,7 +534,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#NewCoder面试题笔记"><span class="toc-text">NewCoder面试题笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Math-round-11-5-等于多少-Math-round-11-5-等于多少"><span class="toc-text">Math.round(11.5) 等于多少 (). Math.round(-11.5) 等于多少 ( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#public-Method-getDeclaredMethods-返回类或接口声明的所有方法，包括public-protected-default-package-访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。"><span class="toc-text">public Method[] getDeclaredMethods()返回类或接口声明的所有方法，包括public, protected, default (package) 访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关于byte和final"><span class="toc-text">关于byte和final</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#java编译和运行命令"><span class="toc-text">java编译和运行命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#switch语句"><span class="toc-text">switch语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#求递归方程T-n-4T-n-2-n-的解"><span class="toc-text">求递归方程T(n)=4T(n/2)+n 的解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在Linux系统中，某文件权限的分数是754"><span class="toc-text">在Linux系统中，某文件权限的分数是754</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#下列代码运行结果为"><span class="toc-text">下列代码运行结果为</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP协议"><span class="toc-text">TCP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP首部格式"><span class="toc-text">TCP首部格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#流量控制"><span class="toc-text">流量控制</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#防止发送方发送报文段太快使得接收方缓冲区溢出，所有要有流量控制"><span class="toc-text">防止发送方发送报文段太快使得接收方缓冲区溢出，所有要有流量控制</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -552,60 +550,39 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="NewCoder面试题笔记"><a href="#NewCoder面试题笔记" class="headerlink" title="NewCoder面试题笔记"></a>NewCoder面试题笔记</h2><ul>
-<li><h4 id="Math-round-11-5-等于多少-Math-round-11-5-等于多少"><a href="#Math-round-11-5-等于多少-Math-round-11-5-等于多少" class="headerlink" title="Math.round(11.5) 等于多少 (). Math.round(-11.5) 等于多少 ( )"></a>Math.round(11.5) 等于多少 (). Math.round(-11.5) 等于多少 ( )</h4></li>
-</ul>
-<pre><code class="java">// 12 -11
-//Math.round(a)
-// a + 0.5 取下边界</code></pre>
-<ul>
-<li><h4 id="public-Method-getDeclaredMethods-返回类或接口声明的所有方法，包括public-protected-default-package-访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。"><a href="#public-Method-getDeclaredMethods-返回类或接口声明的所有方法，包括public-protected-default-package-访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。" class="headerlink" title="public Method[] getDeclaredMethods()返回类或接口声明的所有方法，包括public, protected, default (package) 访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。"></a><strong>public Method[] getDeclaredMethods()</strong>返回类或接口声明的所有方法，包括public, protected, default (package) 访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。</h4></li>
-<li><h4 id="关于byte和final"><a href="#关于byte和final" class="headerlink" title="关于byte和final"></a>关于byte和final</h4></li>
-</ul>
-<pre><code class="java">byte b1=1,b2=2,b3,b6,b8;
-final byte b4=4,b5=6,b7;
-b3=(b1+b2);  /*语句1*/
-b6=b4+b5;    /*语句2*/
-b8=(b1+b4);  /*语句3*/
-b7=(b2+b5);  /*语句4*/
-System.out.println(b3+b6);
-// 当使用 +、-、*、/、%、运算操作时 操作数为：byte、short、int 、char 两个数会被转化为int类型 结果也是int类型 被声明为final的变量不会被转化</code></pre>
-<ul>
-<li><h4 id="java编译和运行命令"><a href="#java编译和运行命令" class="headerlink" title="java编译和运行命令"></a>java编译和运行命令</h4></li>
-</ul>
-<pre><code class="java">//编译命令
-$ javac YourClassName.java
-//运行命令
-$ java YourClassName
-//运行的是YourClassName.class文件</code></pre>
-<ul>
-<li><h4 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h4></li>
-</ul>
-<pre><code class="java">// switch 语句支持的类型
-String byte short int char Enum </code></pre>
-<ul>
-<li><h4 id="求递归方程T-n-4T-n-2-n-的解"><a href="#求递归方程T-n-4T-n-2-n-的解" class="headerlink" title="求递归方程T(n)=4T(n/2)+n 的解"></a>求递归方程T(n)=4T(n/2)+n 的解</h4></li>
-</ul>
-<pre><code>目前不会。。。</code></pre><ul>
-<li><h4 id="在Linux系统中，某文件权限的分数是754"><a href="#在Linux系统中，某文件权限的分数是754" class="headerlink" title="在Linux系统中，某文件权限的分数是754"></a>在Linux系统中，某文件权限的分数是754</h4></li>
-</ul>
-<pre><code>文件所有者、同组用户、其他用户
-权限    权限数值       具体作用
-r         4            read
-w         2            write。
-x         1            execute</code></pre><ul>
-<li><h4 id="下列代码运行结果为"><a href="#下列代码运行结果为" class="headerlink" title="下列代码运行结果为"></a>下列代码运行结果为</h4></li>
-</ul>
-<pre><code class="java">public void doSomething( int[][] mat)
-{
-    for( int row = 0; row &lt; mat.length; row++)
-        for(int col = 0; col &lt; mat[0].length; col++)
-            mat[row][col] = mat[row][mat[0].length - 1 - col];
-}
-
-// 1  3  5  7  9  11
-// 0  2  4  6  8  10</code></pre>
-
+        <h2 id="TCP协议"><a href="#TCP协议" class="headerlink" title="TCP协议"></a>TCP协议</h2><h3 id="TCP首部格式"><a href="#TCP首部格式" class="headerlink" title="TCP首部格式"></a>TCP首部格式</h3><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>源端口号 目的端口号</td>
+<td>多路复用或者分解来自上层或送到上层的应用数据</td>
+</tr>
+<tr>
+<td>序号</td>
+<td>用于实现可靠的数据传输服务</td>
+</tr>
+<tr>
+<td>确认号</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>首部字段长度 4bit</td>
+<td>指示了以32bit的字为单位的TCP首部长度，通常20字节</td>
+</tr>
+<tr>
+<td>选项字段 4bit</td>
+<td>用于协商最大报文段长度</td>
+</tr>
+<tr>
+<td>标志字段 6 bit</td>
+<td>若为1 则对应的首部字段有效</td>
+</tr>
+</tbody></table>
+<h3 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h3><h5 id="防止发送方发送报文段太快使得接收方缓冲区溢出，所有要有流量控制"><a href="#防止发送方发送报文段太快使得接收方缓冲区溢出，所有要有流量控制" class="headerlink" title="防止发送方发送报文段太快使得接收方缓冲区溢出，所有要有流量控制"></a>防止发送方发送报文段太快使得接收方缓冲区溢出，所有要有流量控制</h5>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 15010531295@163.com </span>
     </div>
@@ -618,12 +595,12 @@ x         1            execute</code></pre><ul>
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>java面试题笔记</p>
+    <p><span class="copy-title">文章标题:</span>计网-传输层</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="wangzitian">wangzitian</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-21, 20:27:03</p>
-    <p><span class="copy-title">最后更新:</span>2020-01-20, 10:59:05</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/21/java%E7%AC%94%E8%AF%95%E9%A2%98%E7%AC%94%E8%AE%B0/" title="java面试题笔记">http://wangzitian.club/2019/10/21/java%E7%AC%94%E8%AF%95%E9%A2%98%E7%AC%94%E8%AE%B0/</a>
+    <p><span class="copy-title">发布时间:</span>2020-02-22, 19:42:23</p>
+    <p><span class="copy-title">最后更新:</span>2020-02-27, 14:33:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/02/22/%E8%AE%A1%E7%BD%91-%E4%BC%A0%E8%BE%93%E5%B1%82/" title="计网-传输层">http://wangzitian.club/2020/02/22/%E8%AE%A1%E7%BD%91-%E4%BC%A0%E8%BE%93%E5%B1%82/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
