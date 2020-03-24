@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>计网 --- 网络层 | The Blog of Wang</title>
-  <meta name="keywords" content=" 网络层 ">
-  <meta name="description" content="计网 --- 网络层 | The Blog of Wang">
+  <title>大O表示法 | The Blog of Wang</title>
+  <meta name="keywords" content=" 时间复杂度分析 ">
+  <meta name="description" content="大O表示法 | The Blog of Wang">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="keywords" content="Java, Python, Programer">
 <meta property="og:type" content="website">
@@ -476,9 +476,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-计网-网络层" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-大O表示法" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">计网 --- 网络层</h1>
+        <h1 class="article-title">大O表示法</h1>
     
     <div class="article-meta">
         
@@ -486,21 +486,21 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="计算机网络">计算机网络</a>
+                <a href="javascript:" data-rel="算法">算法</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color4">网络层</a>
+            <a href="javascript:" class="color3">时间复杂度分析</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-03-07 14:00:13'>2020-02-07 11:07</time>
+        创建时间:<time class="date" title='更新时间: 2020-03-24 12:51:01'>2020-03-24 12:36</time>
         
     </div>
     <div class="article-meta">
@@ -522,7 +522,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#网络层内部的工作方式"><span class="toc-text">网络层内部的工作方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数据报"><span class="toc-text">数据报</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#虚电路"><span class="toc-text">虚电路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#两者比较"><span class="toc-text">两者比较</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#几种路由算法"><span class="toc-text">几种路由算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#距离矢量路由"><span class="toc-text">距离矢量路由</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本思想"><span class="toc-text">基本思想</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#优缺点"><span class="toc-text">优缺点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用于RIP协议"><span class="toc-text">应用于RIP协议</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#链路状态路由"><span class="toc-text">链路状态路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ARP-—-地址解析协议"><span class="toc-text">ARP — 地址解析协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#为了解决什么问题？"><span class="toc-text">为了解决什么问题？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何实现"><span class="toc-text">如何实现</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#报文格式解析"><span class="toc-text">报文格式解析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DHCP-—-动态主机配置协议"><span class="toc-text">DHCP — 动态主机配置协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基本思想-1"><span class="toc-text">基本思想</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#消息类型"><span class="toc-text">消息类型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ICMP-—-网际控制报文协议"><span class="toc-text">ICMP — 网际控制报文协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NAT-—-网络地址转换"><span class="toc-text">NAT — 网络地址转换</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#为了解决IP地址短缺的问题"><span class="toc-text">为了解决IP地址短缺的问题</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#基本思想-2"><span class="toc-text">基本思想</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#注：私有地址的数据包不应该出现在Internet上"><span class="toc-text">注：私有地址的数据包不应该出现在Internet上</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#工作过程"><span class="toc-text">工作过程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#缺陷"><span class="toc-text">缺陷</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么会有大O表示法"><span class="toc-text">为什么会有大O表示法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#一个算法的所实施的赋值操作步骤数可以作为独立与程序和机器的度量指标"><span class="toc-text">一个算法的所实施的赋值操作步骤数可以作为独立与程序和机器的度量指标</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#而基本操作数量函数T-n-中最重要的是起决定因素的部分"><span class="toc-text">而基本操作数量函数T(n)中最重要的是起决定因素的部分</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#T-n-中随着n增加而增加速度最快的主动部分就是-O-f-n-f-n-为T-n-的主导部分"><span class="toc-text">T(n)中随着n增加而增加速度最快的主动部分就是 O(f(n)) f(n)为T(n)的主导部分</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -538,107 +538,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="网络层内部的工作方式"><a href="#网络层内部的工作方式" class="headerlink" title="网络层内部的工作方式"></a>网络层内部的工作方式</h3><ul>
-<li><h4 id="数据报"><a href="#数据报" class="headerlink" title="数据报"></a>数据报</h4><p>提供无连接服务，每个数据包携带完整的目的地址，独立进行路由选择</p>
-</li>
-<li><h4 id="虚电路"><a href="#虚电路" class="headerlink" title="虚电路"></a>虚电路</h4><p>提供面向连接的服务，发送数据包之前，必须先建立起一条从源路由器到目的路由器之间的路径，这个连接成为虚电路（vc）</p>
-<p>使用虚电路进行通信</p>
-<p>通信结束，释放虚电路</p>
-</li>
-<li><h4 id="两者比较"><a href="#两者比较" class="headerlink" title="两者比较"></a>两者比较</h4></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>比较项目</th>
-<th>数据报网络</th>
-<th>虚电路网络</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>电路建立</td>
-<td>不需要</td>
-<td>需要</td>
-</tr>
-<tr>
-<td>寻址</td>
-<td>每个数据包包含全部源地址和目的地址</td>
-<td>每个数据包包含一个短的虚电路号</td>
-</tr>
-<tr>
-<td>状态信息</td>
-<td>路由器不保留连接状态</td>
-<td>针对每个连接，每条虚电路都需要保存其状态</td>
-</tr>
-<tr>
-<td>路由方式</td>
-<td>每个数据包被单独路由</td>
-<td>建立虚电路时选择路由，所有数据包都经过此路由</td>
-</tr>
-<tr>
-<td>路由器失效的影响</td>
-<td>除了在崩溃时丢失包外 无影响</td>
-<td>所有经过失效的路由器的虚电路都要被终止</td>
-</tr>
-<tr>
-<td>服务质量</td>
-<td>困难</td>
-<td>如果有足够的资源提前分配给每个虚电路，容易实现</td>
-</tr>
-<tr>
-<td>拥塞控制</td>
-<td>困难</td>
-<td>如果有足够的资源可以提前分配给每个虚电路，容易控制</td>
-</tr>
-</tbody></table>
-<h3 id="几种路由算法"><a href="#几种路由算法" class="headerlink" title="几种路由算法"></a>几种路由算法</h3><h3 id="距离矢量路由"><a href="#距离矢量路由" class="headerlink" title="距离矢量路由"></a>距离矢量路由</h3><ul>
-<li><h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4></li>
-</ul>
-<p>每个路由器维护一张表，表中给出了当前到已知的每个目的地的最佳距离， 以及使用的线路，并通过与相邻路由器交换距离信息来更新表（距离指跳数，跳数超过15则不可达）</p>
-<ul>
-<li><h4 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h4></li>
-</ul>
-<p>对于好休息反应快，对坏消息反应慢</p>
-<p>选择路由时没有考虑线路带宽</p>
-<ul>
-<li><h4 id="应用于RIP协议"><a href="#应用于RIP协议" class="headerlink" title="应用于RIP协议"></a>应用于RIP协议</h4></li>
-</ul>
-<h3 id="链路状态路由"><a href="#链路状态路由" class="headerlink" title="链路状态路由"></a>链路状态路由</h3><p>// to-do</p>
-<h3 id="ARP-—-地址解析协议"><a href="#ARP-—-地址解析协议" class="headerlink" title="ARP — 地址解析协议"></a>ARP — 地址解析协议</h3><h4 id="为了解决什么问题？"><a href="#为了解决什么问题？" class="headerlink" title="为了解决什么问题？"></a>为了解决什么问题？</h4><p>因特网上主机通信使用的是IP地址，但是当一台主机发送数据包时，是根据硬件地址来确定目的接口的，链路层实现具体每段链路的通信，通信过程中MAC地址随着链路的改变而改变。ARP协议实现IP地址到MAC地址的映射。</p>
-<h4 id="如何实现"><a href="#如何实现" class="headerlink" title="如何实现"></a>如何实现</h4><p>主机上有一个ARP高速缓存，里面有IP到MAC地址的映射表，若表中有则直接读出，若没有，则生成一个目的地址为需要查询的IP地址的ARP报文，该查询报文放入一个具有广播目的地址的以太帧中。 发送广播到以太网上，每台主机收到帧后，不断向上分解得到ARP报文，检查自己IP地址是否符合，若符合则发送一个ARP回答报文，其中包含它的MAC地址.</p>
-<h5 id="报文格式解析"><a href="#报文格式解析" class="headerlink" title="报文格式解析"></a>报文格式解析</h5><p><img src="/Users/myx/Three/blog/source/_posts/arp-1.png" alt="arp-1"></p>
-<p>以太网目的地址：全1为广播</p>
-<p>以太网源地址</p>
-<p>帧类型：对于ARP请求或者应答，该字段为0x0806</p>
-<p>硬件类型：表示硬件地址类型，1表示以太网</p>
-<p>协议类型：0x800表示IP地址</p>
-<p>硬件地址长度，协议地址长度分别为6，4</p>
-<p>操作字段指出四种操作类型，ARP请求，ARP应答，RARP请求，RARP应答</p>
-<p>发送端以太网地址 IP地址 </p>
-<p>目的以太网地址 IP地址</p>
-<h3 id="DHCP-—-动态主机配置协议"><a href="#DHCP-—-动态主机配置协议" class="headerlink" title="DHCP — 动态主机配置协议"></a>DHCP — 动态主机配置协议</h3><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>允许服务器将IP地址和配置信息动态分发给客户端。正常情况下，DHCP服务器至少给客户端提供：IP地址，子网掩码，默认网关，也可提供DNS 服务器地址，</p>
-<h4 id="基本思想-1"><a href="#基本思想-1" class="headerlink" title="基本思想"></a>基本思想</h4><p>每个网路必须有一个DHCP服务器来负责地址配置</p>
-<p>当计算机启动时，它有一个嵌入在NIC中的内置以太网或其他链路层地址，但没有IP地址</p>
-<p>该计算机在自己的网路上广播一个DHCP DISCOVER包。（若DHCP服务器和主机不在同一个LAN上，此时需要将路由器配置成一个DHCP中继代理）</p>
-<p>当DHCP服务器收到请求，它就为该主机分配一个空闲的IP地址，并通过DHCP OFFER返回给主机</p>
-<h5 id="消息类型"><a href="#消息类型" class="headerlink" title="消息类型"></a>消息类型</h5><p>DHCP 有 8 种消息类型，分别是 Discover、Request、Release、Inform、Decline、Offer、ACK、NAK。</p>
-<p>其中前 5 种可由主机发起，后 3 种只能是 DHCP 服务端向主机发送，故 AB 正确。</p>
-<h3 id="ICMP-—-网际控制报文协议"><a href="#ICMP-—-网际控制报文协议" class="headerlink" title="ICMP — 网际控制报文协议"></a>ICMP — 网际控制报文协议</h3><p>重要应用</p>
-<p>ping： 主要用来测试两台主机之间的连通性。Ping 的原理是通过向目的主机发送 ICMP Echo 请求报文，目的主机收到之后会发送 Echo 回答报文。Ping 会根据时间和成功响应的次数估算出数据包往返时间以及丢包率。</p>
-<h3 id="NAT-—-网络地址转换"><a href="#NAT-—-网络地址转换" class="headerlink" title="NAT — 网络地址转换"></a>NAT — 网络地址转换</h3><h5 id="为了解决IP地址短缺的问题"><a href="#为了解决IP地址短缺的问题" class="headerlink" title="为了解决IP地址短缺的问题"></a>为了解决IP地址短缺的问题</h5><h5 id="基本思想-2"><a href="#基本思想-2" class="headerlink" title="基本思想"></a>基本思想</h5><p>为公司分配一个或少量共有IP地址，使用共有IP地址在Internet上传输数据包</p>
-<p>公司内部，每台计算机有唯一的私有IP地址，使用该地址在公司内部传输数据包</p>
-<p>当一个数据包离开公司网络时，需要地址转换</p>
-<h5 id="注：私有地址的数据包不应该出现在Internet上"><a href="#注：私有地址的数据包不应该出现在Internet上" class="headerlink" title="注：私有地址的数据包不应该出现在Internet上"></a>注：私有地址的数据包不应该出现在Internet上</h5><h5 id="工作过程"><a href="#工作过程" class="headerlink" title="工作过程"></a>工作过程</h5><p>向外发送的数据包进入到NAT盒中，源地址被公有IP替代，传输层的源端口号被一个索引值替代</p>
-<p>回来时根据传输层的目的端口号从NAT盒中找出原来的表项，提取相应的私有IP地址和原来的端口号，天道数据包中</p>
-<h5 id="缺陷"><a href="#缺陷" class="headerlink" title="缺陷"></a>缺陷</h5><p>违反IP结构模型，IP结构模型声明每个IP地址均唯一标示一台机器</p>
-<p>将Internet从一个无连接网络变成一个面向连接网络</p>
-<p>违反最基本的协议分层规则</p>
-<p>Internet上层的进程不一定适用TCP或者UDP</p>
-<p>有些应用不一定适用TCP UDP协议</p>
-<p>有些应用在正文插入了IP地址</p>
-<p>TCP端口号16位 最多65536台机器被映射</p>
-<p>参考：<a href="https://cyc2018.github.io/CS-Notes/#/README" target="_blank" rel="noopener">https://cyc2018.github.io/CS-Notes/#/README</a></p>
-
+        <h3 id="为什么会有大O表示法"><a href="#为什么会有大O表示法" class="headerlink" title="为什么会有大O表示法"></a>为什么会有大O表示法</h3><p>因为需要一个与具体的机器，程序，运行语言都无关的指标来分析程序运行时间</p>
+<h5 id="一个算法的所实施的赋值操作步骤数可以作为独立与程序和机器的度量指标"><a href="#一个算法的所实施的赋值操作步骤数可以作为独立与程序和机器的度量指标" class="headerlink" title="一个算法的所实施的赋值操作步骤数可以作为独立与程序和机器的度量指标"></a>一个算法的所实施的赋值操作步骤数可以作为独立与程序和机器的度量指标</h5><p>因为赋值语句包含了计算和存储两个基本资源</p>
+<h5 id="而基本操作数量函数T-n-中最重要的是起决定因素的部分"><a href="#而基本操作数量函数T-n-中最重要的是起决定因素的部分" class="headerlink" title="而基本操作数量函数T(n)中最重要的是起决定因素的部分"></a>而基本操作数量函数T(n)中最重要的是起决定因素的部分</h5><h5 id="T-n-中随着n增加而增加速度最快的主动部分就是-O-f-n-f-n-为T-n-的主导部分"><a href="#T-n-中随着n增加而增加速度最快的主动部分就是-O-f-n-f-n-为T-n-的主导部分" class="headerlink" title="T(n)中随着n增加而增加速度最快的主动部分就是 O(f(n)) f(n)为T(n)的主导部分"></a>T(n)中随着n增加而增加速度最快的主动部分就是 O(f(n)) f(n)为T(n)的主导部分</h5>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 15010531295@163.com </span>
     </div>
@@ -651,12 +553,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>计网 --- 网络层</p>
+    <p><span class="copy-title">文章标题:</span>大O表示法</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="wangzitian">wangzitian</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-02-07, 11:07:12</p>
-    <p><span class="copy-title">最后更新:</span>2020-03-07, 14:00:13</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/02/07/%E8%AE%A1%E7%BD%91-%E7%BD%91%E7%BB%9C%E5%B1%82/" title="计网 --- 网络层">http://wangzitian.club/2020/02/07/%E8%AE%A1%E7%BD%91-%E7%BD%91%E7%BB%9C%E5%B1%82/</a>
+    <p><span class="copy-title">发布时间:</span>2020-03-24, 12:36:48</p>
+    <p><span class="copy-title">最后更新:</span>2020-03-24, 12:51:01</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/03/24/%E5%A4%A7O%E8%A1%A8%E7%A4%BA%E6%B3%95/" title="大O表示法">http://wangzitian.club/2020/03/24/%E5%A4%A7O%E8%A1%A8%E7%A4%BA%E6%B3%95/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
