@@ -147,6 +147,198 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2020/03/30/ArrayList%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="wangzitian">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Blog of Wang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/30/ArrayList%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/" class="post-title-link" itemprop="url">ArrayList源码解析</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-03-30 20:33:41 / Modified: 20:36:39" itemprop="dateCreated datePublished" datetime="2020-03-30T20:33:41+08:00">2020-03-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/%E9%9B%86%E5%90%88%E6%BA%90%E7%A0%81/" itemprop="url" rel="index"><span itemprop="name">集合源码</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>###ArrayList</p>
+<details>
+  <summary>变量定义</summary>
+
+
+
+<pre><code class="java">    private static final int DEFAULT_CAPACITY = 10;        // 默认容量
+    private static final Object[] EMPTY_ELEMENTDATA = {}; // 空数组 used for empty instances
+    private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {}; // 
+    transient Object[] elementData; // 真正存储元素的数组
+    private int size; // 存储元素的个数</code></pre>
+</details>
+
+
+
+<details>
+  <summary>构造函数</summary>
+
+
+
+<pre><code class="java">// 接收一个初始长度作为参数
+    public ArrayList(int initialCapacity) {
+      // initialCapacity 是初始长度
+        if (initialCapacity &gt; 0) {
+            this.elementData = new Object[initialCapacity];
+        } else if (initialCapacity == 0) {
+
+          // 如果初始长度为0 则将其设为一个空数组 EMPTY_ELEMENTDATA
+            this.elementData = EMPTY_ELEMENTDATA;
+        } else {
+            throw new IllegalArgumentException(&quot;Illegal Capacity: &quot;+
+                                             initialCapacity);
+        }
+    }
+
+// 没有参数
+    public ArrayList() {
+      // 赋值为空数组 DEFAULTCAPACITY_EMPTY_ELEMENTDATA
+        this.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;
+    }
+
+// 接收一个Collection作为参数
+    public ArrayList(Collection&lt;? extends E&gt; c) {
+        elementData = c.toArray();
+        if ((size = elementData.length) != 0) {
+            // 检查c.toArray()是不是 Object[] 如果不是 将其拷贝为Object[]
+            if (elementData.getClass() != Object[].class)
+                elementData = Arrays.copyOf(elementData, size, Object[].class);
+        } else {
+            // 使用 EMPTY_ELEMENTDATA
+            this.elementData = EMPTY_ELEMENTDATA;
+        }
+    }
+</code></pre>
+</details>
+
+
+
+<details>
+  <summary> 扩容相关 </summary>
+
+
+
+
+<pre><code class="java">   // 返回一个新的数组容量
+        private int newCapacity(int minCapacity) {
+        // oldCapacity 是旧容量
+        int oldCapacity = elementData.length;
+          // newCapacity 是 1.5 * oldCapacity
+        int newCapacity = oldCapacity + (oldCapacity &gt;&gt; 1);
+          // 如果新的容量还是小于最小需要容量 则用最小足以容量当作数组新容量
+        if (newCapacity - minCapacity &lt;= 0) {
+          // 如果 初始化时候没有设定初始容量 则返回 DEFAULT_CAPACITY minCapacity 中最大的
+            if (elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA)
+                return Math.max(DEFAULT_CAPACITY, minCapacity);
+            if (minCapacity &lt; 0) // overflow
+                throw new OutOfMemoryError();
+            return minCapacity;
+        }
+          // 如果新的容量合理 则返回新容量
+        return (newCapacity - MAX_ARRAY_SIZE &lt;= 0)
+            ? newCapacity
+            : hugeCapacity(minCapacity);
+    }
+
+        // 如果需要的容量大于MAX_ARRAY_SIZE 则返回 Integer.MAX_VALUE 否则返回 MAX_ARRAY_SIZE
+    private static int hugeCapacity(int minCapacity) {
+        if (minCapacity &lt; 0) // overflow
+            throw new OutOfMemoryError();
+        return (minCapacity &gt; MAX_ARRAY_SIZE)
+            ? Integer.MAX_VALUE
+            : MAX_ARRAY_SIZE;
+    }</code></pre>
+<pre><code class="java">    // 扩容函数
+        private Object[] grow(int minCapacity) {
+        return elementData = Arrays.copyOf(elementData,
+                                           newCapacity(minCapacity));
+    }
+
+    private Object[] grow() {
+        return grow(size + 1);
+    }</code></pre>
+</details>
+
+
+
+<details>
+  <summary>contains(Object o)</summary>
+
+
+
+
+
+
+
+</details>
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2020/03/24/%E5%A4%A7O%E8%A1%A8%E7%A4%BA%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1221,87 +1413,6 @@ def reverse(data):
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2019/10/25/%E5%B8%B8%E7%94%A8%E7%9A%84%E5%91%BD%E4%BB%A4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="wangzitian">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The Blog of Wang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/10/25/%E5%B8%B8%E7%94%A8%E7%9A%84%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">常用的命令</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-10-25 13:06:24" itemprop="dateCreated datePublished" datetime="2019-10-25T13:06:24+08:00">2019-10-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-21 15:11:51" itemprop="dateModified" datetime="2019-11-21T15:11:51+08:00">2019-11-21</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mac/" itemprop="url" rel="index"><span itemprop="name">mac</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mac/terminal/" itemprop="url" rel="index"><span itemprop="name">terminal</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="查看当前目录树"><a href="#查看当前目录树" class="headerlink" title="查看当前目录树"></a>查看当前目录树</h2><pre><code class="bash">$ find . -print | sed -e &#39;s;[^/]*/;|____;g;s;____|; |;g&#39;</code></pre>
-<h3 id="将数据库字符集转换为utf8"><a href="#将数据库字符集转换为utf8" class="headerlink" title="将数据库字符集转换为utf8"></a>将数据库字符集转换为utf8</h3><pre><code class="mysql">ALTER DATABASE databasename CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</code></pre>
-<pre><code class="mysql">ALTER TABLE tablename CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</code></pre>
-<h3 id="创建一个utf8字符集的数据库"><a href="#创建一个utf8字符集的数据库" class="headerlink" title="创建一个utf8字符集的数据库"></a>创建一个utf8字符集的数据库</h3><pre><code class="mysql">CREATE DATABASE mydatabase CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</code></pre>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1372,17 +1483,17 @@ def reverse(data):
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>

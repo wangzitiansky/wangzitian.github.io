@@ -147,6 +147,87 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2019/10/25/%E5%B8%B8%E7%94%A8%E7%9A%84%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="wangzitian">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Blog of Wang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/10/25/%E5%B8%B8%E7%94%A8%E7%9A%84%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">常用的命令</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-10-25 13:06:24" itemprop="dateCreated datePublished" datetime="2019-10-25T13:06:24+08:00">2019-10-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-11-21 15:11:51" itemprop="dateModified" datetime="2019-11-21T15:11:51+08:00">2019-11-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mac/" itemprop="url" rel="index"><span itemprop="name">mac</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mac/terminal/" itemprop="url" rel="index"><span itemprop="name">terminal</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="查看当前目录树"><a href="#查看当前目录树" class="headerlink" title="查看当前目录树"></a>查看当前目录树</h2><pre><code class="bash">$ find . -print | sed -e &#39;s;[^/]*/;|____;g;s;____|; |;g&#39;</code></pre>
+<h3 id="将数据库字符集转换为utf8"><a href="#将数据库字符集转换为utf8" class="headerlink" title="将数据库字符集转换为utf8"></a>将数据库字符集转换为utf8</h3><pre><code class="mysql">ALTER DATABASE databasename CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</code></pre>
+<pre><code class="mysql">ALTER TABLE tablename CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</code></pre>
+<h3 id="创建一个utf8字符集的数据库"><a href="#创建一个utf8字符集的数据库" class="headerlink" title="创建一个utf8字符集的数据库"></a>创建一个utf8字符集的数据库</h3><pre><code class="mysql">CREATE DATABASE mydatabase CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2019/10/24/python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -317,21 +398,27 @@ print(sorted(zip(prices.values(), prices.keys())))</code></pre>
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2019-10-23 14:38:51 / Modified: 14:55:06" itemprop="dateCreated datePublished" datetime="2019-10-23T14:38:51+08:00">2019-10-23</time>
+              <time title="Created: 2019-10-23 14:38:51" itemprop="dateCreated datePublished" datetime="2019-10-23T14:38:51+08:00">2019-10-23</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-30 20:35:21" itemprop="dateModified" datetime="2020-03-30T20:35:21+08:00">2020-03-30</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
+                  <a href="/categories/Java/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a>
                 </span>
             </span>
 
@@ -517,21 +604,27 @@ print(&#39;{0!s} {0!r}&#39;.format(Data()))
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2019-10-23 10:15:58 / Modified: 10:16:50" itemprop="dateCreated datePublished" datetime="2019-10-23T10:15:58+08:00">2019-10-23</time>
+              <time title="Created: 2019-10-23 10:15:58" itemprop="dateCreated datePublished" datetime="2019-10-23T10:15:58+08:00">2019-10-23</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-30 20:34:19" itemprop="dateModified" datetime="2020-03-30T20:34:19+08:00">2020-03-30</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
+                  <a href="/categories/Java/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a>
                 </span>
             </span>
 
@@ -674,7 +767,7 @@ print(&#39;{0!s} {0!r}&#39;.format(Data()))
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-26 15:56:49" itemprop="dateModified" datetime="2019-10-26T15:56:49+08:00">2019-10-26</time>
+                <time title="Modified: 2020-03-30 20:34:32" itemprop="dateModified" datetime="2020-03-30T20:34:32+08:00">2020-03-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -682,11 +775,11 @@ print(&#39;{0!s} {0!r}&#39;.format(Data()))
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
+                  <a href="/categories/Java/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a>
                 </span>
             </span>
 
@@ -753,21 +846,27 @@ print(&#39;{0!s} {0!r}&#39;.format(Data()))
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2019-10-22 14:49:28 / Modified: 14:51:09" itemprop="dateCreated datePublished" datetime="2019-10-22T14:49:28+08:00">2019-10-22</time>
+              <time title="Created: 2019-10-22 14:49:28" itemprop="dateCreated datePublished" datetime="2019-10-22T14:49:28+08:00">2019-10-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-30 20:34:47" itemprop="dateModified" datetime="2020-03-30T20:34:47+08:00">2020-03-30</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
+                  <a href="/categories/Java/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a>
                 </span>
             </span>
 
@@ -844,7 +943,7 @@ System.out.println(queue.poll()); // 1</code></pre>
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-20 10:59:05" itemprop="dateModified" datetime="2020-01-20T10:59:05+08:00">2020-01-20</time>
+                <time title="Modified: 2020-03-30 20:34:58" itemprop="dateModified" datetime="2020-03-30T20:34:58+08:00">2020-03-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -852,11 +951,11 @@ System.out.println(queue.poll()); // 1</code></pre>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/java%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">java面试</span></a>
+                  <a href="/categories/Java/Java%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">Java面试</span></a>
                 </span>
             </span>
 
@@ -974,7 +1073,7 @@ x         1            execute</code></pre><ul>
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-22 14:48:12" itemprop="dateModified" datetime="2019-10-22T14:48:12+08:00">2019-10-22</time>
+                <time title="Modified: 2020-03-30 20:35:10" itemprop="dateModified" datetime="2020-03-30T20:35:10+08:00">2020-03-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -982,11 +1081,11 @@ x         1            execute</code></pre><ul>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
+                  <a href="/categories/Java/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a>
                 </span>
             </span>
 
@@ -1222,17 +1321,17 @@ private void fastRemove(Object[] es, int i) {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
