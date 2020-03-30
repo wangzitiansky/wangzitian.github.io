@@ -20,13 +20,13 @@
     var CONFIG = {"hostname":"wangzitian.club","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="实现栈LinkedList&amp;lt;Integer&amp;gt; stack = new LinkedList&amp;lt;&amp;gt;(); stack.add(1); stack.add(2); stack.add(3); System.out.println(stack.peekLast()); &#x2F;&#x2F; 3 System.out.println(stack.pollLast()); &#x2F;&#x2F; 3 实现队列Queue">
+  <meta name="description" content="实现栈123456LinkedList&amp;lt;Integer&amp;gt; stack = new LinkedList&amp;lt;&amp;gt;();stack.add(1);stack.add(2);stack.add(3);System.out.println(stack.peekLast()); &#x2F;&#x2F; 3System.out.println(stack.pollLast()); &#x2F;&#x2F; 3  实现队列123">
 <meta name="keywords" content="Java集合,Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LinkedList实现队列和栈">
 <meta property="og:url" content="http:&#x2F;&#x2F;wangzitian.club&#x2F;2019&#x2F;10&#x2F;22&#x2F;LinkedList%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97%E5%92%8C%E6%A0%88&#x2F;index.html">
 <meta property="og:site_name" content="The Blog of Wang">
-<meta property="og:description" content="实现栈LinkedList&amp;lt;Integer&amp;gt; stack = new LinkedList&amp;lt;&amp;gt;(); stack.add(1); stack.add(2); stack.add(3); System.out.println(stack.peekLast()); &#x2F;&#x2F; 3 System.out.println(stack.pollLast()); &#x2F;&#x2F; 3 实现队列Queue">
+<meta property="og:description" content="实现栈123456LinkedList&amp;lt;Integer&amp;gt; stack = new LinkedList&amp;lt;&amp;gt;();stack.add(1);stack.add(2);stack.add(3);System.out.println(stack.peekLast()); &#x2F;&#x2F; 3System.out.println(stack.pollLast()); &#x2F;&#x2F; 3  实现队列123">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2020-03-30T12:34:47.497Z">
 <meta name="twitter:card" content="summary">
@@ -207,18 +207,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="实现栈"><a href="#实现栈" class="headerlink" title="实现栈"></a>实现栈</h2><pre><code class="java">LinkedList&lt;Integer&gt; stack = new LinkedList&lt;&gt;();
-stack.add(1);
-stack.add(2);
-stack.add(3);
-System.out.println(stack.peekLast()); // 3
-System.out.println(stack.pollLast()); // 3</code></pre>
-<h2 id="实现队列"><a href="#实现队列" class="headerlink" title="实现队列"></a>实现队列</h2><pre><code class="java">Queue&lt;Integer&gt; queue = new LinkedList&lt;&gt;();
-queue.add(1);
-queue.add(2);
-queue.add(3);
-System.out.println(queue.peek()); // 1
-System.out.println(queue.poll()); // 1</code></pre>
+        <h2 id="实现栈"><a href="#实现栈" class="headerlink" title="实现栈"></a>实现栈</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">LinkedList&lt;Integer&gt; stack = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">stack.add(<span class="number">1</span>);</span><br><span class="line">stack.add(<span class="number">2</span>);</span><br><span class="line">stack.add(<span class="number">3</span>);</span><br><span class="line">System.out.println(stack.peekLast()); <span class="comment">// 3</span></span><br><span class="line">System.out.println(stack.pollLast()); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="实现队列"><a href="#实现队列" class="headerlink" title="实现队列"></a>实现队列</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Queue&lt;Integer&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">queue.add(<span class="number">1</span>);</span><br><span class="line">queue.add(<span class="number">2</span>);</span><br><span class="line">queue.add(<span class="number">3</span>);</span><br><span class="line">System.out.println(queue.peek()); <span class="comment">// 1</span></span><br><span class="line">System.out.println(queue.poll()); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
 
     </div>
 

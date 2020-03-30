@@ -205,10 +205,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="查看当前目录树"><a href="#查看当前目录树" class="headerlink" title="查看当前目录树"></a>查看当前目录树</h2><pre><code class="bash">$ find . -print | sed -e &#39;s;[^/]*/;|____;g;s;____|; |;g&#39;</code></pre>
-<h3 id="将数据库字符集转换为utf8"><a href="#将数据库字符集转换为utf8" class="headerlink" title="将数据库字符集转换为utf8"></a>将数据库字符集转换为utf8</h3><pre><code class="mysql">ALTER DATABASE databasename CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</code></pre>
-<pre><code class="mysql">ALTER TABLE tablename CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</code></pre>
-<h3 id="创建一个utf8字符集的数据库"><a href="#创建一个utf8字符集的数据库" class="headerlink" title="创建一个utf8字符集的数据库"></a>创建一个utf8字符集的数据库</h3><pre><code class="mysql">CREATE DATABASE mydatabase CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</code></pre>
+          <h2 id="查看当前目录树"><a href="#查看当前目录树" class="headerlink" title="查看当前目录树"></a>查看当前目录树</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ find . -<span class="built_in">print</span> | sed -e <span class="string">'s;[^/]*/;|____;g;s;____|; |;g'</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="将数据库字符集转换为utf8"><a href="#将数据库字符集转换为utf8" class="headerlink" title="将数据库字符集转换为utf8"></a>将数据库字符集转换为utf8</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER DATABASE databasename CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tablename CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建一个utf8字符集的数据库"><a href="#创建一个utf8字符集的数据库" class="headerlink" title="创建一个utf8字符集的数据库"></a>创建一个utf8字符集的数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE mydatabase CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -286,29 +290,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Python数据结构"><a href="#Python数据结构" class="headerlink" title="Python数据结构"></a>Python数据结构</h2><h3 id="List-列表"><a href="#List-列表" class="headerlink" title="List 列表"></a>List 列表</h3><h5 id="list-append-x"><a href="#list-append-x" class="headerlink" title="list.append(x)"></a>list.append(x)</h5><pre><code class="python">list.append(num) # list[len(list):] = [num]</code></pre>
-<h5 id="list-insert-i-x"><a href="#list-insert-i-x" class="headerlink" title="list.insert(i, x)"></a>list.insert(i, x)</h5><pre><code class="python">list.insert(0, num) # 插入列表头部</code></pre>
-<h5 id="list-remove-x"><a href="#list-remove-x" class="headerlink" title="list.remove(x)"></a>list.remove(x)</h5><pre><code class="python">list.remove(num) # 删除第一个值为num的元素</code></pre>
-<h5 id="list-pop-i"><a href="#list-pop-i" class="headerlink" title="list.pop([i])"></a>list.pop([i])</h5><pre><code class="python">list.pop(i) # 删除指定位置的元素</code></pre>
-<h3 id="列表推导式"><a href="#列表推导式" class="headerlink" title="列表推导式"></a>列表推导式</h3><h4 id="列表推导式提供了一个更简单的创建列表的方法"><a href="#列表推导式提供了一个更简单的创建列表的方法" class="headerlink" title="列表推导式提供了一个更简单的创建列表的方法"></a>列表推导式提供了一个更简单的创建列表的方法</h4><pre><code class="python"># 创建一个平方列表
-&gt;&gt;&gt; list = [i * i for i in range(10)]
-&gt;&gt;&gt; list
-[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</code></pre>
-<h4 id="列表表达式的构成"><a href="#列表表达式的构成" class="headerlink" title="列表表达式的构成"></a>列表表达式的构成</h4><pre><code class="python"># 列表推导式的结构是由一对方括号所包含的以下内容：一个表达式，后面跟一个 for 子句，然后是零个或多个 for 或 if 子句。 其结果将是一个新列表，由对表达式依据后面的 for 和 if 子句的内容进行求值计算而得出。
-&gt;&gt;&gt; [(x, y) for x in [1, 2, 3] for y in [1, 2, 3] if x != y]
-[(1, 2), (1, 3), (2, 1), (2, 3), (3, 1), (3, 2)]
-&gt;&gt;&gt; [(x, y) for x in [1, 2, 3] for y in [1, 2, 3] if x == y]
-[(1, 1), (2, 2), (3, 3)]</code></pre>
-<h4 id="小例子"><a href="#小例子" class="headerlink" title="小例子"></a>小例子</h4><h5 id="将二维列表转成一维"><a href="#将二维列表转成一维" class="headerlink" title="将二维列表转成一维"></a>将二维列表转成一维</h5><pre><code class="python"># 二维数组转一维
-&gt;&gt;&gt; list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-&gt;&gt;&gt; [i for row in list for i in row]
-[1, 2, 3, 4, 5, 6, 7, 8, 9]</code></pre>
-<h3 id="del"><a href="#del" class="headerlink" title="del"></a>del</h3><h5 id="有一种方式可以从列表按照给定的索引而不是值来移除一个元素-那就是-del-语句。"><a href="#有一种方式可以从列表按照给定的索引而不是值来移除一个元素-那就是-del-语句。" class="headerlink" title="有一种方式可以从列表按照给定的索引而不是值来移除一个元素: 那就是 del 语句。"></a>有一种方式可以从列表按照给定的索引而不是值来移除一个元素: 那就是 <a href="https://docs.python.org/zh-cn/3/reference/simple_stmts.html#del" target="_blank" rel="noopener"><code>del</code></a> 语句。</h5><pre><code class="python"># 删除一个
-&gt;&gt;&gt; list = [1, 2, 3, 4, 5]
-&gt;&gt;&gt; del list[0]
-&gt;&gt;&gt; list
-[2, 3, 4, 5]
-# </code></pre>
+          <h2 id="Python数据结构"><a href="#Python数据结构" class="headerlink" title="Python数据结构"></a>Python数据结构</h2><h3 id="List-列表"><a href="#List-列表" class="headerlink" title="List 列表"></a>List 列表</h3><h5 id="list-append-x"><a href="#list-append-x" class="headerlink" title="list.append(x)"></a>list.append(x)</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.append(num) <span class="comment"># list[len(list):] = [num]</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="list-insert-i-x"><a href="#list-insert-i-x" class="headerlink" title="list.insert(i, x)"></a>list.insert(i, x)</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.insert(<span class="number">0</span>, num) <span class="comment"># 插入列表头部</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="list-remove-x"><a href="#list-remove-x" class="headerlink" title="list.remove(x)"></a>list.remove(x)</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.remove(num) <span class="comment"># 删除第一个值为num的元素</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="list-pop-i"><a href="#list-pop-i" class="headerlink" title="list.pop([i])"></a>list.pop([i])</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.pop(i) <span class="comment"># 删除指定位置的元素</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="列表推导式"><a href="#列表推导式" class="headerlink" title="列表推导式"></a>列表推导式</h3><h4 id="列表推导式提供了一个更简单的创建列表的方法"><a href="#列表推导式提供了一个更简单的创建列表的方法" class="headerlink" title="列表推导式提供了一个更简单的创建列表的方法"></a>列表推导式提供了一个更简单的创建列表的方法</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个平方列表</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list = [i * i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>]</span><br></pre></td></tr></table></figure>
+
+<h4 id="列表表达式的构成"><a href="#列表表达式的构成" class="headerlink" title="列表表达式的构成"></a>列表表达式的构成</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列表推导式的结构是由一对方括号所包含的以下内容：一个表达式，后面跟一个 for 子句，然后是零个或多个 for 或 if 子句。 其结果将是一个新列表，由对表达式依据后面的 for 和 if 子句的内容进行求值计算而得出。</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[(x, y) <span class="keyword">for</span> x <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] <span class="keyword">for</span> y <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] <span class="keyword">if</span> x != y]</span><br><span class="line">[(<span class="number">1</span>, <span class="number">2</span>), (<span class="number">1</span>, <span class="number">3</span>), (<span class="number">2</span>, <span class="number">1</span>), (<span class="number">2</span>, <span class="number">3</span>), (<span class="number">3</span>, <span class="number">1</span>), (<span class="number">3</span>, <span class="number">2</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[(x, y) <span class="keyword">for</span> x <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] <span class="keyword">for</span> y <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] <span class="keyword">if</span> x == y]</span><br><span class="line">[(<span class="number">1</span>, <span class="number">1</span>), (<span class="number">2</span>, <span class="number">2</span>), (<span class="number">3</span>, <span class="number">3</span>)]</span><br></pre></td></tr></table></figure>
+
+<h4 id="小例子"><a href="#小例子" class="headerlink" title="小例子"></a>小例子</h4><h5 id="将二维列表转成一维"><a href="#将二维列表转成一维" class="headerlink" title="将二维列表转成一维"></a>将二维列表转成一维</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 二维数组转一维</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list = [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[i <span class="keyword">for</span> row <span class="keyword">in</span> list <span class="keyword">for</span> i <span class="keyword">in</span> row]</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="del"><a href="#del" class="headerlink" title="del"></a>del</h3><h5 id="有一种方式可以从列表按照给定的索引而不是值来移除一个元素-那就是-del-语句。"><a href="#有一种方式可以从列表按照给定的索引而不是值来移除一个元素-那就是-del-语句。" class="headerlink" title="有一种方式可以从列表按照给定的索引而不是值来移除一个元素: 那就是 del 语句。"></a>有一种方式可以从列表按照给定的索引而不是值来移除一个元素: 那就是 <a href="https://docs.python.org/zh-cn/3/reference/simple_stmts.html#del" target="_blank" rel="noopener"><code>del</code></a> 语句。</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除一个</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">del</span> list[<span class="number">0</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list</span><br><span class="line">[<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="set集合"><a href="#set集合" class="headerlink" title="set集合"></a>set集合</h3><p>set对象是由具有唯一性的hashable对象组成的无序多项集合</p>
 <h5 id="hashable"><a href="#hashable" class="headerlink" title="hashable"></a>hashable</h5><p>一个对象在其生命周期中不可变，并且可以同其他对象比较则可哈希</p>
 <p>可哈希 —- 具有__hash__方法</p>
@@ -325,36 +322,12 @@
 <h5 id="pop"><a href="#pop" class="headerlink" title="pop()"></a>pop()</h5><p>移除最右边的一个元素</p>
 <h5 id="popleft"><a href="#popleft" class="headerlink" title="popleft()"></a>popleft()</h5><p>移除最左边的一个元素</p>
 <h5 id="reverse"><a href="#reverse" class="headerlink" title="reverse()"></a>reverse()</h5><p>将deque逆序</p>
-<h3 id="heapq简介"><a href="#heapq简介" class="headerlink" title="heapq简介"></a>heapq简介</h3><pre><code class="python">import heapq
-# heapq实现了优先队列算法
-# 是一个数组实现的二叉树 满足heap[k] &lt;= heap[2*k+1] 和 heap[k] &lt;= heap[2*k+2]
-# 默认是最小堆
-heap = []
-item = ()
-heapq.heappush(heap, item)
-# item加入堆 并保证堆的不变性
-heapq.heappop(heap)
-# 弹出并返回堆顶 保持堆的不变性 堆为空则抛出IndexError
-# 堆顶可以使用heapq[0]来访问</code></pre>
-<h5 id="排序字典"><a href="#排序字典" class="headerlink" title="排序字典"></a>排序字典</h5><pre><code class="python">from collections import OrderedDict
-# OrderedDict 会保持着插入时的顺序 内部是一个双向链表
+<h3 id="heapq简介"><a href="#heapq简介" class="headerlink" title="heapq简介"></a>heapq简介</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"><span class="comment"># heapq实现了优先队列算法</span></span><br><span class="line"><span class="comment"># 是一个数组实现的二叉树 满足heap[k] &lt;= heap[2*k+1] 和 heap[k] &lt;= heap[2*k+2]</span></span><br><span class="line"><span class="comment"># 默认是最小堆</span></span><br><span class="line">heap = []</span><br><span class="line">item = ()</span><br><span class="line">heapq.heappush(heap, item)</span><br><span class="line"><span class="comment"># item加入堆 并保证堆的不变性</span></span><br><span class="line">heapq.heappop(heap)</span><br><span class="line"><span class="comment"># 弹出并返回堆顶 保持堆的不变性 堆为空则抛出IndexError</span></span><br><span class="line"><span class="comment"># 堆顶可以使用heapq[0]来访问</span></span><br></pre></td></tr></table></figure>
 
-d = OrderedDict()
-d[&#39;sky&#39;] = 4
-d[&#39;jkr&#39;] = 3
-d[&#39;little zz&#39;] = -2
-for key in d:
-    print(key, d[key])</code></pre>
-<h3 id="字典运算"><a href="#字典运算" class="headerlink" title="字典运算"></a>字典运算</h3><h5 id="用zip函数将字典变成-value-key-的元组序列"><a href="#用zip函数将字典变成-value-key-的元组序列" class="headerlink" title="用zip函数将字典变成(value, key)的元组序列"></a>用zip函数将字典变成(value, key)的元组序列</h5><pre><code class="python">prices = {
-    &#39;ACME&#39;: 45.23,
-    &#39;AAPL&#39;: 612.78,
-    &#39;IBM&#39;: 205.55,
-    &#39;HPQ&#39;: 37.20,
-    &#39;FB&#39;: 10.75
-}
-print(min(zip(prices.values(), prices.keys())))
-print(max(zip(prices.values(), prices.keys())))
-print(sorted(zip(prices.values(), prices.keys())))</code></pre>
+<h5 id="排序字典"><a href="#排序字典" class="headerlink" title="排序字典"></a>排序字典</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> OrderedDict</span><br><span class="line"><span class="comment"># OrderedDict 会保持着插入时的顺序 内部是一个双向链表</span></span><br><span class="line"></span><br><span class="line">d = OrderedDict()</span><br><span class="line">d[<span class="string">'sky'</span>] = <span class="number">4</span></span><br><span class="line">d[<span class="string">'jkr'</span>] = <span class="number">3</span></span><br><span class="line">d[<span class="string">'little zz'</span>] = <span class="number">-2</span></span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> d:</span><br><span class="line">    print(key, d[key])</span><br></pre></td></tr></table></figure>
+
+<h3 id="字典运算"><a href="#字典运算" class="headerlink" title="字典运算"></a>字典运算</h3><h5 id="用zip函数将字典变成-value-key-的元组序列"><a href="#用zip函数将字典变成-value-key-的元组序列" class="headerlink" title="用zip函数将字典变成(value, key)的元组序列"></a>用zip函数将字典变成(value, key)的元组序列</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">prices = &#123;</span><br><span class="line">    <span class="string">'ACME'</span>: <span class="number">45.23</span>,</span><br><span class="line">    <span class="string">'AAPL'</span>: <span class="number">612.78</span>,</span><br><span class="line">    <span class="string">'IBM'</span>: <span class="number">205.55</span>,</span><br><span class="line">    <span class="string">'HPQ'</span>: <span class="number">37.20</span>,</span><br><span class="line">    <span class="string">'FB'</span>: <span class="number">10.75</span></span><br><span class="line">&#125;</span><br><span class="line">print(min(zip(prices.values(), prices.keys())))</span><br><span class="line">print(max(zip(prices.values(), prices.keys())))</span><br><span class="line">print(sorted(zip(prices.values(), prices.keys())))</span><br></pre></td></tr></table></figure>
+
 <p>参考自：<a href="https://docs.python.org/zh-cn/3/library/index.html" target="_blank" rel="noopener">https://docs.python.org/zh-cn/3/library/index.html</a></p>
 
       
@@ -436,24 +409,17 @@ print(sorted(zip(prices.values(), prices.keys())))</code></pre>
           <h1 id="Java数组"><a href="#Java数组" class="headerlink" title="Java数组"></a>Java数组</h1><ul>
 <li><h2 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h2></li>
 </ul>
-<h3 id="生成一个三维数组"><a href="#生成一个三维数组" class="headerlink" title="生成一个三维数组"></a>生成一个三维数组</h3><pre><code class="java">public class RaggedArray {
-    public static void main(String[] args) {
-        Random rand = new Random(47);
-        int[][][] a = new int[rand.nextInt(5)][][];
-        for (int i = 0; i &lt; a.length; i++) {
-            a[i] = new int[rand.nextInt(5)][];
-            for (int j = 0; j &lt; a[i].length; j++) {
-                a[i][j] = new int[rand.nextInt(5)];
-            }
-        }
-        System.out.println(Arrays.deepToString(a));
-    }
-}</code></pre>
+<h3 id="生成一个三维数组"><a href="#生成一个三维数组" class="headerlink" title="生成一个三维数组"></a>生成一个三维数组</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RaggedArray</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Random rand = <span class="keyword">new</span> Random(<span class="number">47</span>);</span><br><span class="line">        <span class="keyword">int</span>[][][] a = <span class="keyword">new</span> <span class="keyword">int</span>[rand.nextInt(<span class="number">5</span>)][][];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.length; i++) &#123;</span><br><span class="line">            a[i] = <span class="keyword">new</span> <span class="keyword">int</span>[rand.nextInt(<span class="number">5</span>)][];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; a[i].length; j++) &#123;</span><br><span class="line">                a[i][j] = <span class="keyword">new</span> <span class="keyword">int</span>[rand.nextInt(<span class="number">5</span>)];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(Arrays.deepToString(a));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 <ul>
 <li><h2 id="复制数组"><a href="#复制数组" class="headerlink" title="复制数组"></a>复制数组</h2></li>
 </ul>
-<h3 id="System-arraycopy"><a href="#System-arraycopy" class="headerlink" title="System.arraycopy()"></a>System.arraycopy()</h3><pre><code class="java">System.arraycopy(src, srcPos, dest, destPos, length);
-// src 原数组 srcPos 从原数组的哪里开始拷贝 dest目标数组 destPost 同srcPost length 复制数组长度</code></pre>
+<h3 id="System-arraycopy"><a href="#System-arraycopy" class="headerlink" title="System.arraycopy()"></a>System.arraycopy()</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.arraycopy(src, srcPos, dest, destPos, length);</span><br><span class="line"><span class="comment">// src 原数组 srcPos 从原数组的哪里开始拷贝 dest目标数组 destPost 同srcPost length 复制数组长度</span></span><br></pre></td></tr></table></figure>
+
+
+
 
       
     </div>
@@ -528,38 +494,16 @@ print(sorted(zip(prices.values(), prices.keys())))</code></pre>
 
       
           <h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><h3 id="format格式化输出"><a href="#format格式化输出" class="headerlink" title="format格式化输出"></a>format格式化输出</h3><ul>
-<li><h4 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h4><pre><code class="python">&gt;&gt;&gt;&#39;{:d}&#39;.format(42)
-# 42
-&gt;&gt;&gt;&#39;{:f}&#39;.format(3.1415926)
-# &#39;3.141593
-
-&gt;&gt;&gt;&#39;{:4d}&#39;.format(42)
-# &#39;  42&#39;
-&gt;&gt;&gt;&#39;{:06.2f}&#39;.format(3.1415926)
-# &#39;003.14&#39;</code></pre>
+<li><h4 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="string">'&#123;:d&#125;'</span>.format(<span class="number">42</span>)</span><br><span class="line"><span class="comment"># 42</span></span><br><span class="line">&gt;&gt;&gt;<span class="string">'&#123;:f&#125;'</span>.format(<span class="number">3.1415926</span>)</span><br><span class="line"><span class="comment"># '3.141593</span></span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;<span class="string">'&#123;:4d&#125;'</span>.format(<span class="number">42</span>)</span><br><span class="line"><span class="comment"># '  42'</span></span><br><span class="line">&gt;&gt;&gt;<span class="string">'&#123;:06.2f&#125;'</span>.format(<span class="number">3.1415926</span>)</span><br><span class="line"><span class="comment"># '003.14'</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><h4 id="带加减号的数字"><a href="#带加减号的数字" class="headerlink" title="带加减号的数字"></a>带加减号的数字</h4><pre><code class="python">&gt;&gt;&gt;&#39;{: d}&#39;.format(-23)
-# &#39;-23&#39;</code></pre>
+<li><h4 id="带加减号的数字"><a href="#带加减号的数字" class="headerlink" title="带加减号的数字"></a>带加减号的数字</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="string">'&#123;: d&#125;'</span>.format(<span class="number">-23</span>)</span><br><span class="line"><span class="comment"># '-23'</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><h4 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h4><pre><code class="python">&gt;&gt;&gt;&#39;{first} {last}&#39;.format(first=&#39;last&#39;, last=&#39;first&#39;)
-# &#39;last first&#39;
-
-&gt;&gt;&gt;data = {&#39;first&#39;: &#39;Hodor&#39;, &#39;last&#39;: &#39;Hodor!&#39; }
-&gt;&gt;&gt; &#39;{first} {last}&#39;.format(**data)
-# &#39;Hodor Hodor!&#39;
-
-&gt;&gt;&gt; data = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-&gt;&gt;&gt; &#39;{d[4]} {d[1]} {d[0]}&#39;.format(d=data)
-&#39;5 2 1&#39;</code></pre>
+<li><h4 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="string">'&#123;first&#125; &#123;last&#125;'</span>.format(first=<span class="string">'last'</span>, last=<span class="string">'first'</span>)</span><br><span class="line"><span class="comment"># 'last first'</span></span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;data = &#123;<span class="string">'first'</span>: <span class="string">'Hodor'</span>, <span class="string">'last'</span>: <span class="string">'Hodor!'</span> &#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;first&#125; &#123;last&#125;'</span>.format(**data)</span><br><span class="line"><span class="comment"># 'Hodor Hodor!'</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>data = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;d[4]&#125; &#123;d[1]&#125; &#123;d[0]&#125;'</span>.format(d=data)</span><br><span class="line"><span class="string">'5 2 1'</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><h4 id="类与对象"><a href="#类与对象" class="headerlink" title="类与对象"></a>类与对象</h4><pre><code class="python">class Data(object):
-    def __str__(self):
-        return &quot;str&quot;
+<li><h4 id="类与对象"><a href="#类与对象" class="headerlink" title="类与对象"></a>类与对象</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Data</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"str"</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'repr'</span></span><br><span class="line">print(<span class="string">'&#123;0!s&#125; &#123;0!r&#125;'</span>.format(Data()))</span><br><span class="line"><span class="comment"># str repr</span></span><br></pre></td></tr></table></figure>
 
-    def __repr__(self):
-        return &#39;repr&#39;
-print(&#39;{0!s} {0!r}&#39;.format(Data()))
-# str repr</code></pre>
+
+
 </li>
 </ul>
 
@@ -676,40 +620,28 @@ print(&#39;{0!s} {0!r}&#39;.format(Data()))
 </tr>
 </tbody></table>
 <h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><h3 id="final"><a href="#final" class="headerlink" title="final"></a>final</h3><p>####常量final关键字修饰</p>
-<pre><code class="java">final int PAI = 3.14;</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="keyword">int</span> PAI = <span class="number">3.14</span>;</span><br></pre></td></tr></table></figure>
+
 <p>####final 修饰一个类的实例域 则其在构造器中必须被初始化 后面的操作中不会再被修改 final修饰符最好修饰不可变类（String）或基本类型</p>
-<h4 id="1-对于基本数据"><a href="#1-对于基本数据" class="headerlink" title="1.对于基本数据"></a>1.对于基本数据</h4><h4 id="声明为final使得数值不可变"><a href="#声明为final使得数值不可变" class="headerlink" title="声明为final使得数值不可变"></a>声明为final使得数值不可变</h4><h4 id="2-对于引用数据-使得引用的对象不可变"><a href="#2-对于引用数据-使得引用的对象不可变" class="headerlink" title="2.对于引用数据 使得引用的对象不可变"></a>2.对于引用数据 使得引用的对象不可变</h4><h4 id="3-对于方法-不能被子类重写-private方法被隐式指定为final"><a href="#3-对于方法-不能被子类重写-private方法被隐式指定为final" class="headerlink" title="3.对于方法 不能被子类重写 private方法被隐式指定为final"></a>3.对于方法 不能被子类重写 private方法被隐式指定为final</h4><h4 id="4-声明类不可以被继承"><a href="#4-声明类不可以被继承" class="headerlink" title="4.声明类不可以被继承"></a>4.声明类不可以被继承</h4><h3 id="static"><a href="#static" class="headerlink" title="static"></a>static</h3><h4 id="1-实例变量于静态变量"><a href="#1-实例变量于静态变量" class="headerlink" title="1.实例变量于静态变量"></a>1.实例变量于静态变量</h4><h4 id="实例变量：每创建一个实例就会产生一个实例变量，它与该实例同生共死。"><a href="#实例变量：每创建一个实例就会产生一个实例变量，它与该实例同生共死。" class="headerlink" title="实例变量：每创建一个实例就会产生一个实例变量，它与该实例同生共死。"></a>实例变量：每创建一个实例就会产生一个实例变量，它与该实例同生共死。</h4><h4 id="静态常量：类所有的实例都共享静态变量，可以直接通过类名来访问它。静态变量在内存中只存在一份"><a href="#静态常量：类所有的实例都共享静态变量，可以直接通过类名来访问它。静态变量在内存中只存在一份" class="headerlink" title="静态常量：类所有的实例都共享静态变量，可以直接通过类名来访问它。静态变量在内存中只存在一份"></a>静态常量：类所有的实例都共享静态变量，可以直接通过类名来访问它。静态变量在内存中只存在一份</h4><pre><code class="java">public static final double PI = 3.14</code></pre>
-<h4 id="2-静态方法"><a href="#2-静态方法" class="headerlink" title="2.静态方法"></a>2.静态方法</h4><h4 id="所有的静态方法必须有实现。静态方法不依赖于任何实例。"><a href="#所有的静态方法必须有实现。静态方法不依赖于任何实例。" class="headerlink" title="所有的静态方法必须有实现。静态方法不依赖于任何实例。"></a>所有的静态方法必须有实现。静态方法不依赖于任何实例。</h4><h4 id="只能访问所属类的静态字段和静态方法，方法中不能有-this-和-super-关键字。"><a href="#只能访问所属类的静态字段和静态方法，方法中不能有-this-和-super-关键字。" class="headerlink" title="只能访问所属类的静态字段和静态方法，方法中不能有 this 和 super 关键字。"></a>只能访问所属类的静态字段和静态方法，方法中不能有 this 和 super 关键字。</h4><pre><code class="java">public class A {
+<h4 id="1-对于基本数据"><a href="#1-对于基本数据" class="headerlink" title="1.对于基本数据"></a>1.对于基本数据</h4><h4 id="声明为final使得数值不可变"><a href="#声明为final使得数值不可变" class="headerlink" title="声明为final使得数值不可变"></a>声明为final使得数值不可变</h4><h4 id="2-对于引用数据-使得引用的对象不可变"><a href="#2-对于引用数据-使得引用的对象不可变" class="headerlink" title="2.对于引用数据 使得引用的对象不可变"></a>2.对于引用数据 使得引用的对象不可变</h4><h4 id="3-对于方法-不能被子类重写-private方法被隐式指定为final"><a href="#3-对于方法-不能被子类重写-private方法被隐式指定为final" class="headerlink" title="3.对于方法 不能被子类重写 private方法被隐式指定为final"></a>3.对于方法 不能被子类重写 private方法被隐式指定为final</h4><h4 id="4-声明类不可以被继承"><a href="#4-声明类不可以被继承" class="headerlink" title="4.声明类不可以被继承"></a>4.声明类不可以被继承</h4><h3 id="static"><a href="#static" class="headerlink" title="static"></a>static</h3><h4 id="1-实例变量于静态变量"><a href="#1-实例变量于静态变量" class="headerlink" title="1.实例变量于静态变量"></a>1.实例变量于静态变量</h4><h4 id="实例变量：每创建一个实例就会产生一个实例变量，它与该实例同生共死。"><a href="#实例变量：每创建一个实例就会产生一个实例变量，它与该实例同生共死。" class="headerlink" title="实例变量：每创建一个实例就会产生一个实例变量，它与该实例同生共死。"></a>实例变量：每创建一个实例就会产生一个实例变量，它与该实例同生共死。</h4><h4 id="静态常量：类所有的实例都共享静态变量，可以直接通过类名来访问它。静态变量在内存中只存在一份"><a href="#静态常量：类所有的实例都共享静态变量，可以直接通过类名来访问它。静态变量在内存中只存在一份" class="headerlink" title="静态常量：类所有的实例都共享静态变量，可以直接通过类名来访问它。静态变量在内存中只存在一份"></a>静态常量：类所有的实例都共享静态变量，可以直接通过类名来访问它。静态变量在内存中只存在一份</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> PI = <span class="number">3.14</span></span><br></pre></td></tr></table></figure>
 
-    private static int x;
-    private int y;
+<h4 id="2-静态方法"><a href="#2-静态方法" class="headerlink" title="2.静态方法"></a>2.静态方法</h4><h4 id="所有的静态方法必须有实现。静态方法不依赖于任何实例。"><a href="#所有的静态方法必须有实现。静态方法不依赖于任何实例。" class="headerlink" title="所有的静态方法必须有实现。静态方法不依赖于任何实例。"></a>所有的静态方法必须有实现。静态方法不依赖于任何实例。</h4><h4 id="只能访问所属类的静态字段和静态方法，方法中不能有-this-和-super-关键字。"><a href="#只能访问所属类的静态字段和静态方法，方法中不能有-this-和-super-关键字。" class="headerlink" title="只能访问所属类的静态字段和静态方法，方法中不能有 this 和 super 关键字。"></a>只能访问所属类的静态字段和静态方法，方法中不能有 this 和 super 关键字。</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> y;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">func1</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = x;</span><br><span class="line">        <span class="comment">// int b = y;  // Non-static field 'y' cannot be referenced from a static context</span></span><br><span class="line">        <span class="comment">// int b = this.y;     // 'A.this' cannot be referenced from a static context</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    public static void func1(){
-        int a = x;
-        // int b = y;  // Non-static field &#39;y&#39; cannot be referenced from a static context
-        // int b = this.y;     // &#39;A.this&#39; cannot be referenced from a static context
-    }
-}</code></pre>
 <h4 id="3-静态语句块：在类初始化时运行一下"><a href="#3-静态语句块：在类初始化时运行一下" class="headerlink" title="3.静态语句块：在类初始化时运行一下"></a>3.静态语句块：在类初始化时运行一下</h4><h3 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h3><h4 id="this关键字用于引用类的当前实例"><a href="#this关键字用于引用类的当前实例" class="headerlink" title="this关键字用于引用类的当前实例"></a>this关键字用于引用类的当前实例</h4><ul>
 <li><h4 id="this-employees-length：访问类Manager的当前实例的变量。"><a href="#this-employees-length：访问类Manager的当前实例的变量。" class="headerlink" title="this.employees.length：访问类Manager的当前实例的变量。"></a>this.employees.length：访问类Manager的当前实例的变量。</h4></li>
 <li><h4 id="this-report（）：调用类Manager的当前实例的方法。"><a href="#this-report（）：调用类Manager的当前实例的方法。" class="headerlink" title="this.report（）：调用类Manager的当前实例的方法。"></a>this.report（）：调用类Manager的当前实例的方法。</h4></li>
 </ul>
-<pre><code class="java">class Manager {
-    Employees[] employees;
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Manager</span> </span>&#123;</span><br><span class="line">    Employees[] employees;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">manageEmployees</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> totalEmp = <span class="keyword">this</span>.employees.length;</span><br><span class="line">        System.out.println(<span class="string">"Total employees: "</span> + totalEmp);</span><br><span class="line">        <span class="keyword">this</span>.report();</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">report</span><span class="params">()</span> </span>&#123; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    void manageEmployees() {
-        int totalEmp = this.employees.length;
-        System.out.println(&quot;Total employees: &quot; + totalEmp);
-        this.report();
-    }
+<h2 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h2><h4 id="java中都是值传递"><a href="#java中都是值传递" class="headerlink" title="java中都是值传递"></a>java中都是值传递</h4><h2 id="Object-通用方法"><a href="#Object-通用方法" class="headerlink" title="Object 通用方法"></a>Object 通用方法</h2><h4 id="equals"><a href="#equals" class="headerlink" title="equals()"></a>equals()</h4><h4 id="1-基本性质"><a href="#1-基本性质" class="headerlink" title="1.基本性质"></a>1.基本性质</h4><h4 id="自反性"><a href="#自反性" class="headerlink" title="自反性"></a>自反性</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x.equals(x); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
-    void report() { }
-}</code></pre>
-<h2 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h2><h4 id="java中都是值传递"><a href="#java中都是值传递" class="headerlink" title="java中都是值传递"></a>java中都是值传递</h4><h2 id="Object-通用方法"><a href="#Object-通用方法" class="headerlink" title="Object 通用方法"></a>Object 通用方法</h2><h4 id="equals"><a href="#equals" class="headerlink" title="equals()"></a>equals()</h4><h4 id="1-基本性质"><a href="#1-基本性质" class="headerlink" title="1.基本性质"></a>1.基本性质</h4><h4 id="自反性"><a href="#自反性" class="headerlink" title="自反性"></a>自反性</h4><pre><code class="java">x.equals(x); // true</code></pre>
-<h4 id="对称性"><a href="#对称性" class="headerlink" title="对称性"></a>对称性</h4><pre><code class="java">x.equals(y) == y.equals(x); // true</code></pre>
-<h4 id="传递性"><a href="#传递性" class="headerlink" title="传递性"></a>传递性</h4><pre><code class="java">if(x.equals(y) &amp;&amp; y.equals(z))
-  x.equals(z); // true</code></pre>
-<h4 id="一致性"><a href="#一致性" class="headerlink" title="一致性"></a>一致性</h4><pre><code>多次调用equals()方法结果不变</code></pre><h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><ul>
+<h4 id="对称性"><a href="#对称性" class="headerlink" title="对称性"></a>对称性</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x.equals(y) == y.equals(x); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="传递性"><a href="#传递性" class="headerlink" title="传递性"></a>传递性</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(x.equals(y) &amp;&amp; y.equals(z))</span><br><span class="line">  x.equals(z); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="一致性"><a href="#一致性" class="headerlink" title="一致性"></a>一致性</h4><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">多次调用<span class="keyword">equals</span>()方法结果不变</span><br></pre></td></tr></table></figure>
+
+<h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><ul>
 <li><h4 id="一个类中包含抽象方法-就是抽象类"><a href="#一个类中包含抽象方法-就是抽象类" class="headerlink" title="一个类中包含抽象方法 就是抽象类"></a>一个类中包含抽象方法 就是抽象类</h4></li>
 <li><h4 id="抽象类不能被实例化"><a href="#抽象类不能被实例化" class="headerlink" title="抽象类不能被实例化"></a>抽象类不能被实例化</h4></li>
 </ul>
@@ -881,18 +813,10 @@ print(&#39;{0!s} {0!r}&#39;.format(Data()))
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="实现栈"><a href="#实现栈" class="headerlink" title="实现栈"></a>实现栈</h2><pre><code class="java">LinkedList&lt;Integer&gt; stack = new LinkedList&lt;&gt;();
-stack.add(1);
-stack.add(2);
-stack.add(3);
-System.out.println(stack.peekLast()); // 3
-System.out.println(stack.pollLast()); // 3</code></pre>
-<h2 id="实现队列"><a href="#实现队列" class="headerlink" title="实现队列"></a>实现队列</h2><pre><code class="java">Queue&lt;Integer&gt; queue = new LinkedList&lt;&gt;();
-queue.add(1);
-queue.add(2);
-queue.add(3);
-System.out.println(queue.peek()); // 1
-System.out.println(queue.poll()); // 1</code></pre>
+          <h2 id="实现栈"><a href="#实现栈" class="headerlink" title="实现栈"></a>实现栈</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">LinkedList&lt;Integer&gt; stack = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">stack.add(<span class="number">1</span>);</span><br><span class="line">stack.add(<span class="number">2</span>);</span><br><span class="line">stack.add(<span class="number">3</span>);</span><br><span class="line">System.out.println(stack.peekLast()); <span class="comment">// 3</span></span><br><span class="line">System.out.println(stack.pollLast()); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="实现队列"><a href="#实现队列" class="headerlink" title="实现队列"></a>实现队列</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Queue&lt;Integer&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">queue.add(<span class="number">1</span>);</span><br><span class="line">queue.add(<span class="number">2</span>);</span><br><span class="line">queue.add(<span class="number">3</span>);</span><br><span class="line">System.out.println(queue.peek()); <span class="comment">// 1</span></span><br><span class="line">System.out.println(queue.poll()); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -973,56 +897,39 @@ System.out.println(queue.poll()); // 1</code></pre>
           <h2 id="NewCoder面试题笔记"><a href="#NewCoder面试题笔记" class="headerlink" title="NewCoder面试题笔记"></a>NewCoder面试题笔记</h2><ul>
 <li><h4 id="Math-round-11-5-等于多少-Math-round-11-5-等于多少"><a href="#Math-round-11-5-等于多少-Math-round-11-5-等于多少" class="headerlink" title="Math.round(11.5) 等于多少 (). Math.round(-11.5) 等于多少 ( )"></a>Math.round(11.5) 等于多少 (). Math.round(-11.5) 等于多少 ( )</h4></li>
 </ul>
-<pre><code class="java">// 12 -11
-//Math.round(a)
-// a + 0.5 取下边界</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 12 -11</span></span><br><span class="line"><span class="comment">//Math.round(a)</span></span><br><span class="line"><span class="comment">// a + 0.5 取下边界</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><h4 id="public-Method-getDeclaredMethods-返回类或接口声明的所有方法，包括public-protected-default-package-访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。"><a href="#public-Method-getDeclaredMethods-返回类或接口声明的所有方法，包括public-protected-default-package-访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。" class="headerlink" title="public Method[] getDeclaredMethods()返回类或接口声明的所有方法，包括public, protected, default (package) 访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。"></a><strong>public Method[] getDeclaredMethods()</strong>返回类或接口声明的所有方法，包括public, protected, default (package) 访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。</h4></li>
 <li><h4 id="关于byte和final"><a href="#关于byte和final" class="headerlink" title="关于byte和final"></a>关于byte和final</h4></li>
 </ul>
-<pre><code class="java">byte b1=1,b2=2,b3,b6,b8;
-final byte b4=4,b5=6,b7;
-b3=(b1+b2);  /*语句1*/
-b6=b4+b5;    /*语句2*/
-b8=(b1+b4);  /*语句3*/
-b7=(b2+b5);  /*语句4*/
-System.out.println(b3+b6);
-// 当使用 +、-、*、/、%、运算操作时 操作数为：byte、short、int 、char 两个数会被转化为int类型 结果也是int类型 被声明为final的变量不会被转化</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span> b1=<span class="number">1</span>,b2=<span class="number">2</span>,b3,b6,b8;</span><br><span class="line"><span class="keyword">final</span> <span class="keyword">byte</span> b4=<span class="number">4</span>,b5=<span class="number">6</span>,b7;</span><br><span class="line">b3=(b1+b2);  <span class="comment">/*语句1*/</span></span><br><span class="line">b6=b4+b5;    <span class="comment">/*语句2*/</span></span><br><span class="line">b8=(b1+b4);  <span class="comment">/*语句3*/</span></span><br><span class="line">b7=(b2+b5);  <span class="comment">/*语句4*/</span></span><br><span class="line">System.out.println(b3+b6);</span><br><span class="line"><span class="comment">// 当使用 +、-、*、/、%、运算操作时 操作数为：byte、short、int 、char 两个数会被转化为int类型 结果也是int类型 被声明为final的变量不会被转化</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><h4 id="java编译和运行命令"><a href="#java编译和运行命令" class="headerlink" title="java编译和运行命令"></a>java编译和运行命令</h4></li>
 </ul>
-<pre><code class="java">//编译命令
-$ javac YourClassName.java
-//运行命令
-$ java YourClassName
-//运行的是YourClassName.class文件</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//编译命令</span></span><br><span class="line">$ javac YourClassName.java</span><br><span class="line"><span class="comment">//运行命令</span></span><br><span class="line">$ java YourClassName</span><br><span class="line"><span class="comment">//运行的是YourClassName.class文件</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><h4 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h4></li>
 </ul>
-<pre><code class="java">// switch 语句支持的类型
-String byte short int char Enum </code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// switch 语句支持的类型</span></span><br><span class="line">String <span class="keyword">byte</span> <span class="keyword">short</span> <span class="keyword">int</span> <span class="keyword">char</span> Enum</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><h4 id="求递归方程T-n-4T-n-2-n-的解"><a href="#求递归方程T-n-4T-n-2-n-的解" class="headerlink" title="求递归方程T(n)=4T(n/2)+n 的解"></a>求递归方程T(n)=4T(n/2)+n 的解</h4></li>
 </ul>
-<pre><code>目前不会。。。</code></pre><ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">目前不会。。。</span><br></pre></td></tr></table></figure>
+
+<ul>
 <li><h4 id="在Linux系统中，某文件权限的分数是754"><a href="#在Linux系统中，某文件权限的分数是754" class="headerlink" title="在Linux系统中，某文件权限的分数是754"></a>在Linux系统中，某文件权限的分数是754</h4></li>
 </ul>
-<pre><code>文件所有者、同组用户、其他用户
-权限    权限数值       具体作用
-r         4            read
-w         2            write。
-x         1            execute</code></pre><ul>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">文件所有者、同组用户、其他用户</span><br><span class="line">权限    权限数值       具体作用</span><br><span class="line">r         <span class="number">4</span>            read</span><br><span class="line">w         <span class="number">2</span>            write。</span><br><span class="line">x         <span class="number">1</span>            execute</span><br></pre></td></tr></table></figure>
+
+<ul>
 <li><h4 id="下列代码运行结果为"><a href="#下列代码运行结果为" class="headerlink" title="下列代码运行结果为"></a>下列代码运行结果为</h4></li>
 </ul>
-<pre><code class="java">public void doSomething( int[][] mat)
-{
-    for( int row = 0; row &lt; mat.length; row++)
-        for(int col = 0; col &lt; mat[0].length; col++)
-            mat[row][col] = mat[row][mat[0].length - 1 - col];
-}
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doSomething</span><span class="params">( <span class="keyword">int</span>[][] mat)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>( <span class="keyword">int</span> row = <span class="number">0</span>; row &lt; mat.length; row++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> col = <span class="number">0</span>; col &lt; mat[<span class="number">0</span>].length; col++)</span><br><span class="line">            mat[row][col] = mat[row][mat[<span class="number">0</span>].length - <span class="number">1</span> - col];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1  3  5  7  9  11</span></span><br><span class="line"><span class="comment">// 0  2  4  6  8  10</span></span><br></pre></td></tr></table></figure>
 
-// 1  3  5  7  9  11
-// 0  2  4  6  8  10</code></pre>
 
       
     </div>
@@ -1100,18 +1007,16 @@ x         1            execute</code></pre><ul>
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="java集合"><a href="#java集合" class="headerlink" title="java集合"></a>java集合</h1><h2 id="Iterator"><a href="#Iterator" class="headerlink" title="Iterator"></a>Iterator</h2><h4 id="1-Iterator-方法返回一个Iterator"><a href="#1-Iterator-方法返回一个Iterator" class="headerlink" title="1.Iterator()方法返回一个Iterator"></a>1.Iterator()方法返回一个Iterator</h4><pre><code class="java">Iterator&lt;Integer&gt; listIter = list.iterator();</code></pre>
-<h4 id="2-next-方法获得序列的下一个元素"><a href="#2-next-方法获得序列的下一个元素" class="headerlink" title="2.next()方法获得序列的下一个元素"></a>2.next()方法获得序列的下一个元素</h4><pre><code class="java">System.out.println(listIter.next());
-//打印第一个元素</code></pre>
-<h4 id="3-hasNext-方法检查序列中是否还有元素"><a href="#3-hasNext-方法检查序列中是否还有元素" class="headerlink" title="3.hasNext()方法检查序列中是否还有元素"></a>3.hasNext()方法检查序列中是否还有元素</h4><pre><code class="java">while(listIter.hasNext()){
-            System.out.println(listIter.next());
-}</code></pre>
-<h4 id="4-remove-将迭代器新近返回的元素删除"><a href="#4-remove-将迭代器新近返回的元素删除" class="headerlink" title="4.remove()将迭代器新近返回的元素删除"></a>4.remove()将迭代器新近返回的元素删除</h4><pre><code class="java">listIter.next();
-listIter.remove();</code></pre>
-<h2 id="ListIterator"><a href="#ListIterator" class="headerlink" title="ListIterator"></a>ListIterator</h2><h4 id="1-ListIterator继承了Iterator"><a href="#1-ListIterator继承了Iterator" class="headerlink" title="1.ListIterator继承了Iterator"></a>1.ListIterator继承了Iterator</h4><h4 id="可以获得当前位置前一个元素和后一个元素的索引"><a href="#可以获得当前位置前一个元素和后一个元素的索引" class="headerlink" title="可以获得当前位置前一个元素和后一个元素的索引"></a>可以获得当前位置前一个元素和后一个元素的索引</h4><pre><code class="java">ListIterator&lt;Integer&gt; it = list.listIterator();
-while(it.hasNext()){
-      System.out.println(it.next() + &quot; &quot; + it.previousIndex() + &quot; &quot; + it.nextIndex());
-}</code></pre>
+          <h1 id="java集合"><a href="#java集合" class="headerlink" title="java集合"></a>java集合</h1><h2 id="Iterator"><a href="#Iterator" class="headerlink" title="Iterator"></a>Iterator</h2><h4 id="1-Iterator-方法返回一个Iterator"><a href="#1-Iterator-方法返回一个Iterator" class="headerlink" title="1.Iterator()方法返回一个Iterator"></a>1.Iterator()方法返回一个Iterator</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Iterator&lt;Integer&gt; listIter = list.iterator();</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-next-方法获得序列的下一个元素"><a href="#2-next-方法获得序列的下一个元素" class="headerlink" title="2.next()方法获得序列的下一个元素"></a>2.next()方法获得序列的下一个元素</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(listIter.next());</span><br><span class="line"><span class="comment">//打印第一个元素</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-hasNext-方法检查序列中是否还有元素"><a href="#3-hasNext-方法检查序列中是否还有元素" class="headerlink" title="3.hasNext()方法检查序列中是否还有元素"></a>3.hasNext()方法检查序列中是否还有元素</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(listIter.hasNext())&#123;</span><br><span class="line">            System.out.println(listIter.next());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-remove-将迭代器新近返回的元素删除"><a href="#4-remove-将迭代器新近返回的元素删除" class="headerlink" title="4.remove()将迭代器新近返回的元素删除"></a>4.remove()将迭代器新近返回的元素删除</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">listIter.next();</span><br><span class="line">listIter.remove();</span><br></pre></td></tr></table></figure>
+
+<h2 id="ListIterator"><a href="#ListIterator" class="headerlink" title="ListIterator"></a>ListIterator</h2><h4 id="1-ListIterator继承了Iterator"><a href="#1-ListIterator继承了Iterator" class="headerlink" title="1.ListIterator继承了Iterator"></a>1.ListIterator继承了Iterator</h4><h4 id="可以获得当前位置前一个元素和后一个元素的索引"><a href="#可以获得当前位置前一个元素和后一个元素的索引" class="headerlink" title="可以获得当前位置前一个元素和后一个元素的索引"></a>可以获得当前位置前一个元素和后一个元素的索引</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ListIterator&lt;Integer&gt; it = list.listIterator();</span><br><span class="line"><span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">      System.out.println(it.next() + <span class="string">" "</span> + it.previousIndex() + <span class="string">" "</span> + it.nextIndex());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="Collection是一个独立的元素序列"><a href="#Collection是一个独立的元素序列" class="headerlink" title="Collection是一个独立的元素序列"></a>Collection是一个独立的元素序列</h3><ul>
 <li><h4 id="int-size-返回长度"><a href="#int-size-返回长度" class="headerlink" title="int size() 返回长度"></a>int <strong>size()</strong> 返回长度</h4></li>
 <li><h4 id="boolean-isEmpty-返回true如果集合为空"><a href="#boolean-isEmpty-返回true如果集合为空" class="headerlink" title="boolean isEmpty() 返回true如果集合为空"></a>boolean <strong>isEmpty</strong>() 返回true如果集合为空</h4></li>
@@ -1133,19 +1038,10 @@ while(it.hasNext()){
 <li><h4 id="Collection-values-returns-a-Collection-view-of-the-values-contained-in-this-map"><a href="#Collection-values-returns-a-Collection-view-of-the-values-contained-in-this-map" class="headerlink" title="Collection values() returns a Collection view of the values contained in this map"></a>Collection<V> <strong>values</strong>() returns a Collection view of the values contained in this map</h4></li>
 <li><h4 id="Set-lt-Map-Entry-lt-K-V-gt-gt-entrySet-returns-a-Set-view-of-the-mappings-contained-in-this-map"><a href="#Set-lt-Map-Entry-lt-K-V-gt-gt-entrySet-returns-a-Set-view-of-the-mappings-contained-in-this-map" class="headerlink" title="Set&lt;Map.Entry&lt;K, V&gt;&gt; entrySet() returns a Set view of the mappings contained in this map"></a>Set&lt;Map.Entry&lt;K, V&gt;&gt; <strong>entrySet</strong>() returns a Set view of the mappings contained in this map</h4></li>
 </ul>
-<h4 id="迭代遍历map"><a href="#迭代遍历map" class="headerlink" title="迭代遍历map"></a>迭代遍历map</h4><pre><code class="java">//检测随机数的分布情况
-public class TestRandom {
-    public static void main(String[] args) {
-        Random rand = new Random(47);
-        Map&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;();
-        for (int i = 0; i &lt; 1000; i++){
-            int r = rand.nextInt(20);
-            Integer freq = map.get(r);
-            map.put(r, (freq == null) ? 1 : freq + 1);
-        }
-        map.forEach((k,v) -&gt; System.out.println(&quot;key: &quot;+k+&quot; value:&quot;+v));
-    }
-}</code></pre>
+<h4 id="迭代遍历map"><a href="#迭代遍历map" class="headerlink" title="迭代遍历map"></a>迭代遍历map</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//检测随机数的分布情况</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestRandom</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Random rand = <span class="keyword">new</span> Random(<span class="number">47</span>);</span><br><span class="line">        Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> r = rand.nextInt(<span class="number">20</span>);</span><br><span class="line">            Integer freq = map.get(r);</span><br><span class="line">            map.put(r, (freq == <span class="keyword">null</span>) ? <span class="number">1</span> : freq + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        map.forEach((k,v) -&gt; System.out.println(<span class="string">"key: "</span>+k+<span class="string">" value:"</span>+v));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 <h3 id="The-List-interface"><a href="#The-List-interface" class="headerlink" title="The List interface"></a>The List interface</h3><ul>
 <li><h4 id="E-get-int-index-returns-the-element-at-the-specified-position-in-this-list"><a href="#E-get-int-index-returns-the-element-at-the-specified-position-in-this-list" class="headerlink" title="E get(int index) returns the element at the specified position in this list"></a>E <strong>get</strong>(int index) returns the element at the specified position in this list</h4></li>
 <li><h4 id="int-size-returns-the-number-of-elements-in-this-collection-1"><a href="#int-size-returns-the-number-of-elements-in-this-collection-1" class="headerlink" title="int size() returns the number of elements in this collection"></a>int <strong>size()</strong> returns the number of elements in this collection</h4></li>
@@ -1160,82 +1056,38 @@ public class TestRandom {
 <li><h4 id="E-set-int-index-E-element-replaces-the-element-at-the-specified-position-in-this-list-with-the-specified-element"><a href="#E-set-int-index-E-element-replaces-the-element-at-the-specified-position-in-this-list-with-the-specified-element" class="headerlink" title="E set(int index, E element) replaces the element at the specified position in this list with the specified element"></a>E <strong>set</strong>(int index, E element) replaces the element at the specified position in this list with the specified element</h4></li>
 <li><h4 id="int-indexOf-Object-o-returns-the-index-of-the-first-occurrence-of-the-specified-element-in-this-list-or-1"><a href="#int-indexOf-Object-o-returns-the-index-of-the-first-occurrence-of-the-specified-element-in-this-list-or-1" class="headerlink" title="int indexOf(Object o) returns the index of the first occurrence of the specified element in this list, or -1"></a>int <strong>indexOf</strong>(Object o) returns the index of the first occurrence of the specified element in this list, or -1</h4></li>
 </ul>
-<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><h2 id="增删改查的时间复杂度"><a href="#增删改查的时间复杂度" class="headerlink" title="增删改查的时间复杂度"></a>增删改查的时间复杂度</h2><h3 id="1-get-int-index-—–-O-1"><a href="#1-get-int-index-—–-O-1" class="headerlink" title="1. get(int index) —– O(1)"></a>1. get(int index) —– O(1)</h3><pre><code class="java">public E get(int index) {
-        Objects.checkIndex(index, size);
-        return elementData(index);
-}</code></pre>
-<h3 id="2-add-E-e-—–-O-1"><a href="#2-add-E-e-—–-O-1" class="headerlink" title="2. add(E e) —– O(1)"></a>2. add(E e) —– O(1)</h3><pre><code class="java">//默认追加元素到list尾部 时间复杂度O(1)
-public boolean add(E e) {
-        modCount++;
-        add(e, elementData, size);
-        return true;
-}</code></pre>
-<h3 id="3-add-int-index-E-element-—–-O-n"><a href="#3-add-int-index-E-element-—–-O-n" class="headerlink" title="3. add(int index, E element) —– O(n)"></a>3. add(int index, E element) —– O(n)</h3><pre><code class="java">public void add(int index, E element) {
-        rangeCheckForAdd(index);
-        modCount++;
-        final int s;
-        Object[] elementData;
-        if ((s = size) == (elementData = this.elementData).length)
-            elementData = grow();
-        System.arraycopy(elementData, index,
-                         elementData, index + 1,
-                         s - index);
-        elementData[index] = element;
-        size = s + 1;
-}</code></pre>
-<h3 id="3-remove-E-e-remove-index-—–-O-n"><a href="#3-remove-E-e-remove-index-—–-O-n" class="headerlink" title="3. remove(E e)    remove(index) —– O(n)"></a>3. remove(E e)    remove(index) —– O(n)</h3><pre><code class="java">public boolean remove(Object o) {
-        final Object[] es = elementData;
-        final int size = this.size;
-        int i = 0;
-        found: {
-            if (o == null) {
-                for (; i &lt; size; i++)
-                    if (es[i] == null)
-                        break found;
-            } else {
-                for (; i &lt; size; i++)
-                    if (o.equals(es[i]))
-                        break found;
-            }
-            return false;
-        }
-        fastRemove(es, i);
-        return true;
-}
-public E remove(int index) {
-        Objects.checkIndex(index, size);
-        final Object[] es = elementData;
+<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><h2 id="增删改查的时间复杂度"><a href="#增删改查的时间复杂度" class="headerlink" title="增删改查的时间复杂度"></a>增删改查的时间复杂度</h2><h3 id="1-get-int-index-—–-O-1"><a href="#1-get-int-index-—–-O-1" class="headerlink" title="1. get(int index) —– O(1)"></a>1. get(int index) —– O(1)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">        Objects.checkIndex(index, size);</span><br><span class="line">        <span class="keyword">return</span> elementData(index);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        @SuppressWarnings(&quot;unchecked&quot;) E oldValue = (E) es[index];
-        fastRemove(es, index);
+<h3 id="2-add-E-e-—–-O-1"><a href="#2-add-E-e-—–-O-1" class="headerlink" title="2. add(E e) —– O(1)"></a>2. add(E e) —– O(1)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//默认追加元素到list尾部 时间复杂度O(1)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span> </span>&#123;</span><br><span class="line">        modCount++;</span><br><span class="line">        add(e, elementData, size);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        return oldValue;
-}
-private void fastRemove(Object[] es, int i) {
-        modCount++;
-        final int newSize;
-        if ((newSize = size - 1) &gt; i)
-            System.arraycopy(es, i + 1, es, i, newSize - i);
-        es[size = newSize] = null;
-}</code></pre>
-<h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2><h3 id="增删改查时间复杂度"><a href="#增删改查时间复杂度" class="headerlink" title="增删改查时间复杂度"></a>增删改查时间复杂度</h3><h3 id="1-add-E-e-—–-O-1"><a href="#1-add-E-e-—–-O-1" class="headerlink" title="1. add(E e) —– O(1)"></a>1. add(E e) —– O(1)</h3><pre><code class="java"></code></pre>
-<h3 id="2-get-int-index-—–-O-n"><a href="#2-get-int-index-—–-O-n" class="headerlink" title="2. get(int index) —– O(n)"></a>2. get(int index) —– O(n)</h3><pre><code class="java"></code></pre>
-<h3 id="3-add-int-index-E-e-—–-O-n"><a href="#3-add-int-index-E-e-—–-O-n" class="headerlink" title="3. add(int index, E e) —– O(n)"></a>3. add(int index, E e) —– O(n)</h3><pre><code class="java"></code></pre>
-<h3 id="4-remove-int-index-—–-O-n"><a href="#4-remove-int-index-—–-O-n" class="headerlink" title="4. remove(int index) —– O(n)"></a>4. remove(int index) —– O(n)</h3><pre><code class="java"></code></pre>
-<h3 id="5-Iterator-remove-—–-O-1"><a href="#5-Iterator-remove-—–-O-1" class="headerlink" title="5. Iterator.remove() —– O(1)"></a>5. Iterator.remove() —– O(1)</h3><pre><code class="java"></code></pre>
-<h3 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h3><h4 id="1-ArrayList-constructs-an-empty-list-with-an-initial-capacity-of-ten-构造一个空的长度为10的list"><a href="#1-ArrayList-constructs-an-empty-list-with-an-initial-capacity-of-ten-构造一个空的长度为10的list" class="headerlink" title="1. ArrayList()  constructs an empty list with an initial capacity of ten; 构造一个空的长度为10的list"></a>1. ArrayList()  constructs an empty list with an initial capacity of ten; 构造一个空的长度为10的list</h4><pre><code class="java">List&lt;String&gt; list = new ArrayList&lt;&gt;(); // a list of strings, it has the default size 10
-</code></pre>
-<h4 id="2-ArrayList-Collection-lt-extends-E-gt-c-constructs-a-list-containing-the-elements-of-the-specified-collection"><a href="#2-ArrayList-Collection-lt-extends-E-gt-c-constructs-a-list-containing-the-elements-of-the-specified-collection" class="headerlink" title="2.ArrayList(Collection&lt;? extends E&gt; c) constructs a list containing the elements of the specified collection;"></a>2.<strong>ArrayList(Collection&lt;? extends E&gt; c)</strong> constructs a list containing the elements of the specified collection;</h4><h4 id="3-ArrayList-int-initialCapacity-constructs-an-empty-list-with-the-specified-initial-capacity"><a href="#3-ArrayList-int-initialCapacity-constructs-an-empty-list-with-the-specified-initial-capacity" class="headerlink" title="3. ArrayList(int initialCapacity)**  constructs an empty list with the specified initial capacity."></a>3. ArrayList(int initialCapacity)**  constructs an empty list with the specified initial capacity.</h4><h3 id="list-与-array"><a href="#list-与-array" class="headerlink" title="list 与 array"></a>list 与 array</h3><h4 id="1-list-to-array"><a href="#1-list-to-array" class="headerlink" title="1. list to array"></a>1. list to array</h4><pre><code class="java">Object[] objArray = list.toArray();
-</code></pre>
-<pre><code class="java">String[] strArray = list.toArray(new String[0]);
-</code></pre>
-<h4 id="2-array-to-list"><a href="#2-array-to-list" class="headerlink" title="2.array to list"></a>2.array to list</h4><pre><code class="java">List&lt;String&gt; list = new ArrayList(Arrays.asList(&quot;one&quot; , &quot;two&quot;));
-</code></pre>
-<h1 id="集合源码"><a href="#集合源码" class="headerlink" title="集合源码"></a>集合源码</h1><h2 id="ArrayList-1"><a href="#ArrayList-1" class="headerlink" title="ArrayList"></a>ArrayList</h2><h3 id="1-概况"><a href="#1-概况" class="headerlink" title="1. 概况"></a>1. 概况</h3><h4 id="RandomAccess接口标志其支持快速随机访问"><a href="#RandomAccess接口标志其支持快速随机访问" class="headerlink" title="RandomAccess接口标志其支持快速随机访问"></a>RandomAccess接口标志其支持快速随机访问</h4><pre><code class="java">public class ArrayList&lt;E&gt; extends AbstractList&lt;E&gt;
-        implements List&lt;E&gt;, RandomAccess, Cloneable, java.io.Serializable
-</code></pre>
-<h4 id="数组默认大小为10"><a href="#数组默认大小为10" class="headerlink" title="数组默认大小为10"></a>数组默认大小为10</h4><pre><code class="java">private static final int DEFAULT_CAPACITY = 10;
-</code></pre>
+<h3 id="3-add-int-index-E-element-—–-O-n"><a href="#3-add-int-index-E-element-—–-O-n" class="headerlink" title="3. add(int index, E element) —– O(n)"></a>3. add(int index, E element) —– O(n)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> index, E element)</span> </span>&#123;</span><br><span class="line">        rangeCheckForAdd(index);</span><br><span class="line">        modCount++;</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> s;</span><br><span class="line">        Object[] elementData;</span><br><span class="line">        <span class="keyword">if</span> ((s = size) == (elementData = <span class="keyword">this</span>.elementData).length)</span><br><span class="line">            elementData = grow();</span><br><span class="line">        System.arraycopy(elementData, index,</span><br><span class="line">                         elementData, index + <span class="number">1</span>,</span><br><span class="line">                         s - index);</span><br><span class="line">        elementData[index] = element;</span><br><span class="line">        size = s + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-remove-E-e-remove-index-—–-O-n"><a href="#3-remove-E-e-remove-index-—–-O-n" class="headerlink" title="3. remove(E e)    remove(index) —– O(n)"></a>3. remove(E e)    remove(index) —– O(n)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">remove</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">final</span> Object[] es = elementData;</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> size = <span class="keyword">this</span>.size;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        found: &#123;</span><br><span class="line">            <span class="keyword">if</span> (o == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">for</span> (; i &lt; size; i++)</span><br><span class="line">                    <span class="keyword">if</span> (es[i] == <span class="keyword">null</span>)</span><br><span class="line">                        <span class="keyword">break</span> found;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">for</span> (; i &lt; size; i++)</span><br><span class="line">                    <span class="keyword">if</span> (o.equals(es[i]))</span><br><span class="line">                        <span class="keyword">break</span> found;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        fastRemove(es, i);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">remove</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">        Objects.checkIndex(index, size);</span><br><span class="line">        <span class="keyword">final</span> Object[] es = elementData;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>) E oldValue = (E) es[index];</span><br><span class="line">        fastRemove(es, index);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> oldValue;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">fastRemove</span><span class="params">(Object[] es, <span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">        modCount++;</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> newSize;</span><br><span class="line">        <span class="keyword">if</span> ((newSize = size - <span class="number">1</span>) &gt; i)</span><br><span class="line">            System.arraycopy(es, i + <span class="number">1</span>, es, i, newSize - i);</span><br><span class="line">        es[size = newSize] = <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2><h3 id="增删改查时间复杂度"><a href="#增删改查时间复杂度" class="headerlink" title="增删改查时间复杂度"></a>增删改查时间复杂度</h3><h3 id="1-add-E-e-—–-O-1"><a href="#1-add-E-e-—–-O-1" class="headerlink" title="1. add(E e) —– O(1)"></a>1. add(E e) —– O(1)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-get-int-index-—–-O-n"><a href="#2-get-int-index-—–-O-n" class="headerlink" title="2. get(int index) —– O(n)"></a>2. get(int index) —– O(n)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-add-int-index-E-e-—–-O-n"><a href="#3-add-int-index-E-e-—–-O-n" class="headerlink" title="3. add(int index, E e) —– O(n)"></a>3. add(int index, E e) —– O(n)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-remove-int-index-—–-O-n"><a href="#4-remove-int-index-—–-O-n" class="headerlink" title="4. remove(int index) —– O(n)"></a>4. remove(int index) —– O(n)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-Iterator-remove-—–-O-1"><a href="#5-Iterator-remove-—–-O-1" class="headerlink" title="5. Iterator.remove() —– O(1)"></a>5. Iterator.remove() —– O(1)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h3><h4 id="1-ArrayList-constructs-an-empty-list-with-an-initial-capacity-of-ten-构造一个空的长度为10的list"><a href="#1-ArrayList-constructs-an-empty-list-with-an-initial-capacity-of-ten-构造一个空的长度为10的list" class="headerlink" title="1. ArrayList()  constructs an empty list with an initial capacity of ten; 构造一个空的长度为10的list"></a>1. ArrayList()  constructs an empty list with an initial capacity of ten; 构造一个空的长度为10的list</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;(); <span class="comment">// a list of strings, it has the default size 10</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-ArrayList-Collection-lt-extends-E-gt-c-constructs-a-list-containing-the-elements-of-the-specified-collection"><a href="#2-ArrayList-Collection-lt-extends-E-gt-c-constructs-a-list-containing-the-elements-of-the-specified-collection" class="headerlink" title="2.ArrayList(Collection&lt;? extends E&gt; c) constructs a list containing the elements of the specified collection;"></a>2.<strong>ArrayList(Collection&lt;? extends E&gt; c)</strong> constructs a list containing the elements of the specified collection;</h4><h4 id="3-ArrayList-int-initialCapacity-constructs-an-empty-list-with-the-specified-initial-capacity"><a href="#3-ArrayList-int-initialCapacity-constructs-an-empty-list-with-the-specified-initial-capacity" class="headerlink" title="3. ArrayList(int initialCapacity)**  constructs an empty list with the specified initial capacity."></a>3. ArrayList(int initialCapacity)**  constructs an empty list with the specified initial capacity.</h4><h3 id="list-与-array"><a href="#list-与-array" class="headerlink" title="list 与 array"></a>list 与 array</h3><h4 id="1-list-to-array"><a href="#1-list-to-array" class="headerlink" title="1. list to array"></a>1. list to array</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object[] objArray = list.toArray();</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String[] strArray = list.toArray(<span class="keyword">new</span> String[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-array-to-list"><a href="#2-array-to-list" class="headerlink" title="2.array to list"></a>2.array to list</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList(Arrays.asList(<span class="string">"one"</span> , <span class="string">"two"</span>));</span><br></pre></td></tr></table></figure>
+
+<h1 id="集合源码"><a href="#集合源码" class="headerlink" title="集合源码"></a>集合源码</h1><h2 id="ArrayList-1"><a href="#ArrayList-1" class="headerlink" title="ArrayList"></a>ArrayList</h2><h3 id="1-概况"><a href="#1-概况" class="headerlink" title="1. 概况"></a>1. 概况</h3><h4 id="RandomAccess接口标志其支持快速随机访问"><a href="#RandomAccess接口标志其支持快速随机访问" class="headerlink" title="RandomAccess接口标志其支持快速随机访问"></a>RandomAccess接口标志其支持快速随机访问</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayList</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractList</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">        <span class="keyword">implements</span> <span class="title">List</span>&lt;<span class="title">E</span>&gt;, <span class="title">RandomAccess</span>, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span></span></span><br></pre></td></tr></table></figure>
+
+<h4 id="数组默认大小为10"><a href="#数组默认大小为10" class="headerlink" title="数组默认大小为10"></a>数组默认大小为10</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEFAULT_CAPACITY = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+
 <h3 id="2-扩容"><a href="#2-扩容" class="headerlink" title="2. 扩容"></a>2. 扩容</h3><h4 id="添加元素时使用-ensureCapacityInternal-方法来保证容量足够，如果不够时，需要使用-grow-方法进行扩容，新容量的大小为-oldCapacity-oldCapacity-gt-gt-1-，也就是旧容量的-1-5-倍。"><a href="#添加元素时使用-ensureCapacityInternal-方法来保证容量足够，如果不够时，需要使用-grow-方法进行扩容，新容量的大小为-oldCapacity-oldCapacity-gt-gt-1-，也就是旧容量的-1-5-倍。" class="headerlink" title="添加元素时使用 ensureCapacityInternal() 方法来保证容量足够，如果不够时，需要使用 grow() 方法进行扩容，新容量的大小为 oldCapacity + (oldCapacity &gt;&gt; 1)，也就是旧容量的 1.5 倍。"></a>添加元素时使用 ensureCapacityInternal() 方法来保证容量足够，如果不够时，需要使用 grow() 方法进行扩容，新容量的大小为 <code>oldCapacity + (oldCapacity &gt;&gt; 1)</code>，也就是旧容量的 1.5 倍。</h4><h4 id="扩容操作需要调用-Arrays-copyOf-把原数组整个复制到新数组中，这个操作代价很高，因此最好在创建-ArrayList-对象时就指定大概的容量大小，减少扩容操作的次数。"><a href="#扩容操作需要调用-Arrays-copyOf-把原数组整个复制到新数组中，这个操作代价很高，因此最好在创建-ArrayList-对象时就指定大概的容量大小，减少扩容操作的次数。" class="headerlink" title="扩容操作需要调用 Arrays.copyOf() 把原数组整个复制到新数组中，这个操作代价很高，因此最好在创建 ArrayList 对象时就指定大概的容量大小，减少扩容操作的次数。"></a>扩容操作需要调用 <code>Arrays.copyOf()</code> 把原数组整个复制到新数组中，这个操作代价很高，因此最好在创建 ArrayList 对象时就指定大概的容量大小，减少扩容操作的次数。</h4>
       
     </div>

@@ -20,13 +20,13 @@
     var CONFIG = {"hostname":"wangzitian.club","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="堆排序堆是一个近似的完全二叉树 有如下性质 parent(i) = (i - 1) &#x2F; 2 left(i) = 2 * i + 1 right(i) = 2 * i + 2  堆排序有三个关键步骤   步骤 作用 时间复杂度    heapify 维护堆的性质 O(lgn)   biuld_heap 建堆 O(n)   heap_sort 堆排序 O(nlgn)    heapify  heapi">
+  <meta name="description" content="堆排序堆是一个近似的完全二叉树 有如下性质 parent(i) = (i - 1) &#x2F; 2 left(i) = 2 * i + 1 right(i) = 2 * i + 2  堆排序有三个关键步骤   步骤 作用 时间复杂度    heapify 维护堆的性质 O(lgn)   biuld_heap 建堆 O(n)   heap_sort 堆排序 O(nlgn)    heapify  12345">
 <meta name="keywords" content="排序算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="堆排序">
 <meta property="og:url" content="http:&#x2F;&#x2F;wangzitian.club&#x2F;2020&#x2F;02&#x2F;11&#x2F;%E5%A0%86%E6%8E%92%E5%BA%8F&#x2F;index.html">
 <meta property="og:site_name" content="The Blog of Wang">
-<meta property="og:description" content="堆排序堆是一个近似的完全二叉树 有如下性质 parent(i) = (i - 1) &#x2F; 2 left(i) = 2 * i + 1 right(i) = 2 * i + 2  堆排序有三个关键步骤   步骤 作用 时间复杂度    heapify 维护堆的性质 O(lgn)   biuld_heap 建堆 O(n)   heap_sort 堆排序 O(nlgn)    heapify  heapi">
+<meta property="og:description" content="堆排序堆是一个近似的完全二叉树 有如下性质 parent(i) = (i - 1) &#x2F; 2 left(i) = 2 * i + 1 right(i) = 2 * i + 2  堆排序有三个关键步骤   步骤 作用 时间复杂度    heapify 维护堆的性质 O(lgn)   biuld_heap 建堆 O(n)   heap_sort 堆排序 O(nlgn)    heapify  12345">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2020-02-11T07:03:39.528Z">
 <meta name="twitter:card" content="summary">
@@ -229,32 +229,18 @@
 <ul>
 <li><h5 id="heapify"><a href="#heapify" class="headerlink" title="heapify"></a>heapify</h5></li>
 </ul>
-<pre><code class="python">heapify(arr, i, heap_size):
-  l = left(i)
-  r = right(i)
-  if l &lt;= heap_size and arr[l] &gt; arr[i]:
-      largest = l
-  if r &lt;= heap_size and arr[r] &gt; arr[largest]:
-      largest = r
-  if largest != i:
-      exchange arr[i], arr[largest]
-      heapify(arr, largest, heap_size)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">heapify(arr, i, heap_size):</span><br><span class="line">  l = left(i)</span><br><span class="line">  r = right(i)</span><br><span class="line">  <span class="keyword">if</span> l &lt;= heap_size <span class="keyword">and</span> arr[l] &gt; arr[i]:</span><br><span class="line">      largest = l</span><br><span class="line">  <span class="keyword">if</span> r &lt;= heap_size <span class="keyword">and</span> arr[r] &gt; arr[largest]:</span><br><span class="line">      largest = r</span><br><span class="line">  <span class="keyword">if</span> largest != i:</span><br><span class="line">      exchange arr[i], arr[largest]</span><br><span class="line">      heapify(arr, largest, heap_size)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>build_heap</li>
 </ul>
-<pre><code class="python">build_heap(arr):
-    heap_size = arr.length - 1
-    for i = parent(heap_size) downto 0:
-        heapify(arr, i, heap_size)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">build_heap(arr):</span><br><span class="line">    heap_size = arr.length - <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i = parent(heap_size) downto <span class="number">0</span>:</span><br><span class="line">        heapify(arr, i, heap_size)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>heap_sort</li>
 </ul>
-<pre><code class="python">heap_sort(arr):
-    build_heap(arr)
-    n = arr.length
-    for i = n - 1 to 1:
-        exchange arr[0], arr[i]
-        heapify(arr, 0, i)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">heap_sort(arr):</span><br><span class="line">    build_heap(arr)</span><br><span class="line">    n = arr.length</span><br><span class="line">    <span class="keyword">for</span> i = n - <span class="number">1</span> to <span class="number">1</span>:</span><br><span class="line">        exchange arr[<span class="number">0</span>], arr[i]</span><br><span class="line">        heapify(arr, <span class="number">0</span>, i)</span><br></pre></td></tr></table></figure>
+
 
     </div>
 

@@ -20,13 +20,13 @@
     var CONFIG = {"hostname":"wangzitian.club","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="装饰器装饰器是语法糖@decorate def target():     pass  # 等价于  target = decorate(target) 简答的例子def decorate(func):     @wraps(func)     def wrapper(*args, **kwargs):         start = time.time()         ret = func(">
+  <meta name="description" content="装饰器装饰器是语法糖1234567@decoratedef target():    pass  # 等价于target = decorate(target)  简答的例子123456789def decorate(func):    @wraps(func)    def wrapper(*args, **kwargs):        start = time.time()        re">
 <meta name="keywords" content="Python装饰器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python装饰器">
 <meta property="og:url" content="http:&#x2F;&#x2F;wangzitian.club&#x2F;2020&#x2F;02&#x2F;09&#x2F;python%E8%A3%85%E9%A5%B0%E5%99%A8&#x2F;index.html">
 <meta property="og:site_name" content="The Blog of Wang">
-<meta property="og:description" content="装饰器装饰器是语法糖@decorate def target():     pass  # 等价于  target = decorate(target) 简答的例子def decorate(func):     @wraps(func)     def wrapper(*args, **kwargs):         start = time.time()         ret = func(">
+<meta property="og:description" content="装饰器装饰器是语法糖1234567@decoratedef target():    pass  # 等价于target = decorate(target)  简答的例子123456789def decorate(func):    @wraps(func)    def wrapper(*args, **kwargs):        start = time.time()        re">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2020-03-04T12:44:17.424Z">
 <meta name="twitter:card" content="summary">
@@ -203,46 +203,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><h4 id="装饰器是语法糖"><a href="#装饰器是语法糖" class="headerlink" title="装饰器是语法糖"></a>装饰器是语法糖</h4><pre><code class="python">@decorate
-def target():
-    pass
+        <h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><h4 id="装饰器是语法糖"><a href="#装饰器是语法糖" class="headerlink" title="装饰器是语法糖"></a>装饰器是语法糖</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@decorate</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">target</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line">  </span><br><span class="line"><span class="comment"># 等价于</span></span><br><span class="line"></span><br><span class="line">target = decorate(target)</span><br></pre></td></tr></table></figure>
 
-# 等价于
+<h4 id="简答的例子"><a href="#简答的例子" class="headerlink" title="简答的例子"></a>简答的例子</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decorate</span><span class="params">(func)</span>:</span></span><br><span class="line"><span class="meta">    @wraps(func)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">        start = time.time()</span><br><span class="line">        ret = func(*args, **kwargs)</span><br><span class="line">        end = time.time()</span><br><span class="line">        print(<span class="string">'time = '</span>, end - start)</span><br><span class="line">        <span class="keyword">return</span> ret</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br></pre></td></tr></table></figure>
 
-target = decorate(target)</code></pre>
-<h4 id="简答的例子"><a href="#简答的例子" class="headerlink" title="简答的例子"></a>简答的例子</h4><pre><code class="python">def decorate(func):
-    @wraps(func)
-    def wrapper(*args, **kwargs):
-        start = time.time()
-        ret = func(*args, **kwargs)
-        end = time.time()
-        print(&#39;time = &#39;, end - start)
-        return ret
-    return wrapper</code></pre>
 <p>装饰器就是给函数加额外的功能</p>
 <h3 id="参数化装饰器"><a href="#参数化装饰器" class="headerlink" title="参数化装饰器"></a>参数化装饰器</h3><p>当一个有参数的装饰器执行时</p>
-<pre><code class="python">@decorate(x, y, z)
-def func(a, b):
-        pass
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@decorate(x, y, z)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a, b)</span>:</span></span><br><span class="line">		<span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">func = decorate(x, y, z)(func)</span><br></pre></td></tr></table></figure>
 
-func = decorate(x, y, z)(func)</code></pre>
 <p>例子来自：PythonCookbook 3rd</p>
-<h3 id="实际项目中的小例子"><a href="#实际项目中的小例子" class="headerlink" title="实际项目中的小例子"></a>实际项目中的小例子</h3><pre><code class="python">def permission_required(permission):
-    def decorator(f):
-        @wraps(f)
-        def decorated_function(*args, **kwargs):
-            if not current_user.can(permission):
-                abort(403)
-            return f(*args, **kwargs)
-        return decorated_function
-    return decorator
+<h3 id="实际项目中的小例子"><a href="#实际项目中的小例子" class="headerlink" title="实际项目中的小例子"></a>实际项目中的小例子</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">permission_required</span><span class="params">(permission)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">decorator</span><span class="params">(f)</span>:</span></span><br><span class="line"><span class="meta">        @wraps(f)</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">decorated_function</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> current_user.can(permission):</span><br><span class="line">                abort(<span class="number">403</span>)</span><br><span class="line">            <span class="keyword">return</span> f(*args, **kwargs)</span><br><span class="line">        <span class="keyword">return</span> decorated_function</span><br><span class="line">    <span class="keyword">return</span> decorator</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">admin_required</span><span class="params">(f)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> permission_required(Permission.ADMIN)(f)</span><br><span class="line">  </span><br><span class="line"><span class="meta">@permission_required(Permission.MODERATE)</span></span><br><span class="line">		<span class="function"><span class="keyword">def</span> <span class="title">moderate_enable</span><span class="params">(id)</span>:</span></span><br><span class="line">    		<span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
 
-def admin_required(f):
-    return permission_required(Permission.ADMIN)(f)
-
-@permission_required(Permission.MODERATE)
-        def moderate_enable(id):
-            pass</code></pre>
 <p>这个是给函数加上访问权限的控制，只有current_user具有了访问权限，则其才能访问moderate_enable视图函数。</p>
 
     </div>

@@ -20,13 +20,13 @@
     var CONFIG = {"hostname":"wangzitian.club","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="private Tuple&amp;lt;int, int[]&amp;gt; Dp(int cur, int disp, int[] dis)         {             int min = 100000;             int[] lane = new int[20];             if (disp == 0)             {">
+  <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536private Tuple&amp;lt;int, int[]&amp;gt; Dp(int cur, int disp, int[] dis)        &amp;#123;            int min = 100000;            int[] lane = new i">
 <meta name="keywords" content="Java, Python, Programer">
 <meta property="og:type" content="article">
 <meta property="og:title" content="源代码">
 <meta property="og:url" content="http:&#x2F;&#x2F;wangzitian.club&#x2F;2019&#x2F;11&#x2F;26&#x2F;%E6%BA%90%E4%BB%A3%E7%A0%81&#x2F;index.html">
 <meta property="og:site_name" content="The Blog of Wang">
-<meta property="og:description" content="private Tuple&amp;lt;int, int[]&amp;gt; Dp(int cur, int disp, int[] dis)         {             int min = 100000;             int[] lane = new int[20];             if (disp == 0)             {">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536private Tuple&amp;lt;int, int[]&amp;gt; Dp(int cur, int disp, int[] dis)        &amp;#123;            int min = 100000;            int[] lane = new i">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-11-26T03:13:06.615Z">
 <meta name="twitter:card" content="summary">
@@ -188,42 +188,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <pre><code class="c#">private Tuple&lt;int, int[]&gt; Dp(int cur, int disp, int[] dis)
-        {
-            int min = 100000;
-            int[] lane = new int[20];
-            if (disp == 0)
-            {
-                lane[disp] = cur;
-                return new Tuple&lt;int, int[]&gt;(D[cur, 0], lane);
-            }
-            else
-            {
-                for (int i = 0; i &lt; disp; i++)
-                {
-                    int newdisp = 0;
-                    int[] newdis = new int[20];
-                    for (int j = 0; j &lt; disp; j++)
-                    {
-                        if (j != i)
-                        {
-                            newdis[newdisp++] = dis[j];
-                        }
-                    }
-                    Tuple&lt;int, int[]&gt; dpout = Dp(dis[i], newdisp, newdis);
+        <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> Tuple&lt;<span class="keyword">int</span>, <span class="keyword">int</span>[]&gt; Dp(<span class="keyword">int</span> cur, <span class="keyword">int</span> disp, <span class="keyword">int</span>[] dis)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> min = <span class="number">100000</span>;</span><br><span class="line">            <span class="keyword">int</span>[] lane = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">20</span>];</span><br><span class="line">            <span class="keyword">if</span> (disp == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                lane[disp] = cur;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> Tuple&lt;<span class="keyword">int</span>, <span class="keyword">int</span>[]&gt;(D[cur, <span class="number">0</span>], lane);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; disp; i++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">int</span> newdisp = <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">int</span>[] newdis = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">20</span>];</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; disp; j++)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">if</span> (j != i)</span><br><span class="line">                        &#123;</span><br><span class="line">                            newdis[newdisp++] = dis[j];</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    Tuple&lt;<span class="keyword">int</span>, <span class="keyword">int</span>[]&gt; dpout = Dp(dis[i], newdisp, newdis);</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">if</span> (dpout.Item1 + D[cur, dis[i]] &lt; min)</span><br><span class="line">                    &#123;</span><br><span class="line">                        min = dpout.Item1 + D[cur, dis[i]];</span><br><span class="line">                        lane = dpout.Item2;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            lane[disp] = cur;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Tuple&lt;<span class="keyword">int</span>, <span class="keyword">int</span>[]&gt;(min, lane);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">Tuple&lt;<span class="keyword">int</span>, <span class="keyword">int</span>[]&gt; dpout = Dp(<span class="number">0</span>, N, target);</span><br></pre></td></tr></table></figure>
 
-                    if (dpout.Item1 + D[cur, dis[i]] &lt; min)
-                    {
-                        min = dpout.Item1 + D[cur, dis[i]];
-                        lane = dpout.Item2;
-                    }
-                }
-            }
-            lane[disp] = cur;
-            return new Tuple&lt;int, int[]&gt;(min, lane);
-        }
-
-Tuple&lt;int, int[]&gt; dpout = Dp(0, N, target);</code></pre>
 
     </div>
 

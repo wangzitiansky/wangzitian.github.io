@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"wangzitian.club","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="###ArrayList    变量定义        private static final int DEFAULT_CAPACITY = 10;        &#x2F;&#x2F; 默认容量     private static final Object[] EMPTY_ELEMENTDATA = {}; &#x2F;&#x2F; 空数组 used for empty instances     private static">
+  <meta name="description" content="ArrayList   变量定义    12345private static final int DEFAULT_CAPACITY = 10;		&#x2F;&#x2F; 默认容量private static final Object[] EMPTY_ELEMENTDATA = &amp;#123;&amp;#125;; &#x2F;&#x2F; 空数组 used for empty instancesprivate static final Obj">
 <meta name="keywords" content="Javay集合源码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ArrayList源码解析">
 <meta property="og:url" content="http:&#x2F;&#x2F;wangzitian.club&#x2F;2020&#x2F;03&#x2F;30&#x2F;ArrayList%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90&#x2F;index.html">
 <meta property="og:site_name" content="The Blog of Wang">
-<meta property="og:description" content="###ArrayList    变量定义        private static final int DEFAULT_CAPACITY = 10;        &#x2F;&#x2F; 默认容量     private static final Object[] EMPTY_ELEMENTDATA = {}; &#x2F;&#x2F; 空数组 used for empty instances     private static">
+<meta property="og:description" content="ArrayList   变量定义    12345private static final int DEFAULT_CAPACITY = 10;		&#x2F;&#x2F; 默认容量private static final Object[] EMPTY_ELEMENTDATA = &amp;#123;&amp;#125;; &#x2F;&#x2F; 空数组 used for empty instancesprivate static final Obj">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-30T12:38:36.524Z">
+<meta property="og:updated_time" content="2020-03-30T12:44:38.836Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://wangzitian.club/2020/03/30/ArrayList%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/">
@@ -174,7 +174,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-03-30 20:33:41 / Modified: 20:38:36" itemprop="dateCreated datePublished" datetime="2020-03-30T20:33:41+08:00">2020-03-30</time>
+              <time title="Created: 2020-03-30 20:33:41 / Modified: 20:44:38" itemprop="dateCreated datePublished" datetime="2020-03-30T20:33:41+08:00">2020-03-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -201,17 +201,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>###ArrayList</p>
-<details>
+        <h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><details>
   <summary>变量定义</summary>
 
 
 
-<pre><code class="java">    private static final int DEFAULT_CAPACITY = 10;        // 默认容量
-    private static final Object[] EMPTY_ELEMENTDATA = {}; // 空数组 used for empty instances
-    private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {}; // 
-    transient Object[] elementData; // 真正存储元素的数组
-    private int size; // 存储元素的个数</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEFAULT_CAPACITY = <span class="number">10</span>;		<span class="comment">// 默认容量</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Object[] EMPTY_ELEMENTDATA = &#123;&#125;; <span class="comment">// 空数组 used for empty instances</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = &#123;&#125;; <span class="comment">// </span></span><br><span class="line"><span class="keyword">transient</span> Object[] elementData; <span class="comment">// 真正存储元素的数组</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> size; <span class="comment">// 存储元素的个数</span></span><br></pre></td></tr></table></figure>
+
+
+
 </details>
 
 
@@ -221,40 +219,10 @@
 
 
 
-<pre><code class="java">// 接收一个初始长度作为参数
-    public ArrayList(int initialCapacity) {
-      // initialCapacity 是初始长度
-        if (initialCapacity &gt; 0) {
-            this.elementData = new Object[initialCapacity];
-        } else if (initialCapacity == 0) {
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 接收一个初始长度作为参数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ArrayList</span><span class="params">(<span class="keyword">int</span> initialCapacity)</span> </span>&#123;</span><br><span class="line">      <span class="comment">// initialCapacity 是初始长度</span></span><br><span class="line">        <span class="keyword">if</span> (initialCapacity &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">this</span>.elementData = <span class="keyword">new</span> Object[initialCapacity];</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (initialCapacity == <span class="number">0</span>) &#123;</span><br><span class="line"></span><br><span class="line">          <span class="comment">// 如果初始长度为0 则将其设为一个空数组 EMPTY_ELEMENTDATA</span></span><br><span class="line">            <span class="keyword">this</span>.elementData = EMPTY_ELEMENTDATA;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Illegal Capacity: "</span>+</span><br><span class="line">                                             initialCapacity);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 没有参数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ArrayList</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="comment">// 赋值为空数组 DEFAULTCAPACITY_EMPTY_ELEMENTDATA</span></span><br><span class="line">        <span class="keyword">this</span>.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 接收一个Collection作为参数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ArrayList</span><span class="params">(Collection&lt;? extends E&gt; c)</span> </span>&#123;</span><br><span class="line">        elementData = c.toArray();</span><br><span class="line">        <span class="keyword">if</span> ((size = elementData.length) != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">// 检查c.toArray()是不是 Object[] 如果不是 将其拷贝为Object[]</span></span><br><span class="line">            <span class="keyword">if</span> (elementData.getClass() != Object[].class)</span><br><span class="line">                elementData = Arrays.copyOf(elementData, size, Object[].class);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 使用 EMPTY_ELEMENTDATA</span></span><br><span class="line">            <span class="keyword">this</span>.elementData = EMPTY_ELEMENTDATA;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-          // 如果初始长度为0 则将其设为一个空数组 EMPTY_ELEMENTDATA
-            this.elementData = EMPTY_ELEMENTDATA;
-        } else {
-            throw new IllegalArgumentException(&quot;Illegal Capacity: &quot;+
-                                             initialCapacity);
-        }
-    }
 
-// 没有参数
-    public ArrayList() {
-      // 赋值为空数组 DEFAULTCAPACITY_EMPTY_ELEMENTDATA
-        this.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;
-    }
 
-// 接收一个Collection作为参数
-    public ArrayList(Collection&lt;? extends E&gt; c) {
-        elementData = c.toArray();
-        if ((size = elementData.length) != 0) {
-            // 检查c.toArray()是不是 Object[] 如果不是 将其拷贝为Object[]
-            if (elementData.getClass() != Object[].class)
-                elementData = Arrays.copyOf(elementData, size, Object[].class);
-        } else {
-            // 使用 EMPTY_ELEMENTDATA
-            this.elementData = EMPTY_ELEMENTDATA;
-        }
-    }
-</code></pre>
 </details>
 
 
@@ -265,44 +233,14 @@
 
 
 
-<pre><code class="java">   // 返回一个新的数组容量
-        private int newCapacity(int minCapacity) {
-        // oldCapacity 是旧容量
-        int oldCapacity = elementData.length;
-          // newCapacity 是 1.5 * oldCapacity
-        int newCapacity = oldCapacity + (oldCapacity &gt;&gt; 1);
-          // 如果新的容量还是小于最小需要容量 则用最小足以容量当作数组新容量
-        if (newCapacity - minCapacity &lt;= 0) {
-          // 如果 初始化时候没有设定初始容量 则返回 DEFAULT_CAPACITY minCapacity 中最大的
-            if (elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA)
-                return Math.max(DEFAULT_CAPACITY, minCapacity);
-            if (minCapacity &lt; 0) // overflow
-                throw new OutOfMemoryError();
-            return minCapacity;
-        }
-          // 如果新的容量合理 则返回新容量
-        return (newCapacity - MAX_ARRAY_SIZE &lt;= 0)
-            ? newCapacity
-            : hugeCapacity(minCapacity);
-    }
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// 返回一个新的数组容量</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">newCapacity</span><span class="params">(<span class="keyword">int</span> minCapacity)</span> </span>&#123;</span><br><span class="line">      <span class="comment">// oldCapacity 是旧容量</span></span><br><span class="line">      <span class="keyword">int</span> oldCapacity = elementData.length;</span><br><span class="line">    	<span class="comment">// newCapacity 是 1.5 * oldCapacity</span></span><br><span class="line">      <span class="keyword">int</span> newCapacity = oldCapacity + (oldCapacity &gt;&gt; <span class="number">1</span>);</span><br><span class="line">    	<span class="comment">// 如果新的容量还是小于最小需要容量 则用最小足以容量当作数组新容量</span></span><br><span class="line">      <span class="keyword">if</span> (newCapacity - minCapacity &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">// 如果 初始化时候没有设定初始容量 则返回 DEFAULT_CAPACITY minCapacity 中最大的</span></span><br><span class="line">          <span class="keyword">if</span> (elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA)</span><br><span class="line">              <span class="keyword">return</span> Math.max(DEFAULT_CAPACITY, minCapacity);</span><br><span class="line">          <span class="keyword">if</span> (minCapacity &lt; <span class="number">0</span>) <span class="comment">// overflow</span></span><br><span class="line">              <span class="keyword">throw</span> <span class="keyword">new</span> OutOfMemoryError();</span><br><span class="line">          <span class="keyword">return</span> minCapacity;</span><br><span class="line">      &#125;</span><br><span class="line">    	<span class="comment">// 如果新的容量合理 则返回新容量</span></span><br><span class="line">      <span class="keyword">return</span> (newCapacity - MAX_ARRAY_SIZE &lt;= <span class="number">0</span>)</span><br><span class="line">          ? newCapacity</span><br><span class="line">          : hugeCapacity(minCapacity);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果需要的容量大于MAX_ARRAY_SIZE 则返回 Integer.MAX_VALUE 否则返回 MAX_ARRAY_SIZE</span></span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">hugeCapacity</span><span class="params">(<span class="keyword">int</span> minCapacity)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (minCapacity &lt; <span class="number">0</span>) <span class="comment">// overflow</span></span><br><span class="line">          <span class="keyword">throw</span> <span class="keyword">new</span> OutOfMemoryError();</span><br><span class="line">      <span class="keyword">return</span> (minCapacity &gt; MAX_ARRAY_SIZE)</span><br><span class="line">          ? Integer.MAX_VALUE</span><br><span class="line">          : MAX_ARRAY_SIZE;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
-        // 如果需要的容量大于MAX_ARRAY_SIZE 则返回 Integer.MAX_VALUE 否则返回 MAX_ARRAY_SIZE
-    private static int hugeCapacity(int minCapacity) {
-        if (minCapacity &lt; 0) // overflow
-            throw new OutOfMemoryError();
-        return (minCapacity &gt; MAX_ARRAY_SIZE)
-            ? Integer.MAX_VALUE
-            : MAX_ARRAY_SIZE;
-    }</code></pre>
-<pre><code class="java">    // 扩容函数
-        private Object[] grow(int minCapacity) {
-        return elementData = Arrays.copyOf(elementData,
-                                           newCapacity(minCapacity));
-    }
 
-    private Object[] grow() {
-        return grow(size + 1);
-    }</code></pre>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 扩容函数</span></span><br><span class="line"><span class="keyword">private</span> Object[] grow(<span class="keyword">int</span> minCapacity) &#123;</span><br><span class="line">      <span class="keyword">return</span> elementData = Arrays.copyOf(elementData,</span><br><span class="line">                                         newCapacity(minCapacity));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> Object[] grow() &#123;</span><br><span class="line">      <span class="keyword">return</span> grow(size + <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+
 </details>
 
 
@@ -403,6 +341,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList"><span class="nav-number">1.</span> <span class="nav-text">ArrayList</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
