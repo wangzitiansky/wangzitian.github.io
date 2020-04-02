@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"wangzitian.club","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="ArrayList   变量定义    12345private static final int DEFAULT_CAPACITY = 10;		&#x2F;&#x2F; 默认容量private static final Object[] EMPTY_ELEMENTDATA = &amp;#123;&amp;#125;; &#x2F;&#x2F; 空数组 used for empty instancesprivate static final Obj">
+  <meta name="description" content="变量定义   变量定义    12345private static final int DEFAULT_CAPACITY = 10;		&#x2F;&#x2F; 默认容量private static final Object[] EMPTY_ELEMENTDATA = &amp;#123;&amp;#125;; &#x2F;&#x2F; 空数组 used for empty instancesprivate static final Object[]">
 <meta name="keywords" content="Javay集合源码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ArrayList源码解析">
 <meta property="og:url" content="http:&#x2F;&#x2F;wangzitian.club&#x2F;2020&#x2F;03&#x2F;30&#x2F;ArrayList%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90&#x2F;index.html">
 <meta property="og:site_name" content="The Blog of Wang">
-<meta property="og:description" content="ArrayList   变量定义    12345private static final int DEFAULT_CAPACITY = 10;		&#x2F;&#x2F; 默认容量private static final Object[] EMPTY_ELEMENTDATA = &amp;#123;&amp;#125;; &#x2F;&#x2F; 空数组 used for empty instancesprivate static final Obj">
+<meta property="og:description" content="变量定义   变量定义    12345private static final int DEFAULT_CAPACITY = 10;		&#x2F;&#x2F; 默认容量private static final Object[] EMPTY_ELEMENTDATA = &amp;#123;&amp;#125;; &#x2F;&#x2F; 空数组 used for empty instancesprivate static final Object[]">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-30T12:44:38.836Z">
+<meta property="og:updated_time" content="2020-04-02T12:59:30.313Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://wangzitian.club/2020/03/30/ArrayList%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/">
@@ -172,10 +172,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-03-30 20:33:41 / Modified: 20:44:38" itemprop="dateCreated datePublished" datetime="2020-03-30T20:33:41+08:00">2020-03-30</time>
+              <time title="Created: 2020-03-30 20:33:41" itemprop="dateCreated datePublished" datetime="2020-03-30T20:33:41+08:00">2020-03-30</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-04-02 20:59:30" itemprop="dateModified" datetime="2020-04-02T20:59:30+08:00">2020-04-02</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -201,7 +207,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><details>
+        <h5 id="变量定义"><a href="#变量定义" class="headerlink" title="变量定义"></a>变量定义</h5><details>
   <summary>变量定义</summary>
 
 
@@ -212,9 +218,7 @@
 
 </details>
 
-
-
-<details>
+<h5 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h5><details>
   <summary>构造函数</summary>
 
 
@@ -225,9 +229,7 @@
 
 </details>
 
-
-
-<details>
+<h5 id="扩容相关函数"><a href="#扩容相关函数" class="headerlink" title="扩容相关函数"></a>扩容相关函数</h5><details>
   <summary> 扩容相关 </summary>
 
 
@@ -243,12 +245,102 @@
 
 </details>
 
+<h5 id="应用函数"><a href="#应用函数" class="headerlink" title="应用函数"></a>应用函数</h5><details>
+  <summary>public boolean contains(Object o)</summary>
+
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">      <span class="comment">// indexOf(o) 返回所在元素的第一个下标值 如果元素不在数组中 则返回-1</span></span><br><span class="line">    	<span class="keyword">return</span> indexOf(o) &gt;= <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">indexOfRange</span><span class="params">(Object o, <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">      Object[] es = elementData;</span><br><span class="line">      <span class="keyword">if</span> (o == <span class="keyword">null</span>) &#123;</span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; end; i++) &#123;</span><br><span class="line">              <span class="keyword">if</span> (es[i] == <span class="keyword">null</span>) &#123;</span><br><span class="line">                  <span class="keyword">return</span> i;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; end; i++) &#123;</span><br><span class="line">              <span class="keyword">if</span> (o.equals(es[i])) &#123;</span><br><span class="line">                  <span class="keyword">return</span> i;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</details>
+
 
 
 <details>
-  <summary>contains(Object o)</summary>
+  <summary>public int lastIndexOf(Object o)</summary>
 
 
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回指定元素的最后出现的下标位置</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lastIndexOf</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> lastIndexOfRange(o, <span class="number">0</span>, size);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 其实就是倒着找</span></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">lastIndexOfRange</span><span class="params">(Object o, <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">      Object[] es = elementData;</span><br><span class="line">      <span class="keyword">if</span> (o == <span class="keyword">null</span>) &#123;</span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> i = end - <span class="number">1</span>; i &gt;= start; i--) &#123;</span><br><span class="line">              <span class="keyword">if</span> (es[i] == <span class="keyword">null</span>) &#123;</span><br><span class="line">                  <span class="keyword">return</span> i;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> i = end - <span class="number">1</span>; i &gt;= start; i--) &#123;</span><br><span class="line">              <span class="keyword">if</span> (o.equals(es[i])) &#123;</span><br><span class="line">                  <span class="keyword">return</span> i;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</details>
+
+
+
+<details>
+  <summary>public E get(int index)</summary>
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 检查是否越界 @throws IndexOutOfBoundsException</span></span><br><span class="line">    Objects.checkIndex(index, size);</span><br><span class="line">    <span class="keyword">return</span> elementData(index);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</details>
+
+
+
+<details>
+  <summary>public E set(int index, E element)</summary>
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 将elementData[index] 设置为 element 并且返回旧值</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">set</span><span class="params">(<span class="keyword">int</span> index, E element)</span> </span>&#123;</span><br><span class="line">      Objects.checkIndex(index, size);</span><br><span class="line">      E oldValue = elementData(index);</span><br><span class="line">      elementData[index] = element;</span><br><span class="line">      <span class="keyword">return</span> oldValue;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</details>
+
+
+
+<details>
+  <summary>public boolean add(E e)</summary>
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(E e, Object[] elementData, <span class="keyword">int</span> s)</span> </span>&#123;</span><br><span class="line">   		<span class="comment">// 如果要插入的地方等于现在数组长度 则扩容</span></span><br><span class="line">      <span class="keyword">if</span> (s == elementData.length)</span><br><span class="line">          elementData = grow();</span><br><span class="line">      elementData[s] = e;</span><br><span class="line">      size = s + <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 操作次数++ </span></span><br><span class="line">      modCount++;</span><br><span class="line">    <span class="comment">// 调用helper add方法 将元素添加至尾部</span></span><br><span class="line">      add(e, elementData, size);</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</details>
+
+
+
+<details>
+  <summary>public void add(int index, E element)</summary>
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> index, E element)</span> </span>&#123;</span><br><span class="line">  	<span class="comment">// 如果index &gt; size 或者 index &lt; 0 则抛出异常</span></span><br><span class="line">    rangeCheckForAdd(index);</span><br><span class="line">  	<span class="comment">// 操作次数++</span></span><br><span class="line">    modCount++;</span><br><span class="line">  	<span class="comment">// 如果size == elementDate.length 则扩容</span></span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> s;</span><br><span class="line">    Object[] elementData;</span><br><span class="line">    <span class="keyword">if</span> ((s = size) == (elementData = <span class="keyword">this</span>.elementData).length)</span><br><span class="line">        elementData = grow();</span><br><span class="line">  	<span class="comment">// 将数组 index --- size - 1的元素 拷贝到 index + 1 ---- size </span></span><br><span class="line">    System.arraycopy(elementData, index,</span><br><span class="line">                     elementData, index + <span class="number">1</span>,</span><br><span class="line">                     s - index);</span><br><span class="line">    elementData[index] = element;</span><br><span class="line">    size = s + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+</details>
+
+
+
+<details>
+  <summary>public boolean addAll(Collection<? extends E> c)</summary>
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">addAll</span><span class="params">(Collection&lt;? extends E&gt; c)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 现将c转化为数组 a</span></span><br><span class="line">    Object[] a = c.toArray();</span><br><span class="line">    modCount++;</span><br><span class="line">  <span class="comment">// numNew 是要放入的集合的长度</span></span><br><span class="line">    <span class="keyword">int</span> numNew = a.length;</span><br><span class="line">  <span class="comment">// 如果传入的是空集合 返回false</span></span><br><span class="line">    <span class="keyword">if</span> (numNew == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    Object[] elementData;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> s;</span><br><span class="line">  <span class="comment">// 如果numNew &gt; elementData.length - size 则扩容</span></span><br><span class="line">    <span class="keyword">if</span> (numNew &gt; (elementData = <span class="keyword">this</span>.elementData).length - (s = size))</span><br><span class="line">        elementData = grow(s + numNew);</span><br><span class="line">  <span class="comment">// 将a里的元素抄入到elementData中</span></span><br><span class="line">    System.arraycopy(a, <span class="number">0</span>, elementData, s, numNew);</span><br><span class="line">    size = s + numNew;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</details>
+
+
+
+
+
+<details>
+  <summary>System.arraycopy</summary>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  public void add(int index, E element) 中使用</span></span><br><span class="line"><span class="comment">//  将index开始的 长度为 s - index 的元素集合 拷贝到 index + 1 --- s  (s = size)</span></span><br><span class="line">System.arraycopy(elementData, index,</span><br><span class="line">                         elementData, index + <span class="number">1</span>,</span><br><span class="line">                         s - index);</span><br></pre></td></tr></table></figure>
 
 
 
@@ -281,7 +373,10 @@
     <a href="/2020/03/24/%E5%A4%A7O%E8%A1%A8%E7%A4%BA%E6%B3%95/" rel="prev" title="大O表示法">
       <i class="fa fa-chevron-left"></i> 大O表示法
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/02/LinedList%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" rel="next" title="LinedList源码分析">
+      LinedList源码分析 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -341,7 +436,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList"><span class="nav-number">1.</span> <span class="nav-text">ArrayList</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#变量定义"><span class="nav-number">1.</span> <span class="nav-text">变量定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#构造函数"><span class="nav-number">2.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#扩容相关函数"><span class="nav-number">3.</span> <span class="nav-text">扩容相关函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#应用函数"><span class="nav-number">4.</span> <span class="nav-text">应用函数</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -355,7 +450,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

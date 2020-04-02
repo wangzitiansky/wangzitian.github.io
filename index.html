@@ -147,6 +147,63 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2020/04/02/LinedList%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="wangzitian">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Blog of Wang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/02/LinedList%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">LinedList源码分析</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-04-02 22:59:28" itemprop="dateCreated datePublished" datetime="2020-04-02T22:59:28+08:00">2020-04-02</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2020/03/30/ArrayList%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -170,10 +227,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-03-30 20:33:41 / Modified: 20:44:38" itemprop="dateCreated datePublished" datetime="2020-03-30T20:33:41+08:00">2020-03-30</time>
+              <time title="Created: 2020-03-30 20:33:41" itemprop="dateCreated datePublished" datetime="2020-03-30T20:33:41+08:00">2020-03-30</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-04-02 20:59:30" itemprop="dateModified" datetime="2020-04-02T20:59:30+08:00">2020-04-02</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -199,7 +262,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><details>
+          <h5 id="变量定义"><a href="#变量定义" class="headerlink" title="变量定义"></a>变量定义</h5><details>
   <summary>变量定义</summary>
 
 
@@ -210,9 +273,7 @@
 
 </details>
 
-
-
-<details>
+<h5 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h5><details>
   <summary>构造函数</summary>
 
 
@@ -223,9 +284,7 @@
 
 </details>
 
-
-
-<details>
+<h5 id="扩容相关函数"><a href="#扩容相关函数" class="headerlink" title="扩容相关函数"></a>扩容相关函数</h5><details>
   <summary> 扩容相关 </summary>
 
 
@@ -241,12 +300,102 @@
 
 </details>
 
+<h5 id="应用函数"><a href="#应用函数" class="headerlink" title="应用函数"></a>应用函数</h5><details>
+  <summary>public boolean contains(Object o)</summary>
+
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">      <span class="comment">// indexOf(o) 返回所在元素的第一个下标值 如果元素不在数组中 则返回-1</span></span><br><span class="line">    	<span class="keyword">return</span> indexOf(o) &gt;= <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">indexOfRange</span><span class="params">(Object o, <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">      Object[] es = elementData;</span><br><span class="line">      <span class="keyword">if</span> (o == <span class="keyword">null</span>) &#123;</span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; end; i++) &#123;</span><br><span class="line">              <span class="keyword">if</span> (es[i] == <span class="keyword">null</span>) &#123;</span><br><span class="line">                  <span class="keyword">return</span> i;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; end; i++) &#123;</span><br><span class="line">              <span class="keyword">if</span> (o.equals(es[i])) &#123;</span><br><span class="line">                  <span class="keyword">return</span> i;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</details>
+
 
 
 <details>
-  <summary>contains(Object o)</summary>
+  <summary>public int lastIndexOf(Object o)</summary>
 
 
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回指定元素的最后出现的下标位置</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lastIndexOf</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> lastIndexOfRange(o, <span class="number">0</span>, size);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 其实就是倒着找</span></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">lastIndexOfRange</span><span class="params">(Object o, <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">      Object[] es = elementData;</span><br><span class="line">      <span class="keyword">if</span> (o == <span class="keyword">null</span>) &#123;</span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> i = end - <span class="number">1</span>; i &gt;= start; i--) &#123;</span><br><span class="line">              <span class="keyword">if</span> (es[i] == <span class="keyword">null</span>) &#123;</span><br><span class="line">                  <span class="keyword">return</span> i;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> i = end - <span class="number">1</span>; i &gt;= start; i--) &#123;</span><br><span class="line">              <span class="keyword">if</span> (o.equals(es[i])) &#123;</span><br><span class="line">                  <span class="keyword">return</span> i;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</details>
+
+
+
+<details>
+  <summary>public E get(int index)</summary>
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 检查是否越界 @throws IndexOutOfBoundsException</span></span><br><span class="line">    Objects.checkIndex(index, size);</span><br><span class="line">    <span class="keyword">return</span> elementData(index);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</details>
+
+
+
+<details>
+  <summary>public E set(int index, E element)</summary>
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 将elementData[index] 设置为 element 并且返回旧值</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">set</span><span class="params">(<span class="keyword">int</span> index, E element)</span> </span>&#123;</span><br><span class="line">      Objects.checkIndex(index, size);</span><br><span class="line">      E oldValue = elementData(index);</span><br><span class="line">      elementData[index] = element;</span><br><span class="line">      <span class="keyword">return</span> oldValue;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</details>
+
+
+
+<details>
+  <summary>public boolean add(E e)</summary>
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(E e, Object[] elementData, <span class="keyword">int</span> s)</span> </span>&#123;</span><br><span class="line">   		<span class="comment">// 如果要插入的地方等于现在数组长度 则扩容</span></span><br><span class="line">      <span class="keyword">if</span> (s == elementData.length)</span><br><span class="line">          elementData = grow();</span><br><span class="line">      elementData[s] = e;</span><br><span class="line">      size = s + <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 操作次数++ </span></span><br><span class="line">      modCount++;</span><br><span class="line">    <span class="comment">// 调用helper add方法 将元素添加至尾部</span></span><br><span class="line">      add(e, elementData, size);</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</details>
+
+
+
+<details>
+  <summary>public void add(int index, E element)</summary>
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> index, E element)</span> </span>&#123;</span><br><span class="line">  	<span class="comment">// 如果index &gt; size 或者 index &lt; 0 则抛出异常</span></span><br><span class="line">    rangeCheckForAdd(index);</span><br><span class="line">  	<span class="comment">// 操作次数++</span></span><br><span class="line">    modCount++;</span><br><span class="line">  	<span class="comment">// 如果size == elementDate.length 则扩容</span></span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> s;</span><br><span class="line">    Object[] elementData;</span><br><span class="line">    <span class="keyword">if</span> ((s = size) == (elementData = <span class="keyword">this</span>.elementData).length)</span><br><span class="line">        elementData = grow();</span><br><span class="line">  	<span class="comment">// 将数组 index --- size - 1的元素 拷贝到 index + 1 ---- size </span></span><br><span class="line">    System.arraycopy(elementData, index,</span><br><span class="line">                     elementData, index + <span class="number">1</span>,</span><br><span class="line">                     s - index);</span><br><span class="line">    elementData[index] = element;</span><br><span class="line">    size = s + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+</details>
+
+
+
+<details>
+  <summary>public boolean addAll(Collection<? extends E> c)</summary>
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">addAll</span><span class="params">(Collection&lt;? extends E&gt; c)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 现将c转化为数组 a</span></span><br><span class="line">    Object[] a = c.toArray();</span><br><span class="line">    modCount++;</span><br><span class="line">  <span class="comment">// numNew 是要放入的集合的长度</span></span><br><span class="line">    <span class="keyword">int</span> numNew = a.length;</span><br><span class="line">  <span class="comment">// 如果传入的是空集合 返回false</span></span><br><span class="line">    <span class="keyword">if</span> (numNew == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    Object[] elementData;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> s;</span><br><span class="line">  <span class="comment">// 如果numNew &gt; elementData.length - size 则扩容</span></span><br><span class="line">    <span class="keyword">if</span> (numNew &gt; (elementData = <span class="keyword">this</span>.elementData).length - (s = size))</span><br><span class="line">        elementData = grow(s + numNew);</span><br><span class="line">  <span class="comment">// 将a里的元素抄入到elementData中</span></span><br><span class="line">    System.arraycopy(a, <span class="number">0</span>, elementData, s, numNew);</span><br><span class="line">    size = s + numNew;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</details>
+
+
+
+
+
+<details>
+  <summary>System.arraycopy</summary>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  public void add(int index, E element) 中使用</span></span><br><span class="line"><span class="comment">//  将index开始的 长度为 s - index 的元素集合 拷贝到 index + 1 --- s  (s = size)</span></span><br><span class="line">System.arraycopy(elementData, index,</span><br><span class="line">                         elementData, index + <span class="number">1</span>,</span><br><span class="line">                         s - index);</span><br></pre></td></tr></table></figure>
 
 
 
@@ -1093,93 +1242,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2019/11/14/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="wangzitian">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The Blog of Wang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/14/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="post-title-link" itemprop="url">Python面向对象</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-11-14 10:37:13" itemprop="dateCreated datePublished" datetime="2019-11-14T10:37:13+08:00">2019-11-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-03 20:40:37" itemprop="dateModified" datetime="2020-03-03T20:40:37+08:00">2020-03-03</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="名称和对象"><a href="#名称和对象" class="headerlink" title="名称和对象"></a>名称和对象</h2><h5 id="对象具有个性，多个名称（在多个作用域内）可以绑定到同一个对象。这在其他语言中称为别名。乍一看Python时通常不会理解这一点，在处理不可变的基本类型（数字，字符串，元组）时可以安全地忽略它。但是，别名对涉及可变对象，如列表，字典和大多数其他类型，的Python代码的语义可能会产生惊人的影响。这通常用于程序的好处，因为别名在某些方面表现得像指针。例如，传递一个对象很便宜，因为实现只传递一个指针；如果函数修改了作为参数传递的对象，调用者将看到更改"><a href="#对象具有个性，多个名称（在多个作用域内）可以绑定到同一个对象。这在其他语言中称为别名。乍一看Python时通常不会理解这一点，在处理不可变的基本类型（数字，字符串，元组）时可以安全地忽略它。但是，别名对涉及可变对象，如列表，字典和大多数其他类型，的Python代码的语义可能会产生惊人的影响。这通常用于程序的好处，因为别名在某些方面表现得像指针。例如，传递一个对象很便宜，因为实现只传递一个指针；如果函数修改了作为参数传递的对象，调用者将看到更改" class="headerlink" title="对象具有个性，多个名称（在多个作用域内）可以绑定到同一个对象。这在其他语言中称为别名。乍一看Python时通常不会理解这一点，在处理不可变的基本类型（数字，字符串，元组）时可以安全地忽略它。但是，别名对涉及可变对象，如列表，字典和大多数其他类型，的Python代码的语义可能会产生惊人的影响。这通常用于程序的好处，因为别名在某些方面表现得像指针。例如，传递一个对象很便宜，因为实现只传递一个指针；如果函数修改了作为参数传递的对象，调用者将看到更改"></a>对象具有个性，多个名称（在多个作用域内）可以绑定到同一个对象。这在其他语言中称为别名。乍一看Python时通常不会理解这一点，在处理不可变的基本类型（数字，字符串，元组）时可以安全地忽略它。但是，别名对涉及可变对象，如列表，字典和大多数其他类型，的Python代码的语义可能会产生惊人的影响。这通常用于程序的好处，因为别名在某些方面表现得像指针。例如，传递一个对象很便宜，因为实现只传递一个指针；如果函数修改了作为参数传递的对象，调用者将看到更改</h5><h3 id="作用域和命名空间"><a href="#作用域和命名空间" class="headerlink" title="作用域和命名空间"></a>作用域和命名空间</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 请注意 局部 赋值（这是默认状态）不会改变 scope_test 对 spam 的绑定。 nonlocal 赋值会改变 scope_test 对 spam 的绑定，而 global 赋值会改变模块层级的绑定。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">scope_test</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">do_local</span><span class="params">()</span>:</span></span><br><span class="line">        spam = <span class="string">"local spam"</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">do_nonlacal</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="keyword">nonlocal</span> spam</span><br><span class="line">        spam = <span class="string">"nonlocal spam"</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">do_global</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="keyword">global</span> spam</span><br><span class="line">        spam = <span class="string">"global spam"</span></span><br><span class="line"></span><br><span class="line">    spam = <span class="string">"test spam"</span></span><br><span class="line">    do_local()</span><br><span class="line">    print(<span class="string">"after local : "</span>, spam)</span><br><span class="line">    do_nonlacal()</span><br><span class="line">    print(<span class="string">"after nonlocal : "</span>, spam)</span><br><span class="line">    do_global()</span><br><span class="line">    print(<span class="string">"afer global : "</span>, spam)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">scope_test()</span><br><span class="line">print(<span class="string">"In the global"</span>, spam)</span><br></pre></td></tr></table></figure>
-
-<h3 id="类对象"><a href="#类对象" class="headerlink" title="类对象"></a>类对象</h3><h5 id="支持属性引用和实例化"><a href="#支持属性引用和实例化" class="headerlink" title="支持属性引用和实例化"></a>支持属性引用和实例化</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(MyClass.__doc__)</span><br></pre></td></tr></table></figure>
-
-<h3 id="方法对象"><a href="#方法对象" class="headerlink" title="方法对象"></a>方法对象</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">myclass = Myclass()</span><br><span class="line">myclass.f()</span><br><span class="line"><span class="comment"># 相当于 Myclass.f(myclass)</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="类变量和实例变量"><a href="#类变量和实例变量" class="headerlink" title="类变量和实例变量"></a>类变量和实例变量</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>:</span></span><br><span class="line">    kind = <span class="string">'canine'</span>         <span class="comment"># class variable shared by all instances</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name    <span class="comment"># instance variable unique to each instance</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = Dog(<span class="string">'Fido'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>e = Dog(<span class="string">'Buddy'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.kind                  <span class="comment"># shared by all dogs</span></span><br><span class="line"><span class="string">'canine'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>e.kind                  <span class="comment"># shared by all dogs</span></span><br><span class="line"><span class="string">'canine'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.name                  <span class="comment"># unique to d</span></span><br><span class="line"><span class="string">'Fido'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>e.name                  <span class="comment"># unique to e</span></span><br><span class="line"><span class="string">'Buddy'</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="python实例的创建和初始化"><a href="#python实例的创建和初始化" class="headerlink" title="python实例的创建和初始化_"></a>python实例的创建和初始化_</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 关于__init__ 和 __new__</span></span><br><span class="line"></span><br><span class="line">Use __new__ when you need to control </span><br><span class="line">the creation of a new instance.</span><br><span class="line"><span class="comment"># 当你需要控制实例的新建时 使用__new__</span></span><br><span class="line"></span><br><span class="line">Use __init__ when you need to control </span><br><span class="line">initialization of a new instance.</span><br><span class="line"><span class="comment"># 当你需要控制实例的初始化时</span></span><br><span class="line"><span class="comment"># 使用 __init__</span></span><br><span class="line"></span><br><span class="line">__new__ <span class="keyword">is</span> the first step of instance creation. </span><br><span class="line">It<span class="string">'s called first, and is responsible for returning </span></span><br><span class="line"><span class="string">a new instance of your class.</span></span><br><span class="line"><span class="string"># __new__ 是新建一个实例的第一步 并且返回</span></span><br><span class="line"><span class="string"># 这个类的一个实例</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">In contrast, __init__ doesn'</span>t <span class="keyword">return</span> anything; </span><br><span class="line">it<span class="string">'s only responsible for initializing the instance </span></span><br><span class="line"><span class="string">after it'</span>s been created.</span><br><span class="line"><span class="comment"># __init__ 值负责初始化</span></span><br><span class="line"></span><br><span class="line">In general, you shouldn<span class="string">'t need to override __new__ </span></span><br><span class="line"><span class="string">unless you'</span>re subclassing an immutable type </span><br><span class="line">like str, int, unicode <span class="keyword">or</span> tuple.</span><br><span class="line"><span class="comment"># 通常不需要重定义__new__</span></span><br><span class="line"><span class="comment"># 除非是不可变类型的子类</span></span><br><span class="line"></span><br><span class="line">参考：https://stackoverflow.com/questions/<span class="number">674304</span>/why-<span class="keyword">is</span>-init-always-called-after-new</span><br></pre></td></tr></table></figure>
-
-<h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 当for循环是发生了什么</span></span><br><span class="line"><span class="comment"># 在幕后，for 语句会在容器对象上调用 iter()。 该函数返回一个定义了 __next__() 方法的迭代器对象，此方法将逐一访问容器中的元素。 当元素用尽时， 将引发 StopIteration 异常来通知终止 for 循环。</span></span><br><span class="line"><span class="keyword">for</span> elemet <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]:</span><br><span class="line">    print(element)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 写一个自己的可迭代对象 </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Reverse</span><span class="params">(object)</span>:</span></span><br><span class="line">	<span class="string">"""docstring for Reverse"""</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, data)</span>:</span></span><br><span class="line">		self.data = data</span><br><span class="line">		self.index = len(data)</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__iter__</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="keyword">return</span> self</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__next__</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="keyword">if</span> self.index == <span class="number">0</span>:</span><br><span class="line">			<span class="keyword">raise</span> StopIteration</span><br><span class="line">		self.index -= <span class="number">1</span></span><br><span class="line">		<span class="keyword">return</span> self.data[self.index]</span><br></pre></td></tr></table></figure>
-
-<h3 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Generator 是一个用于创建迭代器的简单而强大的工具。 它们的写法类似标准的函数，但当它们要返回数据时会使用 yield 语句。 每次对生成器调用 next() 时，它会从上次离开位置恢复执行（它会记住上次执行语句时的所有数据值）。 显示如何非常容易地创建生成器的示例如下:</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverse</span><span class="params">(data)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> range(len(data)<span class="number">-1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">        <span class="keyword">yield</span> data[index]</span><br></pre></td></tr></table></figure>
-
-<h5 id="参考自：https-docs-python-org-zh-cn-3-tutorial-classes-html"><a href="#参考自：https-docs-python-org-zh-cn-3-tutorial-classes-html" class="headerlink" title="参考自：https://docs.python.org/zh-cn/3/tutorial/classes.html"></a>参考自：<a href="https://docs.python.org/zh-cn/3/tutorial/classes.html" target="_blank" rel="noopener">https://docs.python.org/zh-cn/3/tutorial/classes.html</a></h5>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1250,7 +1312,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
