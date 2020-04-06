@@ -147,6 +147,239 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2020/02/07/%E8%AE%A1%E7%BD%91-%E7%BD%91%E7%BB%9C%E5%B1%82/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="wangzitian">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Blog of Wang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/07/%E8%AE%A1%E7%BD%91-%E7%BD%91%E7%BB%9C%E5%B1%82/" class="post-title-link" itemprop="url">计网 --- 网络层</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-02-07 11:07:12" itemprop="dateCreated datePublished" datetime="2020-02-07T11:07:12+08:00">2020-02-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-07 14:00:13" itemprop="dateModified" datetime="2020-03-07T14:00:13+08:00">2020-03-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">计算机网络</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="网络层内部的工作方式"><a href="#网络层内部的工作方式" class="headerlink" title="网络层内部的工作方式"></a>网络层内部的工作方式</h3><ul>
+<li><h4 id="数据报"><a href="#数据报" class="headerlink" title="数据报"></a>数据报</h4><p>提供无连接服务，每个数据包携带完整的目的地址，独立进行路由选择</p>
+</li>
+<li><h4 id="虚电路"><a href="#虚电路" class="headerlink" title="虚电路"></a>虚电路</h4><p>提供面向连接的服务，发送数据包之前，必须先建立起一条从源路由器到目的路由器之间的路径，这个连接成为虚电路（vc）</p>
+<p>使用虚电路进行通信</p>
+<p>通信结束，释放虚电路</p>
+</li>
+<li><h4 id="两者比较"><a href="#两者比较" class="headerlink" title="两者比较"></a>两者比较</h4></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>比较项目</th>
+<th>数据报网络</th>
+<th>虚电路网络</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>电路建立</td>
+<td>不需要</td>
+<td>需要</td>
+</tr>
+<tr>
+<td>寻址</td>
+<td>每个数据包包含全部源地址和目的地址</td>
+<td>每个数据包包含一个短的虚电路号</td>
+</tr>
+<tr>
+<td>状态信息</td>
+<td>路由器不保留连接状态</td>
+<td>针对每个连接，每条虚电路都需要保存其状态</td>
+</tr>
+<tr>
+<td>路由方式</td>
+<td>每个数据包被单独路由</td>
+<td>建立虚电路时选择路由，所有数据包都经过此路由</td>
+</tr>
+<tr>
+<td>路由器失效的影响</td>
+<td>除了在崩溃时丢失包外 无影响</td>
+<td>所有经过失效的路由器的虚电路都要被终止</td>
+</tr>
+<tr>
+<td>服务质量</td>
+<td>困难</td>
+<td>如果有足够的资源提前分配给每个虚电路，容易实现</td>
+</tr>
+<tr>
+<td>拥塞控制</td>
+<td>困难</td>
+<td>如果有足够的资源可以提前分配给每个虚电路，容易控制</td>
+</tr>
+</tbody></table>
+<h3 id="几种路由算法"><a href="#几种路由算法" class="headerlink" title="几种路由算法"></a>几种路由算法</h3><h3 id="距离矢量路由"><a href="#距离矢量路由" class="headerlink" title="距离矢量路由"></a>距离矢量路由</h3><ul>
+<li><h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4></li>
+</ul>
+<p>每个路由器维护一张表，表中给出了当前到已知的每个目的地的最佳距离， 以及使用的线路，并通过与相邻路由器交换距离信息来更新表（距离指跳数，跳数超过15则不可达）</p>
+<ul>
+<li><h4 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h4></li>
+</ul>
+<p>对于好休息反应快，对坏消息反应慢</p>
+<p>选择路由时没有考虑线路带宽</p>
+<ul>
+<li><h4 id="应用于RIP协议"><a href="#应用于RIP协议" class="headerlink" title="应用于RIP协议"></a>应用于RIP协议</h4></li>
+</ul>
+<h3 id="链路状态路由"><a href="#链路状态路由" class="headerlink" title="链路状态路由"></a>链路状态路由</h3><p>// to-do</p>
+<h3 id="ARP-—-地址解析协议"><a href="#ARP-—-地址解析协议" class="headerlink" title="ARP — 地址解析协议"></a>ARP — 地址解析协议</h3><h4 id="为了解决什么问题？"><a href="#为了解决什么问题？" class="headerlink" title="为了解决什么问题？"></a>为了解决什么问题？</h4><p>因特网上主机通信使用的是IP地址，但是当一台主机发送数据包时，是根据硬件地址来确定目的接口的，链路层实现具体每段链路的通信，通信过程中MAC地址随着链路的改变而改变。ARP协议实现IP地址到MAC地址的映射。</p>
+<h4 id="如何实现"><a href="#如何实现" class="headerlink" title="如何实现"></a>如何实现</h4><p>主机上有一个ARP高速缓存，里面有IP到MAC地址的映射表，若表中有则直接读出，若没有，则生成一个目的地址为需要查询的IP地址的ARP报文，该查询报文放入一个具有广播目的地址的以太帧中。 发送广播到以太网上，每台主机收到帧后，不断向上分解得到ARP报文，检查自己IP地址是否符合，若符合则发送一个ARP回答报文，其中包含它的MAC地址.</p>
+<h5 id="报文格式解析"><a href="#报文格式解析" class="headerlink" title="报文格式解析"></a>报文格式解析</h5><p><img src="/Users/myx/Three/blog/source/_posts/arp-1.png" alt="arp-1"></p>
+<p>以太网目的地址：全1为广播</p>
+<p>以太网源地址</p>
+<p>帧类型：对于ARP请求或者应答，该字段为0x0806</p>
+<p>硬件类型：表示硬件地址类型，1表示以太网</p>
+<p>协议类型：0x800表示IP地址</p>
+<p>硬件地址长度，协议地址长度分别为6，4</p>
+<p>操作字段指出四种操作类型，ARP请求，ARP应答，RARP请求，RARP应答</p>
+<p>发送端以太网地址 IP地址 </p>
+<p>目的以太网地址 IP地址</p>
+<h3 id="DHCP-—-动态主机配置协议"><a href="#DHCP-—-动态主机配置协议" class="headerlink" title="DHCP — 动态主机配置协议"></a>DHCP — 动态主机配置协议</h3><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>允许服务器将IP地址和配置信息动态分发给客户端。正常情况下，DHCP服务器至少给客户端提供：IP地址，子网掩码，默认网关，也可提供DNS 服务器地址，</p>
+<h4 id="基本思想-1"><a href="#基本思想-1" class="headerlink" title="基本思想"></a>基本思想</h4><p>每个网路必须有一个DHCP服务器来负责地址配置</p>
+<p>当计算机启动时，它有一个嵌入在NIC中的内置以太网或其他链路层地址，但没有IP地址</p>
+<p>该计算机在自己的网路上广播一个DHCP DISCOVER包。（若DHCP服务器和主机不在同一个LAN上，此时需要将路由器配置成一个DHCP中继代理）</p>
+<p>当DHCP服务器收到请求，它就为该主机分配一个空闲的IP地址，并通过DHCP OFFER返回给主机</p>
+<h5 id="消息类型"><a href="#消息类型" class="headerlink" title="消息类型"></a>消息类型</h5><p>DHCP 有 8 种消息类型，分别是 Discover、Request、Release、Inform、Decline、Offer、ACK、NAK。</p>
+<p>其中前 5 种可由主机发起，后 3 种只能是 DHCP 服务端向主机发送，故 AB 正确。</p>
+<h3 id="ICMP-—-网际控制报文协议"><a href="#ICMP-—-网际控制报文协议" class="headerlink" title="ICMP — 网际控制报文协议"></a>ICMP — 网际控制报文协议</h3><p>重要应用</p>
+<p>ping： 主要用来测试两台主机之间的连通性。Ping 的原理是通过向目的主机发送 ICMP Echo 请求报文，目的主机收到之后会发送 Echo 回答报文。Ping 会根据时间和成功响应的次数估算出数据包往返时间以及丢包率。</p>
+<h3 id="NAT-—-网络地址转换"><a href="#NAT-—-网络地址转换" class="headerlink" title="NAT — 网络地址转换"></a>NAT — 网络地址转换</h3><h5 id="为了解决IP地址短缺的问题"><a href="#为了解决IP地址短缺的问题" class="headerlink" title="为了解决IP地址短缺的问题"></a>为了解决IP地址短缺的问题</h5><h5 id="基本思想-2"><a href="#基本思想-2" class="headerlink" title="基本思想"></a>基本思想</h5><p>为公司分配一个或少量共有IP地址，使用共有IP地址在Internet上传输数据包</p>
+<p>公司内部，每台计算机有唯一的私有IP地址，使用该地址在公司内部传输数据包</p>
+<p>当一个数据包离开公司网络时，需要地址转换</p>
+<h5 id="注：私有地址的数据包不应该出现在Internet上"><a href="#注：私有地址的数据包不应该出现在Internet上" class="headerlink" title="注：私有地址的数据包不应该出现在Internet上"></a>注：私有地址的数据包不应该出现在Internet上</h5><h5 id="工作过程"><a href="#工作过程" class="headerlink" title="工作过程"></a>工作过程</h5><p>向外发送的数据包进入到NAT盒中，源地址被公有IP替代，传输层的源端口号被一个索引值替代</p>
+<p>回来时根据传输层的目的端口号从NAT盒中找出原来的表项，提取相应的私有IP地址和原来的端口号，天道数据包中</p>
+<h5 id="缺陷"><a href="#缺陷" class="headerlink" title="缺陷"></a>缺陷</h5><p>违反IP结构模型，IP结构模型声明每个IP地址均唯一标示一台机器</p>
+<p>将Internet从一个无连接网络变成一个面向连接网络</p>
+<p>违反最基本的协议分层规则</p>
+<p>Internet上层的进程不一定适用TCP或者UDP</p>
+<p>有些应用不一定适用TCP UDP协议</p>
+<p>有些应用在正文插入了IP地址</p>
+<p>TCP端口号16位 最多65536台机器被映射</p>
+<p>参考：<a href="https://cyc2018.github.io/CS-Notes/#/README" target="_blank" rel="noopener">https://cyc2018.github.io/CS-Notes/#/README</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2019/11/26/%E6%BA%90%E4%BB%A3%E7%A0%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="wangzitian">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Blog of Wang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/26/%E6%BA%90%E4%BB%A3%E7%A0%81/" class="post-title-link" itemprop="url">源代码</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2019-11-26 11:12:43 / Modified: 11:13:06" itemprop="dateCreated datePublished" datetime="2019-11-26T11:12:43+08:00">2019-11-26</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> Tuple&lt;<span class="keyword">int</span>, <span class="keyword">int</span>[]&gt; Dp(<span class="keyword">int</span> cur, <span class="keyword">int</span> disp, <span class="keyword">int</span>[] dis)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> min = <span class="number">100000</span>;</span><br><span class="line">            <span class="keyword">int</span>[] lane = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">20</span>];</span><br><span class="line">            <span class="keyword">if</span> (disp == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                lane[disp] = cur;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> Tuple&lt;<span class="keyword">int</span>, <span class="keyword">int</span>[]&gt;(D[cur, <span class="number">0</span>], lane);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; disp; i++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">int</span> newdisp = <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">int</span>[] newdis = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">20</span>];</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; disp; j++)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">if</span> (j != i)</span><br><span class="line">                        &#123;</span><br><span class="line">                            newdis[newdisp++] = dis[j];</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    Tuple&lt;<span class="keyword">int</span>, <span class="keyword">int</span>[]&gt; dpout = Dp(dis[i], newdisp, newdis);</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">if</span> (dpout.Item1 + D[cur, dis[i]] &lt; min)</span><br><span class="line">                    &#123;</span><br><span class="line">                        min = dpout.Item1 + D[cur, dis[i]];</span><br><span class="line">                        lane = dpout.Item2;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            lane[disp] = cur;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Tuple&lt;<span class="keyword">int</span>, <span class="keyword">int</span>[]&gt;(min, lane);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">Tuple&lt;<span class="keyword">int</span>, <span class="keyword">int</span>[]&gt; dpout = Dp(<span class="number">0</span>, N, target);</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2019/11/14/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -919,282 +1152,11 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2019/10/21/java%E7%AC%94%E8%AF%95%E9%A2%98%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="wangzitian">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The Blog of Wang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/10/21/java%E7%AC%94%E8%AF%95%E9%A2%98%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">java面试题笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-10-21 20:27:03" itemprop="dateCreated datePublished" datetime="2019-10-21T20:27:03+08:00">2019-10-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-30 20:34:58" itemprop="dateModified" datetime="2020-03-30T20:34:58+08:00">2020-03-30</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">Java面试</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="NewCoder面试题笔记"><a href="#NewCoder面试题笔记" class="headerlink" title="NewCoder面试题笔记"></a>NewCoder面试题笔记</h2><ul>
-<li><h4 id="Math-round-11-5-等于多少-Math-round-11-5-等于多少"><a href="#Math-round-11-5-等于多少-Math-round-11-5-等于多少" class="headerlink" title="Math.round(11.5) 等于多少 (). Math.round(-11.5) 等于多少 ( )"></a>Math.round(11.5) 等于多少 (). Math.round(-11.5) 等于多少 ( )</h4></li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 12 -11</span></span><br><span class="line"><span class="comment">//Math.round(a)</span></span><br><span class="line"><span class="comment">// a + 0.5 取下边界</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h4 id="public-Method-getDeclaredMethods-返回类或接口声明的所有方法，包括public-protected-default-package-访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。"><a href="#public-Method-getDeclaredMethods-返回类或接口声明的所有方法，包括public-protected-default-package-访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。" class="headerlink" title="public Method[] getDeclaredMethods()返回类或接口声明的所有方法，包括public, protected, default (package) 访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。"></a><strong>public Method[] getDeclaredMethods()</strong>返回类或接口声明的所有方法，包括public, protected, default (package) 访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。</h4></li>
-<li><h4 id="关于byte和final"><a href="#关于byte和final" class="headerlink" title="关于byte和final"></a>关于byte和final</h4></li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span> b1=<span class="number">1</span>,b2=<span class="number">2</span>,b3,b6,b8;</span><br><span class="line"><span class="keyword">final</span> <span class="keyword">byte</span> b4=<span class="number">4</span>,b5=<span class="number">6</span>,b7;</span><br><span class="line">b3=(b1+b2);  <span class="comment">/*语句1*/</span></span><br><span class="line">b6=b4+b5;    <span class="comment">/*语句2*/</span></span><br><span class="line">b8=(b1+b4);  <span class="comment">/*语句3*/</span></span><br><span class="line">b7=(b2+b5);  <span class="comment">/*语句4*/</span></span><br><span class="line">System.out.println(b3+b6);</span><br><span class="line"><span class="comment">// 当使用 +、-、*、/、%、运算操作时 操作数为：byte、short、int 、char 两个数会被转化为int类型 结果也是int类型 被声明为final的变量不会被转化</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h4 id="java编译和运行命令"><a href="#java编译和运行命令" class="headerlink" title="java编译和运行命令"></a>java编译和运行命令</h4></li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//编译命令</span></span><br><span class="line">$ javac YourClassName.java</span><br><span class="line"><span class="comment">//运行命令</span></span><br><span class="line">$ java YourClassName</span><br><span class="line"><span class="comment">//运行的是YourClassName.class文件</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h4 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h4></li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// switch 语句支持的类型</span></span><br><span class="line">String <span class="keyword">byte</span> <span class="keyword">short</span> <span class="keyword">int</span> <span class="keyword">char</span> Enum</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h4 id="求递归方程T-n-4T-n-2-n-的解"><a href="#求递归方程T-n-4T-n-2-n-的解" class="headerlink" title="求递归方程T(n)=4T(n/2)+n 的解"></a>求递归方程T(n)=4T(n/2)+n 的解</h4></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">目前不会。。。</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h4 id="在Linux系统中，某文件权限的分数是754"><a href="#在Linux系统中，某文件权限的分数是754" class="headerlink" title="在Linux系统中，某文件权限的分数是754"></a>在Linux系统中，某文件权限的分数是754</h4></li>
-</ul>
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">文件所有者、同组用户、其他用户</span><br><span class="line">权限    权限数值       具体作用</span><br><span class="line">r         <span class="number">4</span>            read</span><br><span class="line">w         <span class="number">2</span>            write。</span><br><span class="line">x         <span class="number">1</span>            execute</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h4 id="下列代码运行结果为"><a href="#下列代码运行结果为" class="headerlink" title="下列代码运行结果为"></a>下列代码运行结果为</h4></li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doSomething</span><span class="params">( <span class="keyword">int</span>[][] mat)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>( <span class="keyword">int</span> row = <span class="number">0</span>; row &lt; mat.length; row++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> col = <span class="number">0</span>; col &lt; mat[<span class="number">0</span>].length; col++)</span><br><span class="line">            mat[row][col] = mat[row][mat[<span class="number">0</span>].length - <span class="number">1</span> - col];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1  3  5  7  9  11</span></span><br><span class="line"><span class="comment">// 0  2  4  6  8  10</span></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2019/10/21/Java-Collection/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="wangzitian">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The Blog of Wang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/10/21/Java-Collection/" class="post-title-link" itemprop="url">Java Collection</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-10-21 10:47:13" itemprop="dateCreated datePublished" datetime="2019-10-21T10:47:13+08:00">2019-10-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-30 20:35:10" itemprop="dateModified" datetime="2020-03-30T20:35:10+08:00">2020-03-30</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="java集合"><a href="#java集合" class="headerlink" title="java集合"></a>java集合</h1><h2 id="Iterator"><a href="#Iterator" class="headerlink" title="Iterator"></a>Iterator</h2><h4 id="1-Iterator-方法返回一个Iterator"><a href="#1-Iterator-方法返回一个Iterator" class="headerlink" title="1.Iterator()方法返回一个Iterator"></a>1.Iterator()方法返回一个Iterator</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Iterator&lt;Integer&gt; listIter = list.iterator();</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-next-方法获得序列的下一个元素"><a href="#2-next-方法获得序列的下一个元素" class="headerlink" title="2.next()方法获得序列的下一个元素"></a>2.next()方法获得序列的下一个元素</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(listIter.next());</span><br><span class="line"><span class="comment">//打印第一个元素</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="3-hasNext-方法检查序列中是否还有元素"><a href="#3-hasNext-方法检查序列中是否还有元素" class="headerlink" title="3.hasNext()方法检查序列中是否还有元素"></a>3.hasNext()方法检查序列中是否还有元素</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(listIter.hasNext())&#123;</span><br><span class="line">            System.out.println(listIter.next());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-remove-将迭代器新近返回的元素删除"><a href="#4-remove-将迭代器新近返回的元素删除" class="headerlink" title="4.remove()将迭代器新近返回的元素删除"></a>4.remove()将迭代器新近返回的元素删除</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">listIter.next();</span><br><span class="line">listIter.remove();</span><br></pre></td></tr></table></figure>
-
-<h2 id="ListIterator"><a href="#ListIterator" class="headerlink" title="ListIterator"></a>ListIterator</h2><h4 id="1-ListIterator继承了Iterator"><a href="#1-ListIterator继承了Iterator" class="headerlink" title="1.ListIterator继承了Iterator"></a>1.ListIterator继承了Iterator</h4><h4 id="可以获得当前位置前一个元素和后一个元素的索引"><a href="#可以获得当前位置前一个元素和后一个元素的索引" class="headerlink" title="可以获得当前位置前一个元素和后一个元素的索引"></a>可以获得当前位置前一个元素和后一个元素的索引</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ListIterator&lt;Integer&gt; it = list.listIterator();</span><br><span class="line"><span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">      System.out.println(it.next() + <span class="string">" "</span> + it.previousIndex() + <span class="string">" "</span> + it.nextIndex());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Collection是一个独立的元素序列"><a href="#Collection是一个独立的元素序列" class="headerlink" title="Collection是一个独立的元素序列"></a>Collection是一个独立的元素序列</h3><ul>
-<li><h4 id="int-size-返回长度"><a href="#int-size-返回长度" class="headerlink" title="int size() 返回长度"></a>int <strong>size()</strong> 返回长度</h4></li>
-<li><h4 id="boolean-isEmpty-返回true如果集合为空"><a href="#boolean-isEmpty-返回true如果集合为空" class="headerlink" title="boolean isEmpty() 返回true如果集合为空"></a>boolean <strong>isEmpty</strong>() 返回true如果集合为空</h4></li>
-<li><h4 id="boolean-contains-Object-o-返回true如果有指定的元素"><a href="#boolean-contains-Object-o-返回true如果有指定的元素" class="headerlink" title="boolean contains(Object o) 返回true如果有指定的元素"></a>boolean <strong>contains</strong>(Object o) 返回true如果有指定的元素</h4></li>
-<li><h4 id="boolean-add-E-e-确保这个集合包含指定元素"><a href="#boolean-add-E-e-确保这个集合包含指定元素" class="headerlink" title="boolean add(E e) 确保这个集合包含指定元素"></a>boolean <strong>add</strong>(E e) 确保这个集合包含指定元素</h4></li>
-<li><h4 id="boolean-remove-Object-o-removes-a-single-instance-of-the-specified-element"><a href="#boolean-remove-Object-o-removes-a-single-instance-of-the-specified-element" class="headerlink" title="boolean remove(Object o)  removes a single instance of the specified element"></a>boolean <strong>remove</strong>(Object o)  removes a single instance of the specified element</h4></li>
-<li><h4 id="void-clear-清空集合"><a href="#void-clear-清空集合" class="headerlink" title="void clear() 清空集合"></a>void <strong>clear</strong>() 清空集合</h4></li>
-</ul>
-<h3 id="Map一组”键值对“对象"><a href="#Map一组”键值对“对象" class="headerlink" title="Map一组”键值对“对象"></a>Map一组”键值对“对象</h3><h4 id="Here-are-common-methods-for-collections-inherited-from-the-Map-interface"><a href="#Here-are-common-methods-for-collections-inherited-from-the-Map-interface" class="headerlink" title="Here are common methods for collections inherited from the Map interface:"></a>Here are common methods for collections inherited from the Map interface:</h4><ul>
-<li><h4 id="int-size-returns-the-number-of-elements-in-this-collection"><a href="#int-size-returns-the-number-of-elements-in-this-collection" class="headerlink" title="int size() returns the number of elements in this collection"></a>int <strong>size</strong>() returns the number of elements in this collection</h4></li>
-<li><h4 id="boolean-isEmpty-Returns-true-if-this-collection-contains-no-elements"><a href="#boolean-isEmpty-Returns-true-if-this-collection-contains-no-elements" class="headerlink" title="boolean isEmpty() Returns true if this collection contains no elements"></a>boolean <strong>isEmpty</strong>() Returns <strong>true</strong> if this collection contains no elements</h4></li>
-<li><h4 id="boolean-containsKey-Object-key-Returns-true-if-this-collection-contains-the-specified-key"><a href="#boolean-containsKey-Object-key-Returns-true-if-this-collection-contains-the-specified-key" class="headerlink" title="boolean containsKey(Object key)   Returns true if this collection contains the specified key"></a>boolean <strong>containsKey</strong>(Object key)   Returns <strong>true</strong> if this collection contains the specified key</h4></li>
-<li><h4 id="boolean-containsValue-Object-value-Returns-true-if-this-collection-contains-the-specified-value"><a href="#boolean-containsValue-Object-value-Returns-true-if-this-collection-contains-the-specified-value" class="headerlink" title="boolean containsValue(Object value) Returns true if this collection contains the specified value"></a>boolean <strong>containsValue</strong>(Object value) Returns <strong>true</strong> if this collection contains the specified value</h4></li>
-<li><h4 id="V-get-Object-key-returns-the-value-to-which-the-specified-key-is-mapped-or-null"><a href="#V-get-Object-key-returns-the-value-to-which-the-specified-key-is-mapped-or-null" class="headerlink" title="V get(Object key) returns the value to which the specified key is mapped, or null"></a>V <strong>get</strong>(Object key) returns the value to which the specified key is mapped, or <strong>null</strong></h4></li>
-<li><h4 id="V-put-K-key-V-value-associates-the-specified-value-with-the-specified-key-optional"><a href="#V-put-K-key-V-value-associates-the-specified-value-with-the-specified-key-optional" class="headerlink" title="V put(K key, V value) associates the specified value with the specified key (optional)"></a>V <strong>put</strong>(K key, V value) associates the specified value with the specified key (<strong>optional</strong>)</h4></li>
-<li><h4 id="V-remove-Object-key-removes-the-mapping-for-a-key-from-this-map-optional"><a href="#V-remove-Object-key-removes-the-mapping-for-a-key-from-this-map-optional" class="headerlink" title="V remove(Object key) removes the mapping for a key from this map (optional)"></a>V <strong>remove</strong>(Object key) removes the mapping for a key from this map (<strong>optional</strong>)</h4></li>
-<li><h4 id="void-clear-removes-all-elements-from-this-collection-optional"><a href="#void-clear-removes-all-elements-from-this-collection-optional" class="headerlink" title="void clear() removes all elements from this collection (optional)"></a>void <strong>clear</strong>() removes all elements from this collection <strong>(optional)</strong></h4></li>
-<li><h4 id="Set-keySet-Returns-a-Set-view-of-the-keys-contained-in-this-map"><a href="#Set-keySet-Returns-a-Set-view-of-the-keys-contained-in-this-map" class="headerlink" title="Set keySet() Returns a Set view of the keys contained in this map"></a>Set<K> <strong>keySet</strong>() Returns a Set view of the keys contained in this map</h4></li>
-<li><h4 id="Collection-values-returns-a-Collection-view-of-the-values-contained-in-this-map"><a href="#Collection-values-returns-a-Collection-view-of-the-values-contained-in-this-map" class="headerlink" title="Collection values() returns a Collection view of the values contained in this map"></a>Collection<V> <strong>values</strong>() returns a Collection view of the values contained in this map</h4></li>
-<li><h4 id="Set-lt-Map-Entry-lt-K-V-gt-gt-entrySet-returns-a-Set-view-of-the-mappings-contained-in-this-map"><a href="#Set-lt-Map-Entry-lt-K-V-gt-gt-entrySet-returns-a-Set-view-of-the-mappings-contained-in-this-map" class="headerlink" title="Set&lt;Map.Entry&lt;K, V&gt;&gt; entrySet() returns a Set view of the mappings contained in this map"></a>Set&lt;Map.Entry&lt;K, V&gt;&gt; <strong>entrySet</strong>() returns a Set view of the mappings contained in this map</h4></li>
-</ul>
-<h4 id="迭代遍历map"><a href="#迭代遍历map" class="headerlink" title="迭代遍历map"></a>迭代遍历map</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//检测随机数的分布情况</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestRandom</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Random rand = <span class="keyword">new</span> Random(<span class="number">47</span>);</span><br><span class="line">        Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> r = rand.nextInt(<span class="number">20</span>);</span><br><span class="line">            Integer freq = map.get(r);</span><br><span class="line">            map.put(r, (freq == <span class="keyword">null</span>) ? <span class="number">1</span> : freq + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        map.forEach((k,v) -&gt; System.out.println(<span class="string">"key: "</span>+k+<span class="string">" value:"</span>+v));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="The-List-interface"><a href="#The-List-interface" class="headerlink" title="The List interface"></a>The List interface</h3><ul>
-<li><h4 id="E-get-int-index-returns-the-element-at-the-specified-position-in-this-list"><a href="#E-get-int-index-returns-the-element-at-the-specified-position-in-this-list" class="headerlink" title="E get(int index) returns the element at the specified position in this list"></a>E <strong>get</strong>(int index) returns the element at the specified position in this list</h4></li>
-<li><h4 id="int-size-returns-the-number-of-elements-in-this-collection-1"><a href="#int-size-returns-the-number-of-elements-in-this-collection-1" class="headerlink" title="int size() returns the number of elements in this collection"></a>int <strong>size()</strong> returns the number of elements in this collection</h4></li>
-<li><h4 id="boolean-isEmpty-returns-true-if-this-collection-contains-no-elements"><a href="#boolean-isEmpty-returns-true-if-this-collection-contains-no-elements" class="headerlink" title="boolean isEmpty() returns true if this collection contains no elements"></a>boolean <strong>isEmpty</strong>() returns <strong>true</strong> if this collection contains no elements</h4></li>
-<li><h4 id="boolean-contains-Object-o-returns-true-if-this-collection-contains-the-specified-element"><a href="#boolean-contains-Object-o-returns-true-if-this-collection-contains-the-specified-element" class="headerlink" title="boolean contains(Object o) returns true if this collection contains the specified element"></a>boolean <strong>contains</strong>(Object o) returns <strong>true</strong> if this collection contains the specified element</h4></li>
-<li><h4 id="boolean-add-E-e-ensures-that-this-collection-contains-the-specified-element"><a href="#boolean-add-E-e-ensures-that-this-collection-contains-the-specified-element" class="headerlink" title="boolean add(E e) ensures that this collection contains the specified element"></a>boolean <strong>add</strong>(E e) ensures that this collection contains the specified element</h4></li>
-<li><p>####boolean <strong>remove</strong>(Object o) removes a single instance of the specified element</p>
-</li>
-<li><h4 id="void-clear-removes-all-elements-from-this-collection"><a href="#void-clear-removes-all-elements-from-this-collection" class="headerlink" title="void clear() removes all elements from this collection"></a>void <strong>clear</strong>() removes all elements from this collection</h4></li>
-<li><h4 id="void-add-int-index-E-element-inserts-the-specified-element-at-the-specified-position-in-this-list"><a href="#void-add-int-index-E-element-inserts-the-specified-element-at-the-specified-position-in-this-list" class="headerlink" title="void add(int index, E element) inserts the specified element at the specified position in this list"></a>void <strong>add</strong>(int index, E element) inserts the specified element at the specified position in this list</h4></li>
-<li><h4 id="E-remove-int-index-removes-the-element-at-the-specified-position-in-this-list-and-returns-it"><a href="#E-remove-int-index-removes-the-element-at-the-specified-position-in-this-list-and-returns-it" class="headerlink" title="E remove(int index) removes the element at the specified position in this list and returns it"></a>E <strong>remove</strong>(int index) removes the element at the specified position in this list and returns it</h4></li>
-<li><h4 id="E-set-int-index-E-element-replaces-the-element-at-the-specified-position-in-this-list-with-the-specified-element"><a href="#E-set-int-index-E-element-replaces-the-element-at-the-specified-position-in-this-list-with-the-specified-element" class="headerlink" title="E set(int index, E element) replaces the element at the specified position in this list with the specified element"></a>E <strong>set</strong>(int index, E element) replaces the element at the specified position in this list with the specified element</h4></li>
-<li><h4 id="int-indexOf-Object-o-returns-the-index-of-the-first-occurrence-of-the-specified-element-in-this-list-or-1"><a href="#int-indexOf-Object-o-returns-the-index-of-the-first-occurrence-of-the-specified-element-in-this-list-or-1" class="headerlink" title="int indexOf(Object o) returns the index of the first occurrence of the specified element in this list, or -1"></a>int <strong>indexOf</strong>(Object o) returns the index of the first occurrence of the specified element in this list, or -1</h4></li>
-</ul>
-<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><h2 id="增删改查的时间复杂度"><a href="#增删改查的时间复杂度" class="headerlink" title="增删改查的时间复杂度"></a>增删改查的时间复杂度</h2><h3 id="1-get-int-index-—–-O-1"><a href="#1-get-int-index-—–-O-1" class="headerlink" title="1. get(int index) —– O(1)"></a>1. get(int index) —– O(1)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">        Objects.checkIndex(index, size);</span><br><span class="line">        <span class="keyword">return</span> elementData(index);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-add-E-e-—–-O-1"><a href="#2-add-E-e-—–-O-1" class="headerlink" title="2. add(E e) —– O(1)"></a>2. add(E e) —– O(1)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//默认追加元素到list尾部 时间复杂度O(1)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span> </span>&#123;</span><br><span class="line">        modCount++;</span><br><span class="line">        add(e, elementData, size);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-add-int-index-E-element-—–-O-n"><a href="#3-add-int-index-E-element-—–-O-n" class="headerlink" title="3. add(int index, E element) —– O(n)"></a>3. add(int index, E element) —– O(n)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> index, E element)</span> </span>&#123;</span><br><span class="line">        rangeCheckForAdd(index);</span><br><span class="line">        modCount++;</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> s;</span><br><span class="line">        Object[] elementData;</span><br><span class="line">        <span class="keyword">if</span> ((s = size) == (elementData = <span class="keyword">this</span>.elementData).length)</span><br><span class="line">            elementData = grow();</span><br><span class="line">        System.arraycopy(elementData, index,</span><br><span class="line">                         elementData, index + <span class="number">1</span>,</span><br><span class="line">                         s - index);</span><br><span class="line">        elementData[index] = element;</span><br><span class="line">        size = s + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-remove-E-e-remove-index-—–-O-n"><a href="#3-remove-E-e-remove-index-—–-O-n" class="headerlink" title="3. remove(E e)    remove(index) —– O(n)"></a>3. remove(E e)    remove(index) —– O(n)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">remove</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">final</span> Object[] es = elementData;</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> size = <span class="keyword">this</span>.size;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        found: &#123;</span><br><span class="line">            <span class="keyword">if</span> (o == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">for</span> (; i &lt; size; i++)</span><br><span class="line">                    <span class="keyword">if</span> (es[i] == <span class="keyword">null</span>)</span><br><span class="line">                        <span class="keyword">break</span> found;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">for</span> (; i &lt; size; i++)</span><br><span class="line">                    <span class="keyword">if</span> (o.equals(es[i]))</span><br><span class="line">                        <span class="keyword">break</span> found;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        fastRemove(es, i);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">remove</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">        Objects.checkIndex(index, size);</span><br><span class="line">        <span class="keyword">final</span> Object[] es = elementData;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>) E oldValue = (E) es[index];</span><br><span class="line">        fastRemove(es, index);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> oldValue;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">fastRemove</span><span class="params">(Object[] es, <span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">        modCount++;</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> newSize;</span><br><span class="line">        <span class="keyword">if</span> ((newSize = size - <span class="number">1</span>) &gt; i)</span><br><span class="line">            System.arraycopy(es, i + <span class="number">1</span>, es, i, newSize - i);</span><br><span class="line">        es[size = newSize] = <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2><h3 id="增删改查时间复杂度"><a href="#增删改查时间复杂度" class="headerlink" title="增删改查时间复杂度"></a>增删改查时间复杂度</h3><h3 id="1-add-E-e-—–-O-1"><a href="#1-add-E-e-—–-O-1" class="headerlink" title="1. add(E e) —– O(1)"></a>1. add(E e) —– O(1)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-get-int-index-—–-O-n"><a href="#2-get-int-index-—–-O-n" class="headerlink" title="2. get(int index) —– O(n)"></a>2. get(int index) —– O(n)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-add-int-index-E-e-—–-O-n"><a href="#3-add-int-index-E-e-—–-O-n" class="headerlink" title="3. add(int index, E e) —– O(n)"></a>3. add(int index, E e) —– O(n)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="4-remove-int-index-—–-O-n"><a href="#4-remove-int-index-—–-O-n" class="headerlink" title="4. remove(int index) —– O(n)"></a>4. remove(int index) —– O(n)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="5-Iterator-remove-—–-O-1"><a href="#5-Iterator-remove-—–-O-1" class="headerlink" title="5. Iterator.remove() —– O(1)"></a>5. Iterator.remove() —– O(1)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h3><h4 id="1-ArrayList-constructs-an-empty-list-with-an-initial-capacity-of-ten-构造一个空的长度为10的list"><a href="#1-ArrayList-constructs-an-empty-list-with-an-initial-capacity-of-ten-构造一个空的长度为10的list" class="headerlink" title="1. ArrayList()  constructs an empty list with an initial capacity of ten; 构造一个空的长度为10的list"></a>1. ArrayList()  constructs an empty list with an initial capacity of ten; 构造一个空的长度为10的list</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;(); <span class="comment">// a list of strings, it has the default size 10</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="2-ArrayList-Collection-lt-extends-E-gt-c-constructs-a-list-containing-the-elements-of-the-specified-collection"><a href="#2-ArrayList-Collection-lt-extends-E-gt-c-constructs-a-list-containing-the-elements-of-the-specified-collection" class="headerlink" title="2.ArrayList(Collection&lt;? extends E&gt; c) constructs a list containing the elements of the specified collection;"></a>2.<strong>ArrayList(Collection&lt;? extends E&gt; c)</strong> constructs a list containing the elements of the specified collection;</h4><h4 id="3-ArrayList-int-initialCapacity-constructs-an-empty-list-with-the-specified-initial-capacity"><a href="#3-ArrayList-int-initialCapacity-constructs-an-empty-list-with-the-specified-initial-capacity" class="headerlink" title="3. ArrayList(int initialCapacity)**  constructs an empty list with the specified initial capacity."></a>3. ArrayList(int initialCapacity)**  constructs an empty list with the specified initial capacity.</h4><h3 id="list-与-array"><a href="#list-与-array" class="headerlink" title="list 与 array"></a>list 与 array</h3><h4 id="1-list-to-array"><a href="#1-list-to-array" class="headerlink" title="1. list to array"></a>1. list to array</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object[] objArray = list.toArray();</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String[] strArray = list.toArray(<span class="keyword">new</span> String[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-array-to-list"><a href="#2-array-to-list" class="headerlink" title="2.array to list"></a>2.array to list</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList(Arrays.asList(<span class="string">"one"</span> , <span class="string">"two"</span>));</span><br></pre></td></tr></table></figure>
-
-<h1 id="集合源码"><a href="#集合源码" class="headerlink" title="集合源码"></a>集合源码</h1><h2 id="ArrayList-1"><a href="#ArrayList-1" class="headerlink" title="ArrayList"></a>ArrayList</h2><h3 id="1-概况"><a href="#1-概况" class="headerlink" title="1. 概况"></a>1. 概况</h3><h4 id="RandomAccess接口标志其支持快速随机访问"><a href="#RandomAccess接口标志其支持快速随机访问" class="headerlink" title="RandomAccess接口标志其支持快速随机访问"></a>RandomAccess接口标志其支持快速随机访问</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayList</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractList</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">        <span class="keyword">implements</span> <span class="title">List</span>&lt;<span class="title">E</span>&gt;, <span class="title">RandomAccess</span>, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span></span></span><br></pre></td></tr></table></figure>
-
-<h4 id="数组默认大小为10"><a href="#数组默认大小为10" class="headerlink" title="数组默认大小为10"></a>数组默认大小为10</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEFAULT_CAPACITY = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-扩容"><a href="#2-扩容" class="headerlink" title="2. 扩容"></a>2. 扩容</h3><h4 id="添加元素时使用-ensureCapacityInternal-方法来保证容量足够，如果不够时，需要使用-grow-方法进行扩容，新容量的大小为-oldCapacity-oldCapacity-gt-gt-1-，也就是旧容量的-1-5-倍。"><a href="#添加元素时使用-ensureCapacityInternal-方法来保证容量足够，如果不够时，需要使用-grow-方法进行扩容，新容量的大小为-oldCapacity-oldCapacity-gt-gt-1-，也就是旧容量的-1-5-倍。" class="headerlink" title="添加元素时使用 ensureCapacityInternal() 方法来保证容量足够，如果不够时，需要使用 grow() 方法进行扩容，新容量的大小为 oldCapacity + (oldCapacity &gt;&gt; 1)，也就是旧容量的 1.5 倍。"></a>添加元素时使用 ensureCapacityInternal() 方法来保证容量足够，如果不够时，需要使用 grow() 方法进行扩容，新容量的大小为 <code>oldCapacity + (oldCapacity &gt;&gt; 1)</code>，也就是旧容量的 1.5 倍。</h4><h4 id="扩容操作需要调用-Arrays-copyOf-把原数组整个复制到新数组中，这个操作代价很高，因此最好在创建-ArrayList-对象时就指定大概的容量大小，减少扩容操作的次数。"><a href="#扩容操作需要调用-Arrays-copyOf-把原数组整个复制到新数组中，这个操作代价很高，因此最好在创建-ArrayList-对象时就指定大概的容量大小，减少扩容操作的次数。" class="headerlink" title="扩容操作需要调用 Arrays.copyOf() 把原数组整个复制到新数组中，这个操作代价很高，因此最好在创建 ArrayList 对象时就指定大概的容量大小，减少扩容操作的次数。"></a>扩容操作需要调用 <code>Arrays.copyOf()</code> 把原数组整个复制到新数组中，这个操作代价很高，因此最好在创建 ArrayList 对象时就指定大概的容量大小，减少扩容操作的次数。</h4>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1260,7 +1222,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1270,7 +1232,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>

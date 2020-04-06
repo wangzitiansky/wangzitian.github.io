@@ -20,13 +20,15 @@
     var CONFIG = {"hostname":"wangzitian.club","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="keywords" content="Java, Python, Programer">
+  <meta name="description" content="总揽   总揽 1. 继承自        主要属性   主要属性   123456789101112&#x2F;&#x2F; 元素个数transient int size = 0;  &#x2F;**   * Pointer to first node.   *&#x2F;  transient Node&amp;lt;E&amp;gt; first;  &#x2F;**   * Pointer to last node.   *&#x2F;  transient No">
+<meta name="keywords" content="Java集合源码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LinedList源码分析">
 <meta property="og:url" content="http:&#x2F;&#x2F;wangzitian.club&#x2F;2020&#x2F;04&#x2F;02&#x2F;LinedList%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90&#x2F;index.html">
 <meta property="og:site_name" content="The Blog of Wang">
+<meta property="og:description" content="总揽   总揽 1. 继承自        主要属性   主要属性   123456789101112&#x2F;&#x2F; 元素个数transient int size = 0;  &#x2F;**   * Pointer to first node.   *&#x2F;  transient Node&amp;lt;E&amp;gt; first;  &#x2F;**   * Pointer to last node.   *&#x2F;  transient No">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-02T14:59:28.511Z">
+<meta property="og:updated_time" content="2020-04-05T11:39:00.719Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://wangzitian.club/2020/04/02/LinedList%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/">
@@ -173,6 +175,26 @@
 
               <time title="Created: 2020-04-02 22:59:28" itemprop="dateCreated datePublished" datetime="2020-04-02T22:59:28+08:00">2020-04-02</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-04-05 19:39:00" itemprop="dateModified" datetime="2020-04-05T19:39:00+08:00">2020-04-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/%E9%9B%86%E5%90%88%E6%BA%90%E7%A0%81/" itemprop="url" rel="index"><span itemprop="name">集合源码</span></a>
+                </span>
+            </span>
 
           
 
@@ -185,7 +207,46 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h5 id="总揽"><a href="#总揽" class="headerlink" title="总揽"></a>总揽</h5><details>
+  <summary>总揽</summary>
+1. 继承自
+
+</details>
+
+
+
+
+
+<h5 id="主要属性"><a href="#主要属性" class="headerlink" title="主要属性"></a>主要属性</h5><details>
+  <summary>主要属性</summary>
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 元素个数</span></span><br><span class="line"><span class="keyword">transient</span> <span class="keyword">int</span> size = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * Pointer to first node.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">transient</span> Node&lt;E&gt; first;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * Pointer to last node.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">transient</span> Node&lt;E&gt; last;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+</details>
+
+
+
+<h5 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h5><details>
+  <summary>内部类</summary>
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// 典型的双向链表结点  </span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">       E item;</span><br><span class="line">       Node&lt;E&gt; next;</span><br><span class="line">       Node&lt;E&gt; prev;</span><br><span class="line"></span><br><span class="line">       Node(Node&lt;E&gt; prev, E element, Node&lt;E&gt; next) &#123;</span><br><span class="line">           <span class="keyword">this</span>.item = element;</span><br><span class="line">           <span class="keyword">this</span>.next = next;</span><br><span class="line">           <span class="keyword">this</span>.prev = prev;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+</details>
+
+
+
+
     </div>
 
     
@@ -193,6 +254,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java%E9%9B%86%E5%90%88%E6%BA%90%E7%A0%81/" rel="tag"># Java集合源码</a>
+          </div>
 
         
 
@@ -203,7 +267,10 @@
     <a href="/2020/03/30/ArrayList%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/" rel="prev" title="ArrayList源码解析">
       <i class="fa fa-chevron-left"></i> ArrayList源码解析
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/06/HashMap%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" rel="next" title="HashMap源码分析">
+      HashMap源码分析 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -263,6 +330,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#总揽"><span class="nav-number">1.</span> <span class="nav-text">总揽</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#主要属性"><span class="nav-number">2.</span> <span class="nav-text">主要属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#内部类"><span class="nav-number">3.</span> <span class="nav-text">内部类</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -276,7 +344,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -286,7 +354,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
