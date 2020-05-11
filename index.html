@@ -147,6 +147,450 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2020/05/11/%E5%89%91%E6%8C%87offer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="wangzitian">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Blog of Wang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/11/%E5%89%91%E6%8C%87offer/" class="post-title-link" itemprop="url">剑指offer</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-05-11 16:06:17 / Modified: 16:07:16" itemprop="dateCreated datePublished" datetime="2020-05-11T16:06:17+08:00">2020-05-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="剑指offer题解"><a href="#剑指offer题解" class="headerlink" title="剑指offer题解"></a>剑指offer题解</h3><h5 id="多种语言的题解"><a href="#多种语言的题解" class="headerlink" title="多种语言的题解"></a>多种语言的题解</h5><details> 
+<summary>面试题3: 找出数组中重复数字</summary>  
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">duplicateInArray</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">    <span class="comment">// 先检查一遍数组中有没有不符合要求的数字</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> num : nums)&#123;</span><br><span class="line">        <span class="keyword">if</span>(num &lt; <span class="number">0</span> || num &gt; nums.length - <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 数组可以满足性质：nums[i] == i</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 如果不满足则交换直到满足</span></span><br><span class="line">        <span class="keyword">while</span>(nums[i] != i)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 如果发现 要换位置元素 和 当前位置元素相等 则找到了重复的</span></span><br><span class="line">            <span class="keyword">if</span>(nums[i] == nums[nums[i]])&#123;</span><br><span class="line">                <span class="keyword">return</span> nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">            swap(nums, i, nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+
+<details>
+  <summary>面试题3.2：不修改数组找出重复数字</summary>
+
+
+
+</details>
+
+<details>
+<summary> 面试题4: 二维数组查找 </summary>
+
+
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">searchArray</span><span class="params">(<span class="keyword">int</span>[][] array, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">    <span class="comment">// 直接从右上角开始查找</span></span><br><span class="line">    <span class="keyword">int</span> rows = array.length;</span><br><span class="line">    <span class="keyword">if</span>(rows == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">int</span> cols = array[<span class="number">0</span>].length;</span><br><span class="line">    <span class="keyword">int</span> row = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> col = cols - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(row &lt; rows &amp;&amp; col &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(target &gt; array[row][col])&#123;</span><br><span class="line">            row ++;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(target &lt; array[row][col])&#123;</span><br><span class="line">            col --;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</details>
+
+<details>
+<summary> 面试题5: 替换空格 </summary>
+
+
+
+
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">replaceSpaces</span><span class="params">(StringBuffer str)</span> </span>&#123;</span><br><span class="line"><span class="comment">// 先计算替换后的字符串的长度</span></span><br><span class="line">    <span class="keyword">int</span> bef = str.length();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; bef; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(str.charAt(i) == <span class="string">' '</span>)&#123;</span><br><span class="line">            str.append(<span class="string">"  "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> aft = str.length();</span><br><span class="line">    <span class="keyword">int</span> i = bef - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> j = aft - <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 从后往前 对于每个空格进行替换</span></span><br><span class="line">    <span class="keyword">while</span>(j &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">char</span> ch = str.charAt(i --);</span><br><span class="line">        <span class="keyword">if</span>(ch != <span class="string">' '</span>)&#123;</span><br><span class="line">            str.setCharAt(j --, ch);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            str.setCharAt(j --, <span class="string">'0'</span>);</span><br><span class="line">            str.setCharAt(j --, <span class="string">'2'</span>);</span><br><span class="line">            str.setCharAt(j --, <span class="string">'%'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> str.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+
+<details>
+  <summary>面试题7:重建二叉树</summary>
+
+
+
+<p>二叉树</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">buildTree</span><span class="params">(<span class="keyword">int</span>[] preorder, <span class="keyword">int</span>[] inorder)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将 下标 - 值 记录 </span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; inorder.length; i++)&#123;</span><br><span class="line">        map.put(inorder[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> build(preorder, <span class="number">0</span>, preorder.length - <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">build</span><span class="params">(<span class="keyword">int</span>[] preorder, <span class="keyword">int</span> prel, <span class="keyword">int</span> prer, <span class="keyword">int</span> inl)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 边界</span></span><br><span class="line">    <span class="keyword">if</span>(prel &gt; prer)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 根节点</span></span><br><span class="line">    <span class="keyword">int</span> val = preorder[prel];</span><br><span class="line">    TreeNode root = <span class="keyword">new</span> TreeNode(val);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 中序遍历 inl - index 求出左树的长度</span></span><br><span class="line">    <span class="keyword">int</span> index = map.get(val);</span><br><span class="line">    <span class="keyword">int</span> len = index - inl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 左右递归 求出 left right</span></span><br><span class="line">    root.left = build(preorder, prel + <span class="number">1</span>, prel + len, inl);</span><br><span class="line">    root.right = build(preorder, prel + len + <span class="number">1</span>, prer, index + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+
+<details>
+  <summary>面试题8:二叉树的下一个节点</summary>
+
+
+<p>  二叉树</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">inorderSuccessor</span><span class="params">(TreeNode p)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">  <span class="comment">// 特别判断一下</span></span><br><span class="line">  <span class="keyword">if</span>(p == <span class="keyword">null</span>)</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 如果右子树不为空 则结果一定是右树的最左子结点</span></span><br><span class="line">  <span class="keyword">if</span>(p.right != <span class="keyword">null</span>)&#123;</span><br><span class="line">    TreeNode q = p.right;</span><br><span class="line">    <span class="keyword">while</span>(q != <span class="keyword">null</span>)&#123;</span><br><span class="line">      p = q;</span><br><span class="line">      q = q.left;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果右子树为空 则结果一定为其整个子树的父节点000    </span></span><br><span class="line">    TreeNode par = p.father;</span><br><span class="line">    <span class="keyword">while</span>(par != <span class="keyword">null</span> &amp;&amp; par.right == p)&#123;</span><br><span class="line">      p = par;</span><br><span class="line">      par = par.father;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> par;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+
+
+
+<details>
+  <summary>面试题9:用两个栈实现队列</summary>
+
+
+
+<p>栈和队列</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyQueue</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    Deque&lt;Integer&gt; in;</span><br><span class="line">    Deque&lt;Integer&gt; out;</span><br><span class="line">    <span class="comment">/** Initialize your data structure here. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        in = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">        out = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Push element x to the back of queue. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        in.push(x);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 假如out是空 则调用此函数填充in</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clearIn</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(!in.isEmpty())&#123;</span><br><span class="line">            out.push(in.pop());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Removes the element from in front of queue and returns that element. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(out.isEmpty())&#123;</span><br><span class="line">            clearIn();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> out.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Get the front element. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">peek</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(out.isEmpty())&#123;</span><br><span class="line">            clearIn();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> out.peek();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Returns whether the queue is empty. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">empty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> out.isEmpty() &amp;&amp; in.isEmpty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</details>
+
+
+
+<details>
+  <summary>面试题10:斐波那契数列</summary>
+
+
+
+<p>dp</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a b (c)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Fibonacci</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">0</span>, b = <span class="number">1</span>, c = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n -- &gt; <span class="number">0</span>)&#123;</span><br><span class="line">      c = a + b;</span><br><span class="line">      a = b;</span><br><span class="line">      b = c;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</details>
+
+
+
+<details>
+  <summary>面试题11: 旋转数组的最小值</summary>
+
+
+<p>二分查找</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = nums.length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(n &lt; <span class="number">0</span>) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 去除nums[n] == nums[0] 的部分</span></span><br><span class="line">    <span class="keyword">while</span>(n &gt; <span class="number">0</span> &amp;&amp; nums[n] == nums[<span class="number">0</span>]) n --;</span><br><span class="line">    <span class="keyword">if</span>(nums[n] &gt;= nums[<span class="number">0</span>]) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = n;</span><br><span class="line">    <span class="keyword">while</span>(l &lt; r)&#123;</span><br><span class="line">      <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 二分的性质选取的是 左边的都 &gt;= nums[0] 右边的都 &lt; nums[0] </span></span><br><span class="line">      <span class="keyword">if</span>(nums[mid] &gt;= nums[<span class="number">0</span>])&#123;</span><br><span class="line">        l = mid + <span class="number">1</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        r = mid;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums[r];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</details>
+
+
+
+<details>
+  <summary>面试题12：矩阵中的路径</summary>
+
+
+
+<p>dfs</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasPath</span><span class="params">(<span class="keyword">char</span>[][] matrix, String str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> rows = matrix.length;</span><br><span class="line">        <span class="keyword">if</span>(rows == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">int</span> cols = matrix[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; rows; i ++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; cols; j ++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(matrix[i][j] == str.charAt(<span class="number">0</span>))&#123;</span><br><span class="line">                    <span class="keyword">if</span>(dfs(rows, cols, str, <span class="number">0</span>, matrix, i, j))</span><br><span class="line">                        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> rows, <span class="keyword">int</span> cols, String str, <span class="keyword">int</span> l, <span class="keyword">char</span>[][] matrix, <span class="keyword">int</span> row, <span class="keyword">int</span> col)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(l == str.length() - <span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">char</span> ch = matrix[row][col];</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 标记为走过</span></span><br><span class="line">        matrix[row][col] = <span class="string">'*'</span>;</span><br><span class="line">        <span class="keyword">int</span>[] pathx = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span>[] pathy = &#123;<span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> x = row + pathx[i];</span><br><span class="line">            <span class="keyword">int</span> y = col + pathy[i];</span><br><span class="line">            <span class="keyword">if</span>(x &gt;= <span class="number">0</span> &amp;&amp; x &lt; rows &amp;&amp; y &gt;= <span class="number">0</span> &amp;&amp; y &lt; cols &amp;&amp; matrix[x][y] == str.charAt(l + <span class="number">1</span>))&#123;</span><br><span class="line">                <span class="keyword">if</span>(dfs(rows, cols, str, l + <span class="number">1</span>, matrix, x, y))</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 将原来的矩阵复位</span></span><br><span class="line">        matrix[row][col] = ch;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+</details>
+
+
+
+<details>
+  <summary>面试题13:机器人的运动范围</summary>
+
+
+
+<p>dfs</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// dfs 搜索 看能搜索多少个格子</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> rows;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> cols;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> threshold;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span>[][] reach;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> num;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[][] path = &#123;&#123;<span class="number">0</span>, <span class="number">1</span>&#125;, &#123;<span class="number">0</span>, -<span class="number">1</span>&#125;, &#123;<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;-<span class="number">1</span>, <span class="number">0</span>&#125;&#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">movingCount</span><span class="params">(<span class="keyword">int</span> threshold, <span class="keyword">int</span> rows, <span class="keyword">int</span> cols)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.rows = rows;</span><br><span class="line">        <span class="keyword">this</span>.cols = cols;</span><br><span class="line">        <span class="keyword">if</span>(rows &lt;= <span class="number">0</span> || cols &lt;= <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">this</span>.threshold = threshold;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 标记是否走过</span></span><br><span class="line">        reach = <span class="keyword">new</span> <span class="keyword">boolean</span>[rows][cols];</span><br><span class="line">        dfs(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> row, <span class="keyword">int</span> col)</span></span>&#123;</span><br><span class="line">        num ++;</span><br><span class="line">        reach[row][col] = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i ++)&#123;</span><br><span class="line">            <span class="keyword">int</span> x = row + path[i][<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> y = col + path[i][<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span>(x &gt;= <span class="number">0</span> &amp;&amp; x &lt; rows &amp;&amp; y &gt;=<span class="number">0</span> &amp;&amp; y &lt; cols &amp;&amp; !reach[x][y] &amp;&amp; get_sum(x, y) &lt;= threshold)&#123;</span><br><span class="line">                dfs(x, y);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 算出行坐标和列坐标的数位之和</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">get_sum</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> get_num(a) + get_num(b);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">get_num</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(a &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            sum += a % <span class="number">10</span>;</span><br><span class="line">            a /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+</details>
+
+
+
+
+
+<details>
+  <summary>面试题21:调整数据顺序使奇数位于偶数前面</summary>
+
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">reOrderArray</span><span class="params">(<span class="keyword">int</span> [] array)</span> </span>&#123;</span><br><span class="line">     <span class="keyword">int</span> l = -<span class="number">1</span>, r = array.length;</span><br><span class="line">     <span class="keyword">if</span>(r == <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">     </span><br><span class="line">     <span class="comment">// 其实就是快排的思想</span></span><br><span class="line">     <span class="keyword">while</span>(l &lt; r)&#123;</span><br><span class="line">         <span class="keyword">do</span> l ++; <span class="keyword">while</span>(array[l] % <span class="number">2</span> != <span class="number">0</span>);</span><br><span class="line">         <span class="keyword">do</span> r --; <span class="keyword">while</span>(array[r] % <span class="number">2</span> == <span class="number">0</span>);</span><br><span class="line">         <span class="keyword">if</span>(l &lt; r)&#123;</span><br><span class="line">             <span class="keyword">int</span> temp = array[l];</span><br><span class="line">             array[l] = array[r];</span><br><span class="line">             array[r] = temp;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</details>
+
+
+
+<details>
+  <summary>面试题32：从上到小打印二叉树</summary>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">printFromTopToBottom</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">     List&lt;Integer&gt; res = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">     Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">     <span class="keyword">if</span>(root == <span class="keyword">null</span>)</span><br><span class="line">         <span class="keyword">return</span> res;</span><br><span class="line">     queue.add(root);</span><br><span class="line">     <span class="keyword">while</span>(!queue.isEmpty())&#123;</span><br><span class="line">         TreeNode tree = queue.poll();</span><br><span class="line">         res.add(tree.val);</span><br><span class="line">         <span class="keyword">if</span>(tree.left != <span class="keyword">null</span>) queue.add(tree.left);</span><br><span class="line">         <span class="keyword">if</span>(tree.right != <span class="keyword">null</span>) queue.add(tree.right);</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> res;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+</details>
+
+
+
+
+
+<details>
+  <summary>面试题32.2 分层从上到小打印二叉树</summary>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; printFromTopToBottom(TreeNode root) &#123;</span><br><span class="line">     Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">     List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">     <span class="keyword">if</span>(root == <span class="keyword">null</span>)&#123;</span><br><span class="line">         <span class="keyword">return</span> res;</span><br><span class="line">     &#125;</span><br><span class="line">     queue.add(root);</span><br><span class="line">     <span class="keyword">while</span>(!queue.isEmpty())&#123;</span><br><span class="line">         <span class="keyword">int</span> size = queue.size();</span><br><span class="line">         List&lt;Integer&gt; l = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">         <span class="keyword">while</span>(size -- &gt; <span class="number">0</span>)&#123;</span><br><span class="line">             TreeNode tree = queue.poll();</span><br><span class="line">             l.add(tree.val);</span><br><span class="line">             <span class="keyword">if</span>(tree.left != <span class="keyword">null</span>)</span><br><span class="line">                 queue.add(tree.left);</span><br><span class="line">             <span class="keyword">if</span>(tree.right != <span class="keyword">null</span>)</span><br><span class="line">                 queue.add(tree.right);</span><br><span class="line">         &#125;</span><br><span class="line">         res.add(l);</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> res;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+</details>
+
+
+
+<details>
+  <summary>队列的最大值</summary>
+
+
+<h5 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h5><p>给定一个数组和窗口大小，求滑动窗口的最大值</p>
+<p>可以用单调队列求解</p>
+<p>所有元素只会进队一次，出队一次，所以时间负责度是O(N)</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>()&#123;</span><br><span class="line">  <span class="number">1.</span> 如果超出滑动窗口范围，则弹出队头</span><br><span class="line">  <span class="keyword">if</span>(队头 &lt;= i - k)</span><br><span class="line">  队头弹出</span><br><span class="line">  <span class="number">2.</span> 维护单增的队列</span><br><span class="line">  <span class="keyword">while</span>(队尾元素 &lt;= 当前元素)</span><br><span class="line">  队尾弹出</span><br><span class="line">  <span class="number">3.</span> 把当前元素的下标放入队尾</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<details>
+  <summary>Java</summary>
+
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] maxInWindows(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.length;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;&#125;;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span>[] q = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        <span class="keyword">int</span> hh = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> tt = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)&#123;</span><br><span class="line">            <span class="comment">// 如果超出滑动窗口范围 则弹出队头</span></span><br><span class="line">            <span class="keyword">if</span>(hh &lt;= tt &amp;&amp; q[hh] &lt; i - k + <span class="number">1</span>)&#123;</span><br><span class="line">                hh ++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 如果当前元素 &gt;= 队列头元素 则弹出</span></span><br><span class="line">            <span class="keyword">while</span>(hh &lt;= tt &amp;&amp; nums[q[tt]] &lt;= nums[i])&#123;</span><br><span class="line">                tt --;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 将元素如队尾</span></span><br><span class="line">            q[++ tt] = i;</span><br><span class="line">            <span class="comment">// 每次打印队头</span></span><br><span class="line">            <span class="keyword">if</span>(i &gt;= k - <span class="number">1</span>)&#123;</span><br><span class="line">                res.add(nums[q[hh]]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// ArrayList to []</span></span><br><span class="line">        <span class="keyword">return</span> res.stream().mapToInt(i -&gt; i).toArray();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+</details>
+
+
+
+<details>
+  <summary>Python</summary>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxInWindows</span><span class="params">(self, nums, k)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type k: int</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">        res = []</span><br><span class="line">        q = deque()</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums:</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            <span class="keyword">if</span> q <span class="keyword">and</span> q[<span class="number">0</span>] &lt;= i - k:</span><br><span class="line">                q.popleft()</span><br><span class="line">            <span class="keyword">while</span> q <span class="keyword">and</span> nums[q[<span class="number">-1</span>]] &lt;= nums[i]:</span><br><span class="line">                q.pop()</span><br><span class="line">            q.append(i)</span><br><span class="line">            <span class="keyword">if</span> i &gt;= k - <span class="number">1</span>:</span><br><span class="line">                res.append(nums[q[<span class="number">0</span>]])</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+
+
+</details>
+
+
+
+<details>
+  <summary>C++</summary>
+
+
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; maxInWindows(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        <span class="keyword">int</span> q[n], hh = <span class="number">0</span>, tt = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(hh &lt;= tt &amp;&amp; q[hh] &lt;= i - k)&#123;</span><br><span class="line">                hh ++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span>(hh &lt;= tt &amp;&amp; nums[q[tt]] &lt; nums[i])&#123;</span><br><span class="line">                tt --;</span><br><span class="line">            &#125;</span><br><span class="line">            q[++ tt] = i;</span><br><span class="line">            <span class="keyword">if</span>(i &gt;= k - <span class="number">1</span>)&#123;</span><br><span class="line">                res.push_back(nums[q[hh]]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+</details>
+
+
+
+<details>
+  <summary>JavaScript</summary>
+
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> maxInWindows = <span class="function"><span class="keyword">function</span>(<span class="params">nums, k</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> res = [];</span><br><span class="line">    <span class="keyword">var</span> q = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; nums.length; i ++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(q.length !== <span class="number">0</span> &amp;&amp; q[<span class="number">0</span>] &lt;= i - k)&#123;</span><br><span class="line">            q.shift();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(q.length !== <span class="number">0</span> &amp;&amp; nums[q[q.length - <span class="number">1</span>]] &lt;= nums[i])&#123;</span><br><span class="line">            q.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        q.push(i);</span><br><span class="line">        <span class="keyword">if</span>(i &gt;= k - <span class="number">1</span>)&#123;</span><br><span class="line">            res.push(nums[q[<span class="number">0</span>]]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+</details>
+
+
+
+</details>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2020/04/23/supervisor%E7%9A%84%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="wangzitian">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Blog of Wang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/23/supervisor%E7%9A%84%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">supervisor的使用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-04-23 12:57:37 / Modified: 12:58:08" itemprop="dateCreated datePublished" datetime="2020-04-23T12:57:37+08:00">2020-04-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2020/04/23/Linux%E8%AE%BE%E7%BD%AE%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="wangzitian">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Blog of Wang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/23/Linux%E8%AE%BE%E7%BD%AE%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">Linux设置常用命令</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-04-23 12:37:54 / Modified: 12:41:24" itemprop="dateCreated datePublished" datetime="2020-04-23T12:37:54+08:00">2020-04-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ol>
+<li>修改.bashrc</li>
+<li>.bashrc 位于 /root/.bashrc</li>
+<li>增加指令 alias 指令=’cd 项目地址’</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2020/04/06/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -934,313 +1378,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2020/02/19/%E4%B8%80%E9%81%93%E8%AE%A1%E7%BD%91%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="wangzitian">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The Blog of Wang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/19/%E4%B8%80%E9%81%93%E8%AE%A1%E7%BD%91%E9%A2%98/" class="post-title-link" itemprop="url">一道计网题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-02-19 22:43:52" itemprop="dateCreated datePublished" datetime="2020-02-19T22:43:52+08:00">2020-02-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-17 20:05:36" itemprop="dateModified" datetime="2020-03-17T20:05:36+08:00">2020-03-17</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">计算机网络</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="从输入网址获得页面的过程"><a href="#从输入网址获得页面的过程" class="headerlink" title="从输入网址获得页面的过程"></a>从输入网址获得页面的过程</h4><h5 id="DNS解析域名"><a href="#DNS解析域名" class="headerlink" title="DNS解析域名"></a>DNS解析域名</h5><ol>
-<li><p>解析URI，生成HTTP请求消息，为了发送消息，我们需要知道域名对应的IP地址，所以下一步DNS</p>
-</li>
-<li><p>查询DNS，先浏览器缓存，之后操作系统缓存，之后本地Host文件，和向本地DNS服务器进行查询。</p>
-</li>
-<li><p>主机生成一个DNS报文，DNS被放入一个UDP报文段中，之后被放入一个IP数据包中，数据包的目的地之为DNS服务器的目的地址</p>
-</li>
-<li><p>DNS被放入一个数据帧中，准备将该帧发给网关路由器</p>
-</li>
-<li><p>因为只知道网关路由器的IP地址而不知道MAC地址，所以要用到ARP协议</p>
-</li>
-<li><p>主机生成一个目的地址为网关路由器IP地址的ARP查询报文，并放入一个具有广播地址的数据帧中，子网内的所有主机都会受到该帧，包括网关路由器。</p>
-</li>
-<li><p>网关路由器得到该帧后不断向上分解得到ARP报文，发现其中目的IP地址和自己的接口的IP地址一致，则发送一个ARP响应报文，其中包含自己MAC地址，发送给主机</p>
-</li>
-<li><p>主机知道MAC地址后便可以继续DNS解析</p>
-</li>
-<li><p>发送DNS数据帧</p>
-</li>
-<li><p>网关路由器收到该帧后，根据其IP地址和自己的路由表项，决定下一跳地址</p>
-</li>
-<li><p>到达DNS服务器后，DNS服务器得到报文，并查询</p>
-</li>
-<li><p>若找到则返回一个相应报文</p>
-</li>
-<li><p>没找到则根据报文要求，递归或者迭代查询</p>
-</li>
-</ol>
-<h5 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h5><ol>
-<li>有了主机的IP地址之后，生成TCP套接字</li>
-<li>先进行三次握手，生成一个TCP SYN报文</li>
-<li>服务器收到之后，回应一个TCP SYN ACK报文</li>
-<li>主机收到之后，回应一个TCP ACK报文，连接建立成功</li>
-<li>浏览器生成HTTP报文，并委托套接字发送给服务器</li>
-<li>服务器收到HTTP请求后，生成一个HTTP响应报文，放入web页面在报文主体中，发送给主机。</li>
-<li>浏览器收到HTTP响应报文后，提取出内容，进行渲染</li>
-</ol>
-<p>​    </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2020/02/11/%E5%A0%86%E6%8E%92%E5%BA%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="wangzitian">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The Blog of Wang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/11/%E5%A0%86%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">堆排序</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-02-11 14:17:37 / Modified: 15:03:39" itemprop="dateCreated datePublished" datetime="2020-02-11T14:17:37+08:00">2020-02-11</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><h5 id="堆是一个近似的完全二叉树-有如下性质"><a href="#堆是一个近似的完全二叉树-有如下性质" class="headerlink" title="堆是一个近似的完全二叉树 有如下性质"></a>堆是一个近似的完全二叉树 有如下性质</h5><ul>
-<li>parent(i) = (i - 1) / 2</li>
-<li>left(i) = 2 * i + 1</li>
-<li>right(i) = 2 * i + 2</li>
-</ul>
-<h5 id="堆排序有三个关键步骤"><a href="#堆排序有三个关键步骤" class="headerlink" title="堆排序有三个关键步骤"></a>堆排序有三个关键步骤</h5><table>
-<thead>
-<tr>
-<th>步骤</th>
-<th>作用</th>
-<th>时间复杂度</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>heapify</td>
-<td>维护堆的性质</td>
-<td>O(lgn)</td>
-</tr>
-<tr>
-<td>biuld_heap</td>
-<td>建堆</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>heap_sort</td>
-<td>堆排序</td>
-<td>O(nlgn)</td>
-</tr>
-</tbody></table>
-<ul>
-<li><h5 id="heapify"><a href="#heapify" class="headerlink" title="heapify"></a>heapify</h5></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">heapify(arr, i, heap_size):</span><br><span class="line">  l = left(i)</span><br><span class="line">  r = right(i)</span><br><span class="line">  <span class="keyword">if</span> l &lt;= heap_size <span class="keyword">and</span> arr[l] &gt; arr[i]:</span><br><span class="line">      largest = l</span><br><span class="line">  <span class="keyword">if</span> r &lt;= heap_size <span class="keyword">and</span> arr[r] &gt; arr[largest]:</span><br><span class="line">      largest = r</span><br><span class="line">  <span class="keyword">if</span> largest != i:</span><br><span class="line">      exchange arr[i], arr[largest]</span><br><span class="line">      heapify(arr, largest, heap_size)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>build_heap</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">build_heap(arr):</span><br><span class="line">    heap_size = arr.length - <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i = parent(heap_size) downto <span class="number">0</span>:</span><br><span class="line">        heapify(arr, i, heap_size)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>heap_sort</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">heap_sort(arr):</span><br><span class="line">    build_heap(arr)</span><br><span class="line">    n = arr.length</span><br><span class="line">    <span class="keyword">for</span> i = n - <span class="number">1</span> to <span class="number">1</span>:</span><br><span class="line">        exchange arr[<span class="number">0</span>], arr[i]</span><br><span class="line">        heapify(arr, <span class="number">0</span>, i)</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://wangzitian.club/2020/02/09/python%E8%A3%85%E9%A5%B0%E5%99%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="wangzitian">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The Blog of Wang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/09/python%E8%A3%85%E9%A5%B0%E5%99%A8/" class="post-title-link" itemprop="url">Python装饰器</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-02-09 22:32:27" itemprop="dateCreated datePublished" datetime="2020-02-09T22:32:27+08:00">2020-02-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-04 20:44:17" itemprop="dateModified" datetime="2020-03-04T20:44:17+08:00">2020-03-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><h4 id="装饰器是语法糖"><a href="#装饰器是语法糖" class="headerlink" title="装饰器是语法糖"></a>装饰器是语法糖</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@decorate</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">target</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line">  </span><br><span class="line"><span class="comment"># 等价于</span></span><br><span class="line"></span><br><span class="line">target = decorate(target)</span><br></pre></td></tr></table></figure>
-
-<h4 id="简答的例子"><a href="#简答的例子" class="headerlink" title="简答的例子"></a>简答的例子</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decorate</span><span class="params">(func)</span>:</span></span><br><span class="line"><span class="meta">    @wraps(func)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">        start = time.time()</span><br><span class="line">        ret = func(*args, **kwargs)</span><br><span class="line">        end = time.time()</span><br><span class="line">        print(<span class="string">'time = '</span>, end - start)</span><br><span class="line">        <span class="keyword">return</span> ret</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br></pre></td></tr></table></figure>
-
-<p>装饰器就是给函数加额外的功能</p>
-<h3 id="参数化装饰器"><a href="#参数化装饰器" class="headerlink" title="参数化装饰器"></a>参数化装饰器</h3><p>当一个有参数的装饰器执行时</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@decorate(x, y, z)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a, b)</span>:</span></span><br><span class="line">		<span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">func = decorate(x, y, z)(func)</span><br></pre></td></tr></table></figure>
-
-<p>例子来自：PythonCookbook 3rd</p>
-<h3 id="实际项目中的小例子"><a href="#实际项目中的小例子" class="headerlink" title="实际项目中的小例子"></a>实际项目中的小例子</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">permission_required</span><span class="params">(permission)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">decorator</span><span class="params">(f)</span>:</span></span><br><span class="line"><span class="meta">        @wraps(f)</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">decorated_function</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> current_user.can(permission):</span><br><span class="line">                abort(<span class="number">403</span>)</span><br><span class="line">            <span class="keyword">return</span> f(*args, **kwargs)</span><br><span class="line">        <span class="keyword">return</span> decorated_function</span><br><span class="line">    <span class="keyword">return</span> decorator</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">admin_required</span><span class="params">(f)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> permission_required(Permission.ADMIN)(f)</span><br><span class="line">  </span><br><span class="line"><span class="meta">@permission_required(Permission.MODERATE)</span></span><br><span class="line">		<span class="function"><span class="keyword">def</span> <span class="title">moderate_enable</span><span class="params">(id)</span>:</span></span><br><span class="line">    		<span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-
-<p>这个是给函数加上访问权限的控制，只有current_user具有了访问权限，则其才能访问moderate_enable视图函数。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1311,7 +1448,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
