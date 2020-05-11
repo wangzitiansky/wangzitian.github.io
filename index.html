@@ -172,16 +172,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-05-11 16:06:17 / Modified: 16:07:16" itemprop="dateCreated datePublished" datetime="2020-05-11T16:06:17+08:00">2020-05-11</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-                </span>
+              <time title="Created: 2020-05-11 16:06:17 / Modified: 16:12:57" itemprop="dateCreated datePublished" datetime="2020-05-11T16:06:17+08:00">2020-05-11</time>
             </span>
 
           
@@ -195,12 +186,39 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="剑指offer题解"><a href="#剑指offer题解" class="headerlink" title="剑指offer题解"></a>剑指offer题解</h3><h5 id="多种语言的题解"><a href="#多种语言的题解" class="headerlink" title="多种语言的题解"></a>多种语言的题解</h5><details> 
+          <p>title: 剑指offer<br>date: 2020-05-11 16:06:17<br>categories:</p>
+<ul>
+<li>算法<br>tags:</li>
+</ul>
+<h3 id="剑指offer题解"><a href="#剑指offer题解" class="headerlink" title="剑指offer题解"></a>剑指offer题解</h3><h5 id="多种语言的题解"><a href="#多种语言的题解" class="headerlink" title="多种语言的题解"></a>多种语言的题解</h5><details> 
 <summary>面试题3: 找出数组中重复数字</summary>  
+
+<details>
+  <summary>Java</summary
 
 
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">duplicateInArray</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">    <span class="comment">// 先检查一遍数组中有没有不符合要求的数字</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> num : nums)&#123;</span><br><span class="line">        <span class="keyword">if</span>(num &lt; <span class="number">0</span> || num &gt; nums.length - <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 数组可以满足性质：nums[i] == i</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 如果不满足则交换直到满足</span></span><br><span class="line">        <span class="keyword">while</span>(nums[i] != i)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 如果发现 要换位置元素 和 当前位置元素相等 则找到了重复的</span></span><br><span class="line">            <span class="keyword">if</span>(nums[i] == nums[nums[i]])&#123;</span><br><span class="line">                <span class="keyword">return</span> nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">            swap(nums, i, nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+
+
+
+<details>
+  <summary>C++</summary>
+
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">duplicateInArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> r = nums.size() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(l &lt; r)&#123;</span><br><span class="line">            <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">int</span> s = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> x : nums) s += (x &gt;= l &amp;&amp; x &lt;= mid ? <span class="number">1</span> : <span class="number">0</span>);</span><br><span class="line">            <span class="keyword">if</span>(s &gt; mid -l + <span class="number">1</span>)&#123;</span><br><span class="line">                r = mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                l = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+</details>
+
+
+
+
 
 </details>
 
