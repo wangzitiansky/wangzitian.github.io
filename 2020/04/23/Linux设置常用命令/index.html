@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"wangzitian.club","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="修改.bashrc .bashrc 位于 &#x2F;root&#x2F;.bashrc 增加指令 alias 指令=’cd 项目地址’">
-<meta name="keywords" content="Java, Python, Programer">
+  <meta name="description" content="Linux 用户管理命令查看用户权限1234sky@sky-virtual-machine:~&#x2F;Desktop&#x2F;linux$ ls -ltotal 0-rw-rw-r-- 1 sky sky 0 5月  16 20:12 test.txt所有者权限 所属组权限 其他人权限  chmod 更改文件权限chmod { u g o a } { + - = } { r w x } 1234sky@sky-">
+<meta name="keywords" content="linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux设置常用命令">
 <meta property="og:url" content="http:&#x2F;&#x2F;wangzitian.club&#x2F;2020&#x2F;04&#x2F;23&#x2F;Linux%E8%AE%BE%E7%BD%AE%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4&#x2F;index.html">
 <meta property="og:site_name" content="The Blog of Wang">
-<meta property="og:description" content="修改.bashrc .bashrc 位于 &#x2F;root&#x2F;.bashrc 增加指令 alias 指令=’cd 项目地址’">
+<meta property="og:description" content="Linux 用户管理命令查看用户权限1234sky@sky-virtual-machine:~&#x2F;Desktop&#x2F;linux$ ls -ltotal 0-rw-rw-r-- 1 sky sky 0 5月  16 20:12 test.txt所有者权限 所属组权限 其他人权限  chmod 更改文件权限chmod { u g o a } { + - = } { r w x } 1234sky@sky-">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-16T11:08:56.815Z">
+<meta property="og:updated_time" content="2020-05-16T12:44:39.092Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://wangzitian.club/2020/04/23/Linux%E8%AE%BE%E7%BD%AE%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
@@ -180,8 +180,17 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-16 19:08:56" itemprop="dateModified" datetime="2020-05-16T19:08:56+08:00">2020-05-16</time>
+                <time title="Modified: 2020-05-16 20:44:39" itemprop="dateModified" datetime="2020-05-16T20:44:39+08:00">2020-05-16</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
 
           
 
@@ -194,11 +203,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <ol>
-<li>修改.bashrc</li>
-<li>.bashrc 位于 /root/.bashrc</li>
-<li>增加指令 alias 指令=’cd 项目地址’</li>
-</ol>
+        <h3 id="Linux-用户管理命令"><a href="#Linux-用户管理命令" class="headerlink" title="Linux 用户管理命令"></a>Linux 用户管理命令</h3><h5 id="查看用户权限"><a href="#查看用户权限" class="headerlink" title="查看用户权限"></a>查看用户权限</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sky@sky-virtual-machine:~/Desktop/linux$ ls -l</span><br><span class="line">total 0</span><br><span class="line">-rw-rw-r-- 1 sky sky 0 5月  16 20:12 test.txt</span><br><span class="line">所有者权限 所属组权限 其他人权限</span><br></pre></td></tr></table></figure>
+
+<h5 id="chmod-更改文件权限"><a href="#chmod-更改文件权限" class="headerlink" title="chmod 更改文件权限"></a>chmod 更改文件权限</h5><p>chmod { u g o a } { + - = } { r w x }</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sky@sky-virtual-machine:~/Desktop/linux$ chmod u+x test.txt </span><br><span class="line">sky@sky-virtual-machine:~/Desktop/linux$ ls -l</span><br><span class="line">total 0</span><br><span class="line">-rwxrw-r-- 1 sky sky 0 5月  16 20:12 test.txt</span><br></pre></td></tr></table></figure>
+
+<h5 id="数字表示权限"><a href="#数字表示权限" class="headerlink" title="数字表示权限"></a>数字表示权限</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// r --- 4</span></span><br><span class="line"><span class="comment">// w --- 2</span></span><br><span class="line"><span class="comment">// x --- 1</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用数字修改权限</span></span><br><span class="line">sky@sky-virtual-machine:~/Desktop/linux$ chmod 744 test.txt </span><br><span class="line">sky@sky-virtual-machine:~/Desktop/linux$ ls -l</span><br><span class="line">total 0</span><br><span class="line">-rwxr--r-- 1 sky sky 0 5月  16 20:12 test.txt</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="linux-权限理解"><a href="#linux-权限理解" class="headerlink" title="linux 权限理解"></a>linux 权限理解</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对于文件来说 </span></span><br><span class="line">			 r : tail cat more less</span><br><span class="line">			 w : vim</span><br><span class="line">			 x : 执行</span><br><span class="line"><span class="comment"># 对于目录来说 </span></span><br><span class="line">			 r : ls</span><br><span class="line">			 w : touch rm mkdir rmdir</span><br><span class="line">			 x : <span class="built_in">cd</span></span><br></pre></td></tr></table></figure>
+
+<p>对于一个文件可不可以被删除，取决于其上层文件夹的权限</p>
 
     </div>
 
@@ -207,6 +225,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"># linux</a>
+          </div>
 
         
 
@@ -280,6 +301,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux-用户管理命令"><span class="nav-number">1.</span> <span class="nav-text">Linux 用户管理命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#查看用户权限"><span class="nav-number">1.0.1.</span> <span class="nav-text">查看用户权限</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#chmod-更改文件权限"><span class="nav-number">1.0.2.</span> <span class="nav-text">chmod 更改文件权限</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数字表示权限"><span class="nav-number">1.0.3.</span> <span class="nav-text">数字表示权限</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#linux-权限理解"><span class="nav-number">1.0.4.</span> <span class="nav-text">linux 权限理解</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -299,11 +321,11 @@
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
